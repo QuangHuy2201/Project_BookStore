@@ -1,71 +1,72 @@
+<?php
+include "../model/product.php";
+$header = 'product';
+include "header.php";
+?>
+
 <!-- Cart items details -->
-<div class="small-container cart-page">
-        <table>
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-1.jpg">
-                        <div>
-                            <p>Red Printed T-Shirt</p>
-                            <small>Price: $50.00</small>
-                            <br>
-                            <a href="">Remove</a>
+        <div class="cart-wrapper bg-gray h-100vh">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <h2 class="cart-title mt20">Giỏ hàng</h2>
+                        <div class="row txt-bold text-center bg-white mlr0 pt10 pb10 b-radius w-100 mb20">
+                            <div class="col-1">STT</div>
+                            <div class="col-4">Tên Sản Phẩm</div>
+                            <div class="col-2">Đơn giá</div>
+                            <div class="col-2">Số lượng</div>
+                            <div class="col-2">Thành tiền</div>
+                            <div class="col-1">Xoá</div>
+                        </div>
+                        <div class="row text-center bg-white mlr0 pt10 pb10 mb5 b-radius w-100">
+                            <div class="col-1">1</div>
+                            <div class="col-4 text-start">Truyện kiếm hiệp</div>
+                            <div class="col-2">630,000đ</div>
+                            <div class="col-2">1</div>
+                            <div class="col-2">630,000đ</div>
+                            <div class="col-1">
+                                <button>Xoá</button>
+                            </div>
+                        </div>
+                        <div class="row text-center bg-white mlr0 pt10 pb10 mb5 b-radius w-100">
+                            <div class="col-1">2</div>
+                            <div class="col-4 text-start">Sách văn học</div>
+                            <div class="col-2">87,000đ</div>
+                            <div class="col-2">1</div>
+                            <div class="col-2">87,000đ</div>
+                            <div class="col-1">
+                                <button>Xoá</button>
+                            </div>
                         </div>
                     </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$50.00</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-2.jpg">
-                        <div>
-                            <p>Red Printed T-Shirt</p>
-                            <small>Price: $50.00</small>
-                            <br>
-                            <a href="">Remove</a>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="mt20">Thông tin thanh toán</h2>
+                                <div class="bg-white b-radius p30">
+                                    <div class="price d-flex justify-content-between mb10">
+                                        <div class="price_heading">Tạm tính</div>
+                                        <div class="price-value">630,000đ</div>
+                                    </div>
+                                    <div class="discount d-flex justify-content-between mb10">
+                                        <div class="discount-heading">Giảm giá</div>
+                                        <div class="discount-value">0đ</div>
+                                    </div>
+                                    <div class="ship-fee d-flex justify-content-between mb10">
+                                        <div class="ship-fee-heading">Phí giao hàng</div>
+                                        <div class="ship-fee-value">0đ</div>
+                                    </div>
+                                    <div class="total d-flex justify-content-between m-t-10 txt-semiBold fs20">
+                                        <div class="total-heading">Tổng thanh toán</div>
+                                        <div class="total-value">630,000đ</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$50.00</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-3.jpg">
-                        <div>
-                            <p>Red Printed T-Shirt</p>
-                            <small>Price: $50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$50.00</td>
-            </tr>
-        </table>
-        <div class="total-price">
-            <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$200.00</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>$35.00</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$230.00</td>
-                </tr>
-            </table>
+                </div>
+            </div>
         </div>
-    </div>
+
+    </body> 
+</html>
