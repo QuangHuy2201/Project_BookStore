@@ -29,7 +29,7 @@
                         <div class="navbar-nav">
                             <a <?php if ($header == "home") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> aria-current="page" href="index.php">Home</a>
                             <a <?php if ($header == "product") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> href="product.php">Product</a>
-                            <a class="nav-link" href="">Pricing</a>
+                            <a class="nav-link" href="cart.php">Cart</a>
 
                         </div>
                     </div>

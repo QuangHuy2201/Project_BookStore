@@ -63,7 +63,15 @@ $page_left = ($page_current<4)?1:$page_current-3;
                     <img src="'.$link_img.''.$product['image'].'" alt="'.$product['product_name'].'">
                 </div>
                 <h5 class="product-title">'.$product['product_name'].'</h5>
-                <p class="product-price">'.$price.'</p>
+                <div class="flex">
+                <p class="product-price "style="margin-right:40px;">'.$price.'</p>
+                <form action="cart.php" method="POST">
+                <button type="submit" class="btn btn-danger " name="buy_now" >Mua Ngay</button>
+                <input type="hidden" name="product_name" value="'.$product['product_name'].'" >
+                <input type="hidden" name="price" value="'.$product['price'].'" >
+                <input type="hidden" name="quantity" value="1" >
+                </form>
+                </div>
             </div>
         </div>  ';
             }
