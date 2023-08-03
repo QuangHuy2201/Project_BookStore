@@ -1,3 +1,64 @@
+/* FONT */
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../font/poppins/SVN-Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('../font/poppins/SVN-Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url('../font/poppins/SVN-Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: Poppins-SemiBold;
+    src: url('../font/poppins/SVN-Poppins-SemiBold.ttf');
+}
+
+body {
+    font-family: Poppins-Regular, sans-serif;
+}
+
+.txt-regular {
+    font-family: Poppins-Regular, sans-serif;
+}
+
+.txt-medium {
+    font-family: Poppins-Medium, sans-serif;
+}
+
+.txt-semiBold {
+    font-family: Poppins-SemiBold, sans-serif;
+}
+
+.txt-bold {
+    font-family: Poppins-Bold, sans-serif;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-gray {
+    background-color: #f5f5f5;
+}
+
+/* .w-100 {
+    width: 100%;
+} */
+
+.h-100vh {
+    height: 100vh;
+}
+
+.b-radius {
+    border-radius: 5px;
+}
+
 .header-wrapper {
     background-color: #2c55a5;
     width: 100%;
@@ -13,21 +74,17 @@
     color: #fff;
 }
 
-.product-list {
+.product-list {}
 
-}
-
-.product-item {
-
-}
+.product-item {}
 
 .product-img {
     width: 100%;
-    
-  
+
+
 }
 
 .product-img img {
     width: 60%;
-    
+
 }
