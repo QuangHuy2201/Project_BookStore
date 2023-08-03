@@ -4,12 +4,12 @@ function connectdb(){
 
   $servername="localhost";
   $username="root";
-  $password="231077";
+  $password="";
   $dbname = "bookstore";
 
 
   // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
+  $conn = new mysqli($servername, $username, $password, $dbname, 3307);
 
   // Check connection
   if ($conn->connect_error) {
