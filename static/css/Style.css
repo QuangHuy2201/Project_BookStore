@@ -19,8 +19,13 @@
     src: url('../font/poppins/SVN-Poppins-SemiBold.ttf');
 }
 
+:root {
+    --bg-primary: #2c55a5;
+}
+
 body {
     font-family: Poppins-Regular, sans-serif;
+    background-color: #f5f5f5;
 }
 
 .txt-regular {
@@ -47,12 +52,8 @@ body {
     background-color: #f5f5f5;
 }
 
-/* .w-100 {
-    width: 100%;
-} */
-
 .h-100vh {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .b-radius {
