@@ -67,7 +67,7 @@ if (isset($_GET['delete'])) {
     <div class="container">
         <div class="row pt60">
             <div class="col-8">
-                <h2 class="cart-title mt20">Giỏ hàng</h2>
+                <h2 class="cart-title mt20 mb20">Giỏ hàng</h2>
                 <div class="row txt-bold text-center bg-white mlr0 pt10 pb10 b-radius w-100 mb20">
                     <div class="col-1">STT</div>
                     <div class="col-4">Tên Sản Phẩm</div>
@@ -106,7 +106,7 @@ if (isset($_GET['delete'])) {
             <div class="col-4">
                 <div class="row">
                     <div class="col">
-                        <h2 class="mt20">Thông tin thanh toán</h2>
+                        <h2 class="mt20 mb20">Thông tin thanh toán</h2>
                         <div class="bg-white b-radius p30">
                             <div class="price d-flex justify-content-between mb10">
                                 <div class="price_heading">Tạm tính</div>
@@ -135,6 +135,11 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
 </div>
+
+<?php
+    include "footer.php";
+?>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
