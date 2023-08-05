@@ -66,10 +66,12 @@ $page_left = ($page_current<4)?1:$page_current-3;
                 <div class="flex">
                 <p class="product-price "style="margin-right:40px;">'.$price.'</p>
                 <form action="cart.php" method="POST">
-                <button type="submit" class="btn btn-danger " name="buy_now" >Mua Ngay</button>
+                
                 <input type="hidden" name="product_name" value="'.$product['product_name'].'" >
+                <input type="hidden" name="image" value="'.$product['image'].'" >
                 <input type="hidden" name="price" value="'.$product['price'].'" >
-                <input type="hidden" name="quantity" value="1" >
+                <input type="hidden" name="category_id" value="'.$product['category_id'].'" >
+                <button type="submit" class="btn btn-danger " name="buy_now" >Mua Ngay</button>
                 </form>
                 </div>
             </div>

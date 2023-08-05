@@ -1,67 +1,18 @@
 <?php
 include "../model/product.php";
+include "../model/add_cart.php";
 $header = 'product';
 include "header.php";
 session_start();
 
-
 if(!isset($_SESSION['cart']))$_SESSION['cart']=[];
+
 if(isset($_POST['buy_now']))
 {   
-   $product_name=$_POST['product_name'];
-   $price=$_POST['price'];
-   $quantity=1;
-
+    add_cart();
     
-    //Check product in cart 
-    //flag
-    $fl=0;
-    for($i=0;$i<sizeof($_SESSION['cart']);$i++ )
-    {
-        if($_SESSION['cart'][$i][0]==$product_name)
-        {   
-            $fl=1;
-            $_SESSION['cart'][$i][2]+= $quantity;
-            break;
-        }
-    }
-
-    if($fl==0)
-    {
-        //Add to cart
-        $product_cart =[$product_name, $price,$quantity];
-        $_SESSION['cart'][] =$product_cart;
-        
-
-    }
-
 }
-function show_to_cart()
 
-{  
-    $total=0;
-    if( !empty($_SESSION['cart']) )
-    {   
-        for($i=0;$i<sizeof($_SESSION['cart']);$i++ ){
-            $sum=$_SESSION['cart'][$i][1]*$_SESSION['cart'][$i][2];
-            echo ' <div class="row text-center bg-white mlr0 pt10 pb10 mb5 b-radius w-100">
-            <div class="col-1">'.($i+1).'</div>
-            <div class="col-4 text-start">'.$_SESSION['cart'][$i][0].'</div>
-            <div class="col-2">'.number_format($_SESSION['cart'][$i][1]).'đ</div>
-            <div class="col-2">'.$_SESSION['cart'][$i][2].'</div>
-            <div class="col-2">'.number_format($sum).'</div>
-            <div class="col-1">
-            <form method="GET">
-                <button type="submit" name="delete" value="'.$i.'">Xoá</button>
-            </form>
-            </div>
-            </div>';
-            $total+=$sum;
-            }
-    }
-    else echo"<p>Chưa có sản phẩm trong giỏ hàng của bạn.</p>";
-    return $total;
-}
 
 if(isset($_GET['delete_all'])) unset($_SESSION['cart']);
 
@@ -81,9 +32,10 @@ if(isset($_GET['delete']))
                         <h2 class="cart-title mt20">Giỏ hàng</h2>
                         <div class="row txt-bold text-center bg-white mlr0 pt10 pb10 b-radius w-100 mb20">
                             <div class="col-1">STT</div>
-                            <div class="col-4">Tên Sản Phẩm</div>
+                            <div class="col-3">Tên Sản Phẩm</div>
+                            <div class="col-2">Hình ảnh</div>
                             <div class="col-2">Đơn giá</div>
-                            <div class="col-2">Số lượng</div>
+                            <div class="col-1">Số lượng</div>
                             <div class="col-2">Thành tiền</div>
                             <div class="col-1">Xoá</div>
                         </div>
