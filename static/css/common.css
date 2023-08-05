@@ -14,7 +14,6 @@ body {
   overscroll-behavior-y: none;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: unset;
-  padding-bottom: 16rem;
 }
 .dnone, .sp {display: none;}
 .db {display: block;}
@@ -84,9 +83,11 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 .mb80 {margin-bottom: 8rem;}
 .mb90 {margin-bottom: 9rem;}
 
+.mt10 {margin-top: 1rem;}
 .mt20{margin-top: 2rem !important;}
 .mt45 {margin-top: 4.5rem;}
 
+.mr10 {margin-right: 1rem;}
 .mlr0 {
   margin-left: 0rem;
   margin-right: 0rem;
@@ -196,28 +197,10 @@ mark:after {
   z-index: 1;
   display: inline-block; 
 }
-.square::before, .square::after {
-  content: "";
-  position: absolute;
-  width: 3.5rem;
-  height: 3.5rem;
-  z-index: -1;
-}
-.square::before {
-  top:-2rem;
-  left:-4rem;
-  background: url(../img/common/square_l.svg) no-repeat center center;
-  background-size: cover;
-}
-.square::after {
-  bottom:-2rem;
-  right:-4rem;
-  background: url(../img/common/square_r.svg) no-repeat center center;
-  background-size: cover;
-}
 
 .fs10 {font-size: 1rem;}
 .fs12 {font-size: 1.2rem;}
+.fs13 {font-size: 1.3rem;}
 .fs14 {font-size: 1.4rem;}
 .fs15 {font-size: 1.5rem;}
 .fs16 {font-size: 1.6rem;}
@@ -301,38 +284,6 @@ mark:after {
 
 .in_left img {
   width: 20rem;
-}
-
-/* Animation */
-.btnFlash,
-.btnSave {
-	position: relative;
-	overflow: hidden;
-}
-
-.animation_delay03::before {
-	animation-delay: 0.6s;
-}
-
-@-webkit-keyframes shiny {
-	0% {
-		transform: translateX(-18rem);
-		opacity: 0
-	}
-
-	40% {
-		opacity: 1
-	}
-
-	70% {
-		transform: translateX(30rem);
-		opacity: 0
-	}
-
-	100% {
-		transform: translateX(30rem);
-		opacity: 0
-	}
 }
 
 @media screen and (max-width:749px) {
