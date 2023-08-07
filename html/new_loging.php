@@ -14,7 +14,7 @@ include "../view/header.php";
                         <h2>Đăng Nhập</h2>
                         <form>
                             <div class="form-group">
-                                <input type="email" id="" name="name" required>
+                                <input type="email" id="" name="email" required>
                                 <label>Email</label>
                             </div>
                             <div class="form-group">
