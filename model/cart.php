@@ -52,17 +52,19 @@ function show_to_cart()
             echo ' <div class="row text-center bg-white mlr0 pt10 pb10 mb5 b-radius w-100">
             <div class="col-1 my-auto">' . ($i + 1) . '</div>
             <div class="col-4 my-auto text-start d-flex">
-                <img src="' . $link_img . '" class="mx-2" width=50 atr="' . $_SESSION['cart'][$i]['product_name'] . '"></img>
+                <img src="' . $link_img . '" class="mx-2" width=50 atr="'.$_SESSION['cart'][$i]['product_name'].'"></img>
                 <p>' . $_SESSION['cart'][$i]['product_name'] . '</p>
             </div>
-            <div class="col-2 my-auto">' . number_format($_SESSION['cart'][$i]['price']) . 'đ</div>
+            <div class="col-2 my-auto">'.number_format($_SESSION['cart'][$i]['price']).'đ</div>
             
             <div class="col-2 my-auto">
-                <button class="quantity-arrow-minus"> - </button>
-                <input class="quantity-num" type="number" value="'. $_SESSION['cart'][$i]['quantity'] .'"></input>
-                <button class="quantity-arrow-plus"> + </button>
+            <form method="GET">
+                <a class="btn quantity-arrow-minus" type="submit"  name="sub" href="index.php?act=cart&sub='.$i.'"> - </a>
+                <input disabled class=" quantity-num" type="number" value="'.$_SESSION['cart'][$i]['quantity'].'"></input>
+                <a class="btn quantity-arrow-plus" name="add" type="submit" href="index.php?act=cart&add='.$i.'"> + </a>
+            </form>
             </div>
-            <div class="col-2 my-auto">' . number_format($sum) . 'đ</div>
+            <div class="col-2 my-auto">'.number_format($sum).'đ</div>
             <div class="col-1 my-auto">
             <form  method="GET">
                 <a type="submit" name="delete"class=" btn btn-outline-danger " href="index.php?act=cart&delete=' . $i . '">Xóa</a>
@@ -72,22 +74,11 @@ function show_to_cart()
             $total += $sum;
         }
     } else echo "<p>Chưa có sản phẩm trong giỏ hàng của bạn.</p>";
+   
     return $total;
+
 }
-function delete_cart()
-{
 
-    //Delete
-    if (isset($_GET['delete_all'])) {
-        unset($_SESSION['cart']);
-        //header('Location: index.php?act=cart');
-    }
+  
+    
 
-
-    if (isset($_GET['delete'])) {
-
-        array_splice($_SESSION['cart'], $_GET['delete'], 1);
-
-        // header('Location: index.php?act=cart');
-    }
-}

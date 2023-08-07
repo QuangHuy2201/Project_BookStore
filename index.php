@@ -71,6 +71,22 @@ if(isset($_GET['act']))
                     unset($_SESSION['cart']); 
                     header('Location: index.php?act=cart');
                 }
+               //Update cart 
+                if(isset($_GET['add']))
+                {
+                    $index =$_GET['add'];
+                    $_SESSION['cart'][$index]['quantity']++;
+                    header('Location: index.php?act=cart');
+                }
+                if(isset($_GET['sub']))
+                {
+                    $index =$_GET['sub'];
+                    if($_SESSION['cart'][$index]['quantity']-1==0)
+                    array_splice($_SESSION['cart'],$index,1);
+                    else $_SESSION['cart'][$index]['quantity']--;
+                    header('Location: index.php?act=cart');
+                }
+
                 include "./view/cart.php";
                 break;
            
