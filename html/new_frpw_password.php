@@ -14,15 +14,15 @@ include "../view/header.php";
                         <h2>Quên mật khẩu</h2>
                         <form>
                             <div class="form-group">
-                                <input type="email" id="" name="name" required>
-                                <label>Email</label>
+                                <input type="password" id="" name="password1" required>
+                                <label>Mật khẩu mới</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="" name="password2" required>
+                                <label>Nhập lại mật khẩu mới</label>
                             </div>
                             <div class="forgot-password fs14 text-end mt10">
                                 <a href="#">Đăng nhập?</a>
-                            </div>
-                            <!-- Dòng này sẽ hiện ra sau khi nấn xác nhận -->
-                            <div class="text-danger mt10">
-                                <p>Thư xác nhận đang được gửi vào email của bạn</p>
                             </div>
 
                             <div class="myform-button">
