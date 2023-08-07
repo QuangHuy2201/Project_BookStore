@@ -11,21 +11,22 @@ include "../view/header.php";
                         <img src="../static/images/logo/login_img.jpg" alt="logging" >
                     </div>
                     <div class="form-input">
-                        <h2>Đăng Nhập</h2>
+                        <h2>Quên mật khẩu</h2>
                         <form>
                             <div class="form-group">
-                                <input type="email" id="" name="email" required>
-                                <label>Email</label>
+                                <input type="password" id="" name="password1" required>
+                                <label>Mật khẩu mới</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" id="" name="password" required>
-                                <label>Mật khẩu</label>
+                                <input type="password" id="" name="password2" required>
+                                <label>Nhập lại mật khẩu mới</label>
                             </div>
                             <div class="forgot-password fs14 text-end mt10">
-                                <a href="#">Quên mật khẩu?</a>
+                                <a href="#">Đăng nhập?</a>
                             </div>
+
                             <div class="myform-button">
-                                <button class="myform-btn">Đăng nhập</button>
+                                <button class="myform-btn">Xác nhận</button>
                             </div>
                             <div class="register fs14 text-center mt20">
                                 Bạn chưa phải là thành viên?

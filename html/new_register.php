@@ -11,7 +11,7 @@ include "../view/header.php";
                         <img src="../static/images/logo/login_img.jpg" alt="logging" >
                     </div>
                     <div class="form-input">
-                        <h2>Đăng Nhập</h2>
+                        <h2>Đăng Ký</h2>
                         <form>
                             <div class="form-group">
                                 <input type="email" id="" name="email" required>
@@ -21,15 +21,15 @@ include "../view/header.php";
                                 <input type="password" id="" name="password" required>
                                 <label>Mật khẩu</label>
                             </div>
-                            <div class="forgot-password fs14 text-end mt10">
-                                <a href="#">Quên mật khẩu?</a>
+                            <div class="form-group">
+                                <input type="password" id="" name="password" required>
+                                <label>Nhập lại mật khẩu</label>
                             </div>
                             <div class="myform-button">
-                                <button class="myform-btn">Đăng nhập</button>
+                                <button class="myform-btn">Đăng Ký</button>
                             </div>
                             <div class="register fs14 text-center mt20">
-                                Bạn chưa phải là thành viên?
-                                <a href="#" class="d-block">Đăng ký</a>
+                                <a href="#" class="d-block">Đăng nhập</a>
                             </div>
                         </form>
                     </div>
