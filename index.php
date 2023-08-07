@@ -32,7 +32,7 @@ if(isset($_GET['act']))
 
                 if(mysqli_num_rows(getAll('product',$conn=connectdb()))/$product_page!=0)
                     $pages = floor(mysqli_num_rows( getAll('product',$conn=connectdb()))/$product_page)+1;
-                else $pages = mysqli_num_rows( getAll('product'))/$product_page;
+                else $pages = mysqli_num_rows( getAll('product', $conn=connectdb()))/$product_page;
                 $page_right = (($page_current+3)>$pages)?$pages:$page_current+3;
                 $page_left = ($page_current<4)?1:$page_current-3;
 
