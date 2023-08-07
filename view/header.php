@@ -1,3 +1,23 @@
+<?php 
+if(isset($_GET['act']))
+{
+    switch($_GET['act'])
+    {
+        case 'product':
+            $header='product';
+            break;
+        case 'cart':
+            $header='cart';
+            break;
+        default:
+            $header='home';
+            break;
+    }
+}
+else $header='home';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,13 +47,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <!-- <a <?php if ($header == "home") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> aria-current="page" href="index.php">Home</a> -->
-                            <!-- <a <?php if ($header == "product") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> href="product.php">Product</a> -->
-                            <a class="nav-link" href="cart.php">Cart</a>
-                            <a href="../html/new_loging.php" class="nav-link">Login</a>
+                            <a  <?php if($header=='home')echo 'class=" nav-link active"';else echo 'class=" nav-link "'; ?>aria-current="page" href="index.php">Home</a>
+                            <a <?php if($header=='product')echo 'class=" nav-link active"';else echo 'class=" nav-link "'; ?>href="index.php?act=product">Product</a>
+                            <a <?php if($header=='cart')echo 'class=" nav-link active"';else echo 'class=" nav-link "'; ?> href="index.php?act=cart">Cart</a>
                         </div>
                     </div>
             </nav>
         </div>
-
     </div>
