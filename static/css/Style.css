@@ -163,12 +163,12 @@ body {
     background: transparent;
 }
 
-.myform-area .form-area .form-input {
+/* .myform-area .form-area .form-input {
     background-color: white;
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 40px 0 #e1e1e1;
-}
+} */
 
 .myform-area .form-area .form-input {
     width: 50%;
