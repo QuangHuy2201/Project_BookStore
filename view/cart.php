@@ -12,9 +12,11 @@
                     <div class="col-2">Thành tiền</div>
                     <div class="col-1">Xoá</div>
                 </div>
-
+                
                 <?php $total = show_to_cart(); ?>
-
+                <?php   
+               
+                ?>
             </div>
 
             <div class="col-4">
@@ -61,7 +63,7 @@
 include "footer.php";
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
 <!-- <script>
     $('.btn-minus').on('click', function(e) {
         var input = $(e.target).closest('.form-type-number').find('input');
@@ -73,7 +75,7 @@ include "footer.php";
         console.log('up')
     });
 </script> -->
-<script>
+<!-- <script>
     $(function() {
 
         (function quantityProducts() {
@@ -96,7 +98,7 @@ include "footer.php";
         })();
 
     });
-</script>
+</script> -->
 
 
 </body>
