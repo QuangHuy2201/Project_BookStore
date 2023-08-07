@@ -93,6 +93,7 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
   margin-right: 0rem;
 }
 
+.pb05 {padding-bottom: 0.5rem;}
 .pb10 {padding-bottom: 1rem;}
 .pb15 {padding-bottom: 1.5rem;}
 .pb20 {padding-bottom: 2rem;}
@@ -107,6 +108,7 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 .pb120 {padding-bottom: 12rem;}
 .pb140 {padding-bottom: 14rem;}
 
+.pt05 {padding-top: 0.5rem;}
 .pt10 {padding-top: 1rem;}
 .pt20 {padding-top: 2rem;}
 .pt30 {padding-top: 3.0rem;}
@@ -119,6 +121,7 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 .ptb30 {padding-top: 3rem; padding-bottom: 3rem;}
 .ptb60 {padding-top: 6rem; padding-bottom: 6rem;}
 
+.p10 {padding: 1rem;}
 .p15 {padding: 1.5rem;}
 .p20 {padding: 2rem;}
 .p30 {padding: 3rem;}
@@ -128,8 +131,11 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 }
 
 .plr20{
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0 2rem;
+}
+
+.plr50{
+  padding: 0 8rem;
 }
 
 /*----- img -----*/

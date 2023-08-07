@@ -56,6 +56,10 @@ body {
     background-color: #f5f5f5;
 }
 
+.color-primary {
+    background-color: #2c55a5;
+}
+
 .h-100vh {
     min-height: 100vh;
 }
@@ -94,7 +98,11 @@ body {
 
 }
 
+/* login page */
 
+
+
+/* footer */
 .slogan {
     background-color: var(--bg-primary);
     width: 100%;

@@ -27,10 +27,10 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a <?php if ($header == "home") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> aria-current="page" href="index.php">Home</a>
-                            <a <?php if ($header == "product") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> href="product.php">Product</a>
+                            <!-- <a <?php if ($header == "home") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> aria-current="page" href="index.php">Home</a> -->
+                            <!-- <a <?php if ($header == "product") { ?> class=" nav-link active" <?php   } else { ?> class=" nav-link " <?php   }  ?> href="product.php">Product</a> -->
                             <a class="nav-link" href="cart.php">Cart</a>
-
+                            <a href="../html/new_loging.php" class="nav-link">Login</a>
                         </div>
                     </div>
             </nav>
