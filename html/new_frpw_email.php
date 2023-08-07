@@ -14,7 +14,7 @@ include "../view/header.php";
                         <h2>Quên mật khẩu</h2>
                         <form>
                             <div class="form-group">
-                                <input type="email" id="" name="name" required>
+                                <input type="email" id="" name="email" required>
                                 <label>Email</label>
                             </div>
                             <div class="forgot-password fs14 text-end mt10">
