@@ -14,11 +14,13 @@
                 <i class="fa fa-th"></i>
             </div>
             <h3 class="category-title txt-medium p10 d-inline-block">Danh mục</h3>
+            <form method="GET">
             <ul class="category-list list-unstyled mt50 ms-3">
                 <li><a href="#" class="text-decoration-none fs14">Truyện kiếm hiệp</a></li>
                 <li><a href="#" class="text-decoration-none fs14">Sách văn học</a></li>
                 <li><a href="#" class="text-decoration-none fs14">Truyện tranh - comic</a></li>
             </ul>
+            </form>
         </div>
         <div class="col-9">
             <h3 class="txt-medium ms-3">
