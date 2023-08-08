@@ -86,7 +86,9 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 .mt10 {margin-top: 1rem;}
 .mt20{margin-top: 2rem !important;}
 .mt45 {margin-top: 4.5rem;}
+.mt50 {margin-top: 5rem;}
 
+.mll0 {margin-left: 1rem;}
 .mr10 {margin-right: 1rem;}
 .mlr0 {
   margin-left: 0rem;
@@ -131,7 +133,8 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 }
 
 .plr20{
-  padding: 0 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .plr50{
