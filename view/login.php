@@ -19,29 +19,10 @@ session_start();
                             <span onclick="register()">Register</span>
                             <hr id="Indicator">
                         </div>
-                        <form id="LoginForm" action="model/user.php" method="POST">
-
-                        <?php 
-                        
-                        if(isset($_SESSION['message_login'])) 
-                        {
-                           
-                            ?> 
-                            
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>Oh!</strong>  <?= $_SESSION['message_login']; ?> 
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            <?php
-                            unset($_SESSION['message_login']);
-
-                        }
-
-                        ?>
-
+                        <form id="LoginForm" action="index.php?act=login" method="POST">
                             <input type="text" placeholder="Username" name="user_name">
                             <input type="password" placeholder="Password" name="password">
-                            <button type="submit" class="btn" name="btn-login">Login</button>
+                            <input type="submit" class="btn" name="btn-login" value="Login"></input>
                             <a href="">Forget Password</a>
                         </form>
 

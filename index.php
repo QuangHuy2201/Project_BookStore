@@ -4,17 +4,26 @@ include "./model/cart.php";
 include "./model/connectDB.php";
 include "./model/product.php";
 include "./model/page.php";
+include "./model/user.php";
+include "./model/passwordBcrypt.php";
 $product_page =12;
 
 
 //Header
 $header ='';
+
 include_once "./view/header.php";
 
 if(isset($_GET['act']))
     {   
         switch($_GET['act'])
-        {
+        {   
+            case 'home':
+                $products_1=getByCategoryID_Limit('product',1,$conn=connectdb());
+                $products_2=getByCategoryID_Limit('product',2,$conn=connectdb());
+                $products_3=getByCategoryID_Limit('product',3,$conn=connectdb());
+                include "./view/home.php";
+                break;
             case'product':
                 $header ='product';
                 if(isset($_GET['page']))
@@ -51,7 +60,7 @@ if(isset($_GET['act']))
                 break;
 
             case'cart':
-                session_start();
+                
 
                 if(!isset($_SESSION['cart']))$_SESSION['cart']=[];
                 if(isset($_POST['buy_now']))
@@ -88,6 +97,29 @@ if(isset($_GET['act']))
                 }
 
                 include "./view/cart.php";
+                break;
+            case 'login':
+               
+                if(isset($_POST['btn-login']))
+                {
+                    login();
+                    check_info();
+                }
+                include "./view/_login.php";
+                break;
+            case 'logout':
+                unset($_SESSION['auth_user']);
+                header('Location: index.php?act=login');
+                break;
+            case 'register':
+                
+                if(isset($_POST['btn-register']))
+                {
+                    register();
+                    
+                }
+                
+                include "./view/register.php";
                 break;
            
 

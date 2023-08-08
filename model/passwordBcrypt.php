@@ -3,7 +3,7 @@
 function PasswordHash($password)
 {
 
-    $opts = [ "cost" => 10, "salt" => "asg" ];
+    $opts = [ "cost" => 10 ];
     $hashp = password_hash($password, PASSWORD_BCRYPT, $opts);
     return $hashp; 
 }
