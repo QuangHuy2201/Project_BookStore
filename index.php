@@ -105,7 +105,7 @@ if(isset($_GET['act']))
                     login();
                     check_info();
                 }
-                include "./view/_login.php";
+                include "./view/login.php";
                 break;
             case 'logout':
                 unset($_SESSION['auth_user']);

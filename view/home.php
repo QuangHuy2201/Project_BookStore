@@ -17,7 +17,7 @@
     echo '<div class="col-4">
     <div class="product-item">
         <div class="product-img">
-            <img src="../static/images/sach-truyen-kiem-hiep/'.$product['image'].'" alt="'.$product['product_name'].'">
+            <img src="./static/images/sach-truyen-kiem-hiep/'.$product['image'].'" alt="'.$product['product_name'].'">
         </div>
         <h5 class="product-title">'.$product['product_name'].'</h5>
         <p class="product-price">'.$price.'</p>
@@ -49,7 +49,7 @@
     echo '<div class="col-4">
     <div class="product-item">
         <div class="product-img">
-            <img src="../static/images/sach-van-hoc/'.$product['image'].'" alt="'.$product['product_name'].'">
+            <img src="./static/images/sach-van-hoc/'.$product['image'].'" alt="'.$product['product_name'].'">
         </div>
         <h5 class="product-title">'.$product['product_name'].'</h4>
         <p class="product-price">'.$price.'</p>
@@ -81,7 +81,7 @@
     echo '<div class="col-4">
     <div class="product-item">
         <div class="product-img">
-            <img src="../static/images/truyen-tranh-comic/'.$product['image'].'" alt="'.$product['product_name'].'">
+            <img src="./static/images/truyen-tranh-comic/'.$product['image'].'" alt="'.$product['product_name'].'">
         </div>
         <h5 class="product-title">'.$product['product_name'].'</h4>
         <p class="product-price">'.$price.'</p>

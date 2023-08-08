@@ -14,7 +14,7 @@ if(isset($_SESSION['message']))
             <div class="col-lg-8">
                 <div class="form-area login-form">
                     <div class="form-content">
-                        <img src="../static/images/logo/login_img.jpg" alt="logging" >
+                        <img src="./static/images/logo/login_img.jpg" alt="logging" >
                     </div>
                     <div class="form-input">
                         <h2>Đăng Ký</h2>

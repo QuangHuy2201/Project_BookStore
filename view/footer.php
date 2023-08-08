@@ -20,7 +20,7 @@
     <div class="container bg-white pb20">
         <div class="row px-4">
             <div class="col-4 info pt20">
-                <img src="../static/images/logo/logo1.png" alt="logo" width="200" class="mb10">
+                <img src="./static/images/logo/logo1.png" alt="logo" width="200" class="mb10">
                 <h4 class="fs14 txt-medium">CÔNG TY TNHH TRỰC TUYẾN BOOKSTORE</h4>
                 <p class="fs13"> 53/8 Vườn Lài - P.Phú Thọ Hoà - Quận Tân Phú - TP.Hồ Chí Minh</p>
                 <p class="fs13">BookStore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống BookStore trên toàn quốc.</p>
@@ -75,30 +75,30 @@
                 </div>
                 <div class="row mt20">
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/vnpost1.png" alt="vnpost" width="100">
+                        <img src="./static/images/logo/vnpost1.png" alt="vnpost" width="100">
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/ahamove_logo3.png" alt="ahamove" width="150">
+                        <img src="./static/images/logo/ahamove_logo3.png" alt="ahamove" width="150">
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/icon_giao_hang_nhanh1.png" alt="ghn" width="150">
+                        <img src="./static/images/logo/icon_giao_hang_nhanh1.png" alt="ghn" width="150">
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/Logo_ninjavan.png" alt="vnpost" width="150">
+                        <img src="./static/images/logo/Logo_ninjavan.png" alt="vnpost" width="150">
                     </div>
                 </div>
                 <div class="row mt20">
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/vnpay_logo.png" alt="vnpay" width="100">
+                        <img src="./static/images/logo/vnpay_logo.png" alt="vnpay" width="100">
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/ZaloPay-logo.png" alt="zalopay" width="100">
+                        <img src="./static/images/logo/ZaloPay-logo.png" alt="zalopay" width="100">
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/momopay.png" alt="momo" width="50">
+                        <img src="./static/images/logo/momopay.png" alt="momo" width="50">
                     </div>
                     <div class="col-3 d-flex align-items-center justify-content-center">
-                        <img src="../static/images/logo/shopeepay_logo.png" alt="shopeepay" width="100">
+                        <img src="./static/images/logo/shopeepay_logo.png" alt="shopeepay" width="100">
                     </div>
                 </div>
             </div>

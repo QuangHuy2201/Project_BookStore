@@ -63,10 +63,10 @@ function show_to_products($products) {
                 $price_old =number_format($product['price_old'])."đ";
                 $discount_percent = 100 - (round($product['price'] / $product['price_old'], 2) * 100);
                 if($product['category_id']==1)
-                $link_img="../static/images/sach-truyen-kiem-hiep/";
+                $link_img="./static/images/sach-truyen-kiem-hiep/";
                 else if($product['category_id']==2)
-                $link_img="../static/images/sach-van-hoc/";
-                else $link_img="../static/images/truyen-tranh-comic/";
+                $link_img="./static/images/sach-van-hoc/";
+                else $link_img="./static/images/truyen-tranh-comic/";
             echo '<div class="col-3">
                     <div class="product-item p10 mb15">
                         <div class="product-img text-center">
