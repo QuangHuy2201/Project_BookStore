@@ -151,6 +151,11 @@ body {
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid #ee4d2d;
 }
+.filter-item_a{
+    color: #ee4d2d;
+    padding-bottom: 1rem;
+    border-bottom: 0.2rem solid #ee4d2d;
+}
 
 .product-item {
     background-color: #fff;

@@ -30,13 +30,15 @@
             <div class="filter row ms-3 fs14 mt10 pb10">
                 <div class="col-2">Sắp xếp theo</div>
                 <div class="col-2 filter-item">
-                    <a href="">Bán chạy</a>
+                    <a>Bán chạy</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2">Giá giảm dần</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2" 
+                    class="<?php if($sort=='2')echo'filter-item_a';?>" >Giá giảm dần</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=3">Giá tăng dần</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=3"
+                    class="<?php if($sort=='3')echo'filter-item_a';?>">Giá tăng dần</a>
                 </div>
             </div>
 
