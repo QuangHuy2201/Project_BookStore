@@ -81,7 +81,7 @@ body {
 /* ========== Product page ========== */
 .category {
     min-height: 300px;
-    border: 0.2rem solid #eee;
+    border: 0.2rem solid #dbdbdb;
     position: relative;
 }
 
@@ -89,7 +89,7 @@ body {
     position: absolute;
     top: 0;
     left: 4.1rem;
-    background-color: #eeeeee;
+    background-color: #dbdbdb;
     color: #333;
 }
 
@@ -100,7 +100,7 @@ body {
     height: 0;
     border-style: solid;
     border-width: 4.1rem 4.1rem 0 0;
-    border-color: #eee transparent transparent;
+    border-color: #dbdbdb transparent transparent;
     position: absolute;
     right: -4.1rem;
     top: 0;
@@ -110,7 +110,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #d5d4d4;
+    background-color: #bbbbbb;
     color: #fff;
     height: 4.1rem;
     padding: 1rem 1.3rem;
@@ -133,7 +133,7 @@ body {
 }
 
 .filter {
-    border-bottom: 0.2rem solid #eee;
+    border-bottom: 0.2rem solid #dbdbdb;
 }
 
 .filter-item a {
@@ -148,8 +148,6 @@ body {
     border-bottom: 0.2rem solid #ee4d2d;
 }
 
-.product-list {}
-
 .product-item {
     background-color: #fff;
 }
@@ -162,6 +160,10 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+.product-title:hover {
+    color: #ee4d2d !important;
 }
 
 .product-img {
@@ -189,7 +191,9 @@ body {
     padding: 1.2rem;
 }
 
-/*========== login page ==========*/
+/* ========== Product Detail ========== */
+
+/*========== Login page ==========*/
 .myform-area {
     overflow: hidden;
     padding: 60px 0;
@@ -248,11 +252,6 @@ body {
     margin-right: 10px;
 }
 
-
-.myform-area .form-area .form-content .facebook:hover,
-.myform-area .form-area .form-content .facebook:focus {
-    background: transparent;
-}
 
 /* .myform-area .form-area .form-input {
     background-color: white;
