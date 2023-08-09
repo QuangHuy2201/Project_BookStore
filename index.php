@@ -25,8 +25,16 @@ if(isset($_GET['act']))
                 break;
             case'product':
                 $header ='product';
-                list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging(12);
-                
+                if(!isset($_GET['sort']))
+                {
+                    $page_bar_opt ='1';
+                list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging_to_category(12);
+
+                }
+                else
+                {    $page_bar_opt ='2';
+                    list($page_left,$page_right,$page_current,$products,$pages,$category_id,$sort)= paging_to_category_sort(12);
+                }
 
                 include "./view/product.php";
                 break;

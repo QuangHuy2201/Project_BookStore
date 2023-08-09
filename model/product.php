@@ -24,11 +24,40 @@ function  getLimit($table,$start,$end,$conn){
 function  getLimit_category($table,$category_id,$start,$end,$conn){ 
 
    
-    $sql = "SELECT   * FROM $table WHERE category_id='$category_id' limit $start,$end ";
+    $sql = "SELECT * FROM $table WHERE category_id='$category_id' limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+function  getLimit_category_Price_Desc($table,$category_id,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT * FROM $table WHERE category_id='$category_id' ORDER BY price DESC limit $start,$end ";
     
     return $query_run = mysqli_query($conn,$sql);
 }
 
+function  getLimit_category_Price_ASC($table,$category_id,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT * FROM $table WHERE category_id='$category_id' ORDER BY price ASC limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+function  getLimit_Price_Desc($table,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT * FROM $table ORDER BY price DESC limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+
+function  getLimit_Price_ASC($table,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT * FROM $table ORDER BY price ASC limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 function  getAll_Price_Desc($table,$conn){ 
 
    
@@ -44,7 +73,7 @@ function  getAll_Price_ASC($table,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
-function  getAll_Price_Desc_category($table,$conn,$category_id){ 
+function  getAll_Price_Desc_to_category($table,$category_id,$conn){ 
 
    
     $sql = "SELECT   * FROM $table WHERE category_id='$category_id'  ORDER BY price DESC ";
@@ -52,7 +81,7 @@ function  getAll_Price_Desc_category($table,$conn,$category_id){
     return $query_run = mysqli_query($conn,$sql);
 }
 
-function  getAll_Price_ASC_category($table,$conn,$category_id){ 
+function  getAll_Price_ASC_to_category($table,$category_id,$conn){ 
 
     
     $sql = "SELECT   * FROM $table WHERE category_id='$category_id' ORDER BY price ASC ";

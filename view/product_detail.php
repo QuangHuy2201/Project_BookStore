@@ -7,14 +7,15 @@
         $discount_percent = 100 - (round($product['price'] / $product['price_old'], 2) * 100);
         if($product['category_id'] == 1) {
             $link_img = "./static/images/sach-truyen-kiem-hiep/";
-            $category = "Sách truyện kiếm hiệp";
+            $category = "Truyện kiếm hiệp";
         }
         else if($product['category_id']==2) {
             $link_img = "./static/images/sach-van-hoc/";
-            $category = "Sách Sách văn học";
+            $category = "Sách văn học";
         }
-        else {
+        else  {
             $link_img = "./static/images/truyen-tranh-comic/";
+            $category = "Truyện tranh manga-comic";
         }
     }
 ?>
@@ -24,11 +25,11 @@
     <div class="row bg-white p10 bd1 mt20 mb20 fs14">   
         <nav aria-label="breadcrumb" class="d-flex align-items-center">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a class="text-reset text-decoration-none" href="#">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a class="text-reset text-decoration-none" href="#">Sách</a></li>
+                <li class="breadcrumb-item"><a class="text-reset text-decoration-none" href="index.php?act=home">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a class="text-reset text-decoration-none" href="index.php?act=product">Sách</a></li>
                 <?php 
-                    echo '<li class="breadcrumb-item" aria-current="page"><a class="text-reset text-decoration-none" href="#">'.$category.'</a></li>';
-                    echo '<li class="breadcrumb-item" aria-current="page">'.$product['product_name'].'</li>';
+                    echo '<li class="breadcrumb-item" aria-current="page"><a class="text-reset text-decoration-none" href="index.php?act=product&category='.$product['category_id'].'">'.$category.'</a></li>';
+                    echo '<li class="breadcrumb-item active" aria-current="page">'.$product['product_name'].'</li>';
                 ?>
                 
             </ol>

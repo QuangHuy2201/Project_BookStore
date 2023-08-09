@@ -2,8 +2,8 @@
 <div class="container mt-5">
     <div class="row">
         <nav aria-label="breadcrumb" class="">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php?act=home">Trang chủ</a></li>
+            <ol class="breadcrumb ">
+                <li class="breadcrumb-item"><a class="text-reset text-decoration-none" href="index.php?act=home">Trang chủ</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Sách</li>
             </ol>
         </nav>
@@ -33,10 +33,10 @@
                     <a href="">Bán chạy</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=1">Giá thấp nhất</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2">Giá giảm dần</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="">Giá cao nhất</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=3">Giá tăng dần</a>
                 </div>
             </div>
 
@@ -48,7 +48,12 @@
 
             <div class="pagination d-flex justify-content-center mt20">
                 <div class="btn-group" role="group" aria-label="First group">
-                    <?php page_bar($page_current,$page_left, $page_right,$pages,$category_id); ?>
+                    <?php 
+                    if($page_bar_opt =='1')
+                    page_bar_category($page_current,$page_left, $page_right,$pages,$category_id); 
+                    else if($page_bar_opt =='2')
+                    page_bar_category_sort($page_current,$page_left, $page_right,$pages,$category_id,$sort); 
+                    ?>
                 </div>
             </div>
         </div>
