@@ -7,13 +7,27 @@ function  getAll($table,$conn)
 
     return $query_run = mysqli_query($conn,$sql);
 }
+function  getAll_category($table,$category_id,$conn)
+{ 
+
+    $sql = "SELECT  * FROM $table WHERE category_id='$category_id'";
+
+    return $query_run = mysqli_query($conn,$sql);
+}
 function  getLimit($table,$start,$end,$conn){ 
 
    
     $sql = "SELECT   * FROM $table limit $start,$end ";
     
     return $query_run = mysqli_query($conn,$sql);
-    }
+}
+function  getLimit_category($table,$category_id,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT   * FROM $table WHERE category_id='$category_id' limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 
 function  getAll_Price_Desc($table,$conn){ 
 
@@ -30,7 +44,21 @@ function  getAll_Price_ASC($table,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
+function  getAll_Price_Desc_category($table,$conn,$category_id){ 
 
+   
+    $sql = "SELECT   * FROM $table WHERE category_id='$category_id'  ORDER BY price DESC ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+
+function  getAll_Price_ASC_category($table,$conn,$category_id){ 
+
+    
+    $sql = "SELECT   * FROM $table WHERE category_id='$category_id' ORDER BY price ASC ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 
 function  getByID($table,$id,$conn){ 
 
@@ -45,7 +73,6 @@ function  getByCategoryID($table,$category_id,$conn){
 
 
     $sql = "SELECT   * FROM $table Where category_id='$category_id'";
-    
     return $query_run = mysqli_query($conn,$sql);
 }
 function  getByCategoryID_Limit($table,$category_id,$conn){ 
