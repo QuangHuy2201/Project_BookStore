@@ -3,16 +3,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-4 slogan-item d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-timer "></i>
-                        <p>CHUYỂN HÀNG ĐÚNG GIỜ</p>
+                        <i class="fa-solid fa-timer d-flex align-items-center justify-content-center"></i>
+                        <p class="mb-0">CHUYỂN HÀNG ĐÚNG GIỜ</p>
                     </div>
                     <div class="col-4 slogan-item d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-cloud"></i>
-                        <p>DỊCH VỤ TỐT NHẤT</p>
+                        <i class="fa-solid fa-cloud d-flex align-items-center justify-content-center"></i>
+                        <p class="mb-0">DỊCH VỤ TỐT NHẤT</p>
                     </div>
                     <div class="col-4 slogan-item d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-life-ring"></i>
-                        <p>HỖ TRỢ KHÁCH HÀNG 24/7</p>
+                        <i class="fa-solid fa-life-ring d-flex align-items-center justify-content-center"></i>
+                        <p class="mb-0">HỖ TRỢ KHÁCH HÀNG 24/7</p>
                     </div>
                 </div>
             </div>
