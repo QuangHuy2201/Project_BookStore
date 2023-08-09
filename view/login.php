@@ -21,7 +21,7 @@ if(isset($_SESSION['message_info']))
                         <form action="index.php?act=login" method="POST">
                             <div class="form-group">
                                 <input type="email" id="" name="email" required>
-                                <label>Email</label>
+                                <label>Email hoặc Tên đăng nhập</label>
                             </div>
                             <div class="form-group">
                                 <input type="password" id="" name="password" required>
@@ -44,6 +44,3 @@ if(isset($_SESSION['message_info']))
         </div>
     </div>
 </section>
-</body>
-
-</html>
