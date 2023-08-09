@@ -20,6 +20,10 @@ if(isset($_SESSION['message']))
                         <h2>Đăng Ký</h2>
                         <form action="index.php?act=register" method="POST">
                             <div class="form-group">
+                                <input type="text" id="" name="name" required>
+                                <label>Tên đăng nhập</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="email" id="" name="email" required>
                                 <label>Email</label>
                             </div>
