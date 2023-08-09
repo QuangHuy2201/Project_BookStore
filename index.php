@@ -54,11 +54,11 @@ if(isset($_GET['act']))
                     $product_start=($page_current-1)*$product_page;
                     $products = getLimit('product',$product_start,$product_page,$conn=connectdb());
                 }
-               
+            
 
                 include "./view/product.php";
                 break;
-
+        
             case'cart':
                 
 
@@ -121,7 +121,14 @@ if(isset($_GET['act']))
                 
                 include "./view/register.php";
                 break;
-           
+
+            case'detail':
+                if(isset($_GET['name'])) {
+                    $product_name = $_GET['name'];
+                    $product = getByName('product', $product_name, connectdb());
+                }
+                include "./view/product_detail.php";
+                break;
 
         }
     }
