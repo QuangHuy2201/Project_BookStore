@@ -16,12 +16,12 @@ if(isset($_SESSION['message_info']))
                     <div class="form-content">
                         <img src="./static/images/logo/login_img.jpg" alt="logging" >
                     </div>
-                    <div class="form-input">
+                    <div class="form-input form-input2">
                         <h2>Đăng Nhập</h2>
                         <form action="index.php?act=login" method="POST">
                             <div class="form-group">
                                 <input type="email" id="" name="email" required>
-                                <label>Email</label>
+                                <label>Email hoặc Tên đăng nhập</label>
                             </div>
                             <div class="form-group">
                                 <input type="password" id="" name="password" required>
@@ -44,6 +44,3 @@ if(isset($_SESSION['message_info']))
         </div>
     </div>
 </section>
-</body>
-
-</html>

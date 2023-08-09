@@ -30,7 +30,7 @@ if(isset($_GET['act']))
 
                 include "./view/product.php";
                 break;
-
+        
             case'cart':
                 
 
@@ -93,7 +93,14 @@ if(isset($_GET['act']))
                 
                 include "./view/register.php";
                 break;
-           
+
+            case'detail':
+                if(isset($_GET['name'])) {
+                    $product_name = $_GET['name'];
+                    $product = getByName('product', $product_name, connectdb());
+                }
+                include "./view/product_detail.php";
+                break;
 
         }
     }

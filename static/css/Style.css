@@ -56,6 +56,10 @@ body {
     background-color: #f5f5f5;
 }
 
+.bd1 {
+    border: 0.1rem solid #dbdbdb;
+}
+
 .color-primary {
     background-color: #2c55a5;
 }
@@ -81,7 +85,7 @@ body {
 /* ========== Product page ========== */
 .category {
     min-height: 300px;
-    border: 0.2rem solid #eee;
+    border: 0.2rem solid #dbdbdb;
     position: relative;
 }
 
@@ -89,7 +93,7 @@ body {
     position: absolute;
     top: 0;
     left: 4.1rem;
-    background-color: #eeeeee;
+    background-color: #dbdbdb;
     color: #333;
 }
 
@@ -100,7 +104,7 @@ body {
     height: 0;
     border-style: solid;
     border-width: 4.1rem 4.1rem 0 0;
-    border-color: #eee transparent transparent;
+    border-color: #dbdbdb transparent transparent;
     position: absolute;
     right: -4.1rem;
     top: 0;
@@ -110,7 +114,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #d5d4d4;
+    background-color: #bbbbbb;
     color: #fff;
     height: 4.1rem;
     padding: 1rem 1.3rem;
@@ -133,7 +137,7 @@ body {
 }
 
 .filter {
-    border-bottom: 0.2rem solid #eee;
+    border-bottom: 0.2rem solid #dbdbdb;
 }
 
 .filter-item a {
@@ -148,8 +152,6 @@ body {
     border-bottom: 0.2rem solid #ee4d2d;
 }
 
-.product-list {}
-
 .product-item {
     background-color: #fff;
 }
@@ -162,6 +164,10 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+.product-title:hover {
+    color: #ee4d2d !important;
 }
 
 .product-img {
@@ -189,7 +195,89 @@ body {
     padding: 1.2rem;
 }
 
-/*========== login page ==========*/
+/* ========== Product Detail ========== */
+
+.detail_img {
+    height: fit-content;
+}
+
+.detail-content { 
+    position: relative;
+}
+
+.detail-content::after {
+    position: absolute;
+    content: "";
+    left: 2.5%;
+    bottom: 0;
+    width: 95%;
+    border: 1px solid #dbdbdb;
+}
+.voucher-item {
+    position: relative;
+    padding: 5px 15px;
+    border: 0;
+    white-space: nowrap;
+    color: #0d5cb6;
+    background: rgba(41,102,219,.13);
+    width: fit-content;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.voucher-item::before {
+    content: "";
+    width: 6px;
+    height: calc(100% - 5px);
+    position: absolute;
+    top: 2.5px;
+    left: -0.3rem;
+    background-image: radial-gradient(#fff 2px,transparent 0);
+    background-size: 6px 6px;
+    background-position-x: -6px;
+}
+
+.voucher-item::after {
+    content: "";
+    width: 6px;
+    height: calc(100% - 5px);
+    position: absolute;
+    top: 2.5px;
+    right: -0.3rem;
+    background-image: radial-gradient(#fff 2px,transparent 0);
+    background-size: 6px 6px;
+    background-position-x: -6px;
+}
+
+.sale-title {
+    background-color: #2c55a5;
+}
+
+.sale-content i {
+    background-color: #92bd2a;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.sale-content .location {
+    background-color: #ff9c00;
+}
+
+.detail-main h3 {
+    position: relative;
+}
+
+.detail-main h3::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    bottom: -2rem;
+    border: 1px solid #eee;
+}
+
+/*========== Login page ==========*/
 .myform-area {
     overflow: hidden;
     padding: 60px 0;
@@ -203,7 +291,7 @@ body {
     position: relative;
     background: rgba(103, 58, 183, 0.7);
     width: 100%;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
     box-shadow: 0 0 40px 0 #e1e1e1;
 }
@@ -248,18 +336,9 @@ body {
     margin-right: 10px;
 }
 
-
-.myform-area .form-area .form-content .facebook:hover,
-.myform-area .form-area .form-content .facebook:focus {
-    background: transparent;
+.form-input2 {
+    padding-top: 7rem !important;
 }
-
-/* .myform-area .form-area .form-input {
-    background-color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 40px 0 #e1e1e1;
-} */
 
 .myform-area .form-area .form-input {
     width: 50%;
@@ -376,7 +455,9 @@ body {
     margin-right: 10px;
     font-size: 18px;
     color: #fff;
-    padding: 10px;
+    /* padding: 10px; */
+    width: 3.8rem;
+    height: 3.8rem;
     border-radius: 50%;
 }
 

@@ -1,27 +1,27 @@
-<?php 
+<?php
 session_start();
-if(isset($_GET['act']))
-{
-    switch($_GET['act'])
-    {
+if (isset($_GET['act'])) {
+    switch ($_GET['act']) {
         case 'product':
-            $header='product';
+            $header = 'product';
             break;
         case 'cart':
-            $header='cart';
+            $header = 'cart';
             break;
         case 'login':
-            $header='login';
+            $header = 'login';
             break;
         case 'register':
-            $header='login';
+            $header = 'login';
+            break;
+        case 'detail':
+            $header = 'detail';
             break;
         default:
-            $header='home';
+            $header = 'home';
             break;
     }
-}
-else $header='home';
+} else $header = 'home';
 
 
 ?>
@@ -54,20 +54,18 @@ else $header='home';
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class=" nav-link <?php if($header=='home')echo 'active'?>"aria-current="page" href="index.php">Home</a>
-                            <a class=" nav-link <?php if($header=='product')echo 'active'?>" href="index.php?act=product">Product</a>
-                            <?php 
-                                if(isset($_SESSION['auth_user']))
-                                    {
-                                    ?>
-                                           <a class=" nav-link " href="index.php?act=logout">Logout</a>
-                                    <?php }
-                                    else{ ?>
-                                        <a class=" nav-link <?php if($header=='login')echo 'active'; ?>" href="index.php?act=login">Login</a>
-                                    <?php } 
+                            <a class=" nav-link <?php if ($header == 'home') echo 'active' ?>" aria-current="page" href="index.php">Home</a>
+                            <a class=" nav-link <?php if ($header == 'product') echo 'active' ?>" href="index.php?act=product">Product</a>
+                            <?php
+                            if (isset($_SESSION['auth_user'])) {
                             ?>
-                            <a class=" nav-link <?php if($header=='cart')echo'active'?>" href="index.php?act=cart">Cart</a>
-                            
+                                <a class=" nav-link " href="index.php?act=logout">Logout</a>
+                            <?php } else { ?>
+                                <a class=" nav-link <?php if ($header == 'login') echo 'active'; ?>" href="index.php?act=login">Login</a>
+                            <?php }
+                            ?>
+                            <a class=" nav-link <?php if ($header == 'cart') echo 'active' ?>" href="index.php?act=cart">Cart</a>
+
                         </div>
                     </div>
             </nav>

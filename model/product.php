@@ -68,6 +68,14 @@ function  getByID($table,$id,$conn){
     return $query_run = mysqli_query($conn,$sql);
 }
 
+function  getByName($table,$product_name,$conn){ 
+
+  
+    $sql = "SELECT   * FROM $table Where product_name='$product_name'";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+
 
 function  getByCategoryID($table,$category_id,$conn){ 
 
@@ -99,11 +107,11 @@ function show_to_products($products) {
                         <div class="product-img text-center">
                             <img src="'.$link_img.''.$product['image'].'" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
                         </div>
-                        <h5 class="product-title fs13 mt10" title="'.$product['product_name'].'">'.$product['product_name'].'</h5>
+                        <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
                         <div>
                             <div class="d-flex align-items-center">
                                 <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
-                                <p class="product-price me-2 text-danger">'.$price.'</p>
+                                <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
                                 <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
                             </div>
 
