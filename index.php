@@ -1,12 +1,11 @@
 <?php 
-
 include "./model/cart.php";
 include "./model/connectDB.php";
 include "./model/product.php";
 include "./model/page.php";
 include "./model/user.php";
 include "./model/passwordBcrypt.php";
-$product_page =12;
+
 
 
 //Header
@@ -26,35 +25,16 @@ if(isset($_GET['act']))
                 break;
             case'product':
                 $header ='product';
-                if(isset($_GET['page']))
+                if(!isset($_GET['sort']))
                 {
-                    if($_GET['page'])
-                    {
-                        $page_current = $_GET['page'];
-                    }
-                    else
-                    {
-                        $page_current = 1;
-                    }
-                }
-                else $page_current = 1;
+                    $page_bar_opt ='1';
+                list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging_to_category(12);
 
-                if(mysqli_num_rows(getAll('product',$conn=connectdb()))/$product_page!=0)
-                    $pages = floor(mysqli_num_rows( getAll('product',$conn=connectdb()))/$product_page)+1;
-                else $pages = mysqli_num_rows( getAll('product', $conn=connectdb()))/$product_page;
-                $page_right = (($page_current+3)>$pages)?$pages:$page_current+3;
-                $page_left = ($page_current<4)?1:$page_current-3;
-
-                if($page_current ==1)
-                {
-                    $products = getLimit('product',1,$product_page ,$conn=connectdb());
                 }
                 else
-                {   
-                    $product_start=($page_current-1)*$product_page;
-                    $products = getLimit('product',$product_start,$product_page,$conn=connectdb());
+                {    $page_bar_opt ='2';
+                    list($page_left,$page_right,$page_current,$products,$pages,$category_id,$sort)= paging_to_category_sort(12);
                 }
-            
 
                 include "./view/product.php";
                 break;

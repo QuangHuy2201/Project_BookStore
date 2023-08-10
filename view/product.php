@@ -1,8 +1,9 @@
+<?php ?>
 <div class="container mt-5">
     <div class="row">
         <nav aria-label="breadcrumb" class="">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <ol class="breadcrumb ">
+                <li class="breadcrumb-item"><a class="text-reset text-decoration-none" href="index.php?act=home">Trang chủ</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Sách</li>
             </ol>
         </nav>
@@ -14,11 +15,11 @@
                 <i class="fa fa-th"></i>
             </div>
             <h3 class="category-title txt-medium p10 d-inline-block">Danh mục</h3>
-            <form method="GET">
+            <form  method="GET">
             <ul class="category-list list-unstyled mt50 ms-3">
-                <li><a href="#" class="text-decoration-none fs14">Truyện kiếm hiệp</a></li>
-                <li><a href="#" class="text-decoration-none fs14">Sách văn học</a></li>
-                <li><a href="#" class="text-decoration-none fs14">Truyện tranh - comic</a></li>
+                <li><a type="submit"  href="index.php?act=product&category=1" name="category1"  class="text-decoration-none fs14" >Truyện kiếm hiệp</a></li>
+                <li><a type="submit"  href="index.php?act=product&category=2" name="category2" class="text-decoration-none fs14">Sách văn học</a></li>
+                <li><a type="submit"  href="index.php?act=product&category=3" name="category3" class="text-decoration-none fs14">Truyện tranh - comic</a></li>
             </ul>
             </form>
         </div>
@@ -29,26 +30,32 @@
             <div class="filter row ms-3 fs14 mt10 pb10">
                 <div class="col-2">Sắp xếp theo</div>
                 <div class="col-2 filter-item">
-                    <a href="">Bán chạy</a>
+                    <a>Bán chạy</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="">Giá thấp nhất</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2" 
+                    class="<?php if($sort=='2')echo'filter-item_a';?>" >Giá giảm dần</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="">Giá cao nhất</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=3"
+                    class="<?php if($sort=='3')echo'filter-item_a';?>">Giá tăng dần</a>
                 </div>
             </div>
 
             <div class="row  ms-3 mt20">
                 <?php
-                show_to_products($products);
-
+                show_to_products($products); 
                 ?>
             </div>
 
             <div class="pagination d-flex justify-content-center mt20">
                 <div class="btn-group" role="group" aria-label="First group">
-                    <?php paging($page_current, $page_left, $page_right, $pages); ?>
+                    <?php 
+                    if($page_bar_opt =='1')
+                    page_bar_category($page_current,$page_left, $page_right,$pages,$category_id); 
+                    else if($page_bar_opt =='2')
+                    page_bar_category_sort($page_current,$page_left, $page_right,$pages,$category_id,$sort); 
+                    ?>
                 </div>
             </div>
         </div>

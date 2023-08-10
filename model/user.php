@@ -27,7 +27,7 @@ function register()
       $insert_query_run = mysqli_query($conn,$insert_query);
       if($insert_query_run)
        { //Send mail
-        // sendmail('test',$email);
+        //sendmail('test',$email);
         $_SESSION['message'] = "Tạo tài khoản thành công.";
        }
       else
