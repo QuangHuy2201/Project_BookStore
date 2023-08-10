@@ -11,7 +11,7 @@ include "header.php";
 
         <div class="row">
             <div class="col">
-                <h3 class="category-title">
+                <h3 class="">
                     Truyện kiếm hiệp
                 </h3>
             </div>
@@ -43,7 +43,7 @@ include "header.php";
         <div class="container">
         <div class="row">
             <div class="col">
-                <h3 class="category-title">
+                <h3 class="">
                     Sách văn học
                 </h3>
             </div>
@@ -75,7 +75,7 @@ include "header.php";
         <div class="container">
         <div class="row">
             <div class="col">
-                <h3 class="category-title">
+                <h3 class="">
                 Truyện tranh - Comic
                 </h3>
             </div>

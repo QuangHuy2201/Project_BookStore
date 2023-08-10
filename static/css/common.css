@@ -138,7 +138,8 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 }
 
 .plr50{
-  padding: 0 8rem;
+  padding-left:5rem;
+  padding-right:5rem;
 }
 
 /*----- img -----*/
