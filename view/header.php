@@ -42,32 +42,61 @@ if (isset($_GET['act'])) {
 </head>
 
 <body>
-    <div class="header-wrapper">
+    <header class="p-3 bg-blue text-white">
         <div class="container">
-            <nav class="navbar navbar-expand-lg d-flex justify-content-between">
-                <a class="navbar-brand" href="index.php">
-                    <img src="./static/images/logo/logo1.png" alt="logo" width="100" height="40">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+                    <img src="./static/images/logo/logo1.png" width="80" height="35" alt="logo">
                 </a>
-                <div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class=" nav-link <?php if ($header == 'home') echo 'active' ?>" aria-current="page" href="index.php">Home</a>
-                            <a class=" nav-link <?php if ($header == 'product') echo 'active' ?>" href="index.php?act=product">Product</a>
-                            <?php
-                            if (isset($_SESSION['auth_user'])) {
-                            ?>
-                                <a class=" nav-link " href="index.php?act=logout">Logout</a>
-                            <?php } else { ?>
-                                <a class=" nav-link <?php if ($header == 'login') echo 'active'; ?>" href="index.php?act=login">Login</a>
-                            <?php }
-                            ?>
-                            <a class=" nav-link <?php if ($header == 'cart') echo 'active' ?>" href="index.php?act=cart">Cart</a>
 
-                        </div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-3 text-white active">Trang chủ</a></li>
+                    <li>
+                        <a class="nav-link px-3 text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sản phẩm
+                        </a>
+                        <ul class="dropdown-menu fs14">
+                            <li><a class="dropdown-item" href="#">Sách văn học</a></li>
+                            <li><a class="dropdown-item" href="#">Truyện kiếm hiệp</a></li>
+                            <li><a class="dropdown-item" href="#">Truyện tranh Manga - Comic</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link px-3 text-white">Về chúng tôi</a></li>
+                    <li><a href="#" class="nav-link px-3 text-white">Liên hệ</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search">
+                </form>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <a class="btn btn-outline-light me-2 fs14">
+                        <i class="fa-light fa-cart-shopping"></i>
+                        Giỏ hàng
+                    </a>
+                </form>
+
+                <?php
+                    if (isset($_SESSION['auth_user'])) {
+                ?>
+                    <div class="text-end">
+                        <a type="button" role="button" data-bs-toggle="dropdown" class="text-white me-2 text-decoration-none fs14 dropdown-toggle">Xin chào, User</a>
+                        <ul class="dropdown-menu fs14">
+                            <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
+                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                        </ul>
                     </div>
-            </nav>
+                <?php } else { ?>
+                    <div class="text-end">
+                        <a type="button" class="btn btn-outline-light me-2 fs14">Đăng nhập</a>
+                    </div>
+                <?php }
+                ?>
+
+                
+
+                
+            </div>
         </div>
-    </div>
+    </header>

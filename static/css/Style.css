@@ -56,6 +56,10 @@ body {
     background-color: #f5f5f5;
 }
 
+.bg-blue {
+    background-color: #2c55a5;
+}
+
 .bd1 {
     border: 0.1rem solid #dbdbdb;
 }
