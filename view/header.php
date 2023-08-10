@@ -67,8 +67,9 @@ if (isset($_GET['act'])) {
                     <li><a href="#" class="nav-link px-3 text-white">Liên hệ</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <input type="search" class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="index.php" method="GET">
+                    <input type="hidden" name ="act"value="search"/>
+                    <input type="text" name="search"class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search">
                 </form>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

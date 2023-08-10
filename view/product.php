@@ -33,7 +33,8 @@
             <div class="filter row ms-3 fs14 mt10 pb10">
                 <div class="col-2">Sắp xếp theo</div>
                 <div class="col-2 filter-item">
-                    <a>Lượt xem</a>
+                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=1"
+                    class="<?php if($sort=='1')echo'filter-item_a';?>"  >Lượt xem</a>
                 </div>
                 <div class="col-2 filter-item">
                     <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2" 

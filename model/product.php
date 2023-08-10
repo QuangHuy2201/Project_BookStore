@@ -35,6 +35,13 @@ function  getLimit_category_Price_Desc($table,$category_id,$start,$end,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
+function  getLimit_category_View_Desc($table,$category_id,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT * FROM $table WHERE category_id='$category_id' ORDER BY view DESC limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 
 function  getLimit_category_Price_ASC($table,$category_id,$start,$end,$conn){ 
 
@@ -47,6 +54,13 @@ function  getLimit_Price_Desc($table,$start,$end,$conn){
 
    
     $sql = "SELECT * FROM $table ORDER BY price DESC limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+function  getLimit_View_Desc($table,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT * FROM $table ORDER BY view DESC limit $start,$end ";
     
     return $query_run = mysqli_query($conn,$sql);
 }
@@ -65,6 +79,13 @@ function  getAll_Price_Desc($table,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
+function  getAll_View_Desc($table,$conn){ 
+
+   
+    $sql = "SELECT   * FROM $table ORDER BY view DESC ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 
 function  getAll_Price_ASC($table,$conn){ 
 
@@ -80,6 +101,14 @@ function  getAll_Price_Desc_to_category($table,$category_id,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
+function  getAll_View_Desc_to_category($table,$category_id,$conn){ 
+
+   
+    $sql = "SELECT   * FROM $table WHERE category_id='$category_id'  ORDER BY view DESC ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+
 
 function  getAll_Price_ASC_to_category($table,$category_id,$conn){ 
 
@@ -124,6 +153,17 @@ function addView($table, $view, $product_id, $conn) {
     $sql = "UPDATE $table SET view='$view'  where product_id = '$product_id'";
     return $query_run = mysqli_query($conn,$sql);
 }
+function getALL_Search($table,$search, $conn) {
+    $sql = "SELECT * FROM $table WHERE product_name LIKE '$search%'";
+    return $query_run = mysqli_query($conn,$sql);
+}
+function  getLimit_Search($table,$search,$start,$end,$conn){ 
+
+   
+    $sql = "SELECT  * FROM $table WHERE product_name LIKE '$search%' limit $start,$end ";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 
 function show_to_products($products) {
     foreach ($products as $product)  
@@ -139,7 +179,10 @@ function show_to_products($products) {
             echo '<div class="col-3">
                     <div class="product-item p10 mb15">
                         <div class="product-img text-center">
-                            <img src="'.$link_img.''.$product['image'].'" class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                            <a href="index.php?act=detail&name='.$product['product_name'].'">
+                                <img src="'.$link_img.''.$product['image'].'" 
+                                class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                            </a>
                         </div>
                         <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
                         <div>

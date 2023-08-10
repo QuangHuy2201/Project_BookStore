@@ -32,7 +32,7 @@ if(isset($_GET['act']))
 
                 }
                 else
-                {    $page_bar_opt ='2';
+                {   $page_bar_opt ='2';
                     list($page_left,$page_right,$page_current,$products,$pages,$category_id,$sort)= paging_to_category_sort(12);
                 }
 
@@ -129,6 +129,13 @@ if(isset($_GET['act']))
                     }
                 }
                 include "./view/product_detail.php";
+                break;
+
+            case 'search':
+                $search = $_GET['search'] ;
+                $page_bar_opt ='3';
+                list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging_search(20,$search);
+                include "./view/product.php";
                 break;
 
         }
