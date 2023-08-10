@@ -69,7 +69,8 @@ if (isset($_GET['act'])) {
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="index.php" method="GET">
                     <input type="hidden" name ="act"value="search"/>
-                    <input type="text" name="search"class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search">
+                    <input type="text" name="search"class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search" 
+                        value="<?php if(isset($_GET['search'])) echo $_GET['search'];?>">
                 </form>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

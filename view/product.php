@@ -30,18 +30,40 @@
             <h3 class="txt-medium ms-3">
                 TẤT CẢ SẢN PHẨM
             </h3>
+            <?php
+            if(isset($_SESSION['search']))
+            {
+                if ($_SESSION['search']!=0)
+                {
+                echo'   <h4 class="txt-medium ms-3">
+                     Tìm thấy '.$_SESSION['search'].' sách phù hợp.
+                    </h4>';
+                    unset($_SESSION['search']);
+                }
+                else {
+                    echo'   <h4 class="txt-medium ms-3">
+                    Không tìm thấy sách phù hợp.
+                    </h4>';
+                    unset($_SESSION['search']);
+                }
+            }
+
+           
+
+            ?>
+           
             <div class="filter row ms-3 fs14 mt10 pb10">
                 <div class="col-2">Sắp xếp theo</div>
                 <div class="col-2 filter-item">
-                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=1"
+                    <a href="index.php?act=product&category=<?php if(isset($category_id))echo $category_id; else echo 0; ?>&sort=1"
                     class="<?php if($sort=='1')echo'filter-item_a';?>"  >Lượt xem</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2" 
+                    <a href="index.php?act=product&category=<?php if(isset($category_id))echo $category_id; else echo 0; ?>&sort=2" 
                     class="<?php if($sort=='2')echo'filter-item_a';?>" >Giá giảm dần</a>
                 </div>
                 <div class="col-2 filter-item">
-                    <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=3"
+                    <a href="index.php?act=product&category=<?php if(isset($category_id))echo $category_id; else echo 0; ?>&sort=3"
                     class="<?php if($sort=='3')echo'filter-item_a';?>">Giá tăng dần</a>
                 </div>
             </div>
@@ -59,6 +81,8 @@
                     page_bar_category($page_current,$page_left, $page_right,$pages,$category_id); 
                     else if($page_bar_opt =='2')
                     page_bar_category_sort($page_current,$page_left, $page_right,$pages,$category_id,$sort); 
+                    else if($page_bar_opt =='3')
+                    page_bar_search($page_current,$page_left,$page_right,$pages,$search); 
                     ?>
                 </div>
             </div>

@@ -154,13 +154,13 @@ function addView($table, $view, $product_id, $conn) {
     return $query_run = mysqli_query($conn,$sql);
 }
 function getALL_Search($table,$search, $conn) {
-    $sql = "SELECT * FROM $table WHERE product_name LIKE '$search%'";
+    $sql = "SELECT * FROM $table WHERE product_name LIKE '%$search%'";
     return $query_run = mysqli_query($conn,$sql);
 }
 function  getLimit_Search($table,$search,$start,$end,$conn){ 
 
    
-    $sql = "SELECT  * FROM $table WHERE product_name LIKE '$search%' limit $start,$end ";
+    $sql = "SELECT  * FROM $table WHERE product_name LIKE '%$search%' limit $start,$end ";
     
     return $query_run = mysqli_query($conn,$sql);
 }

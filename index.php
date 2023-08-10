@@ -132,9 +132,20 @@ if(isset($_GET['act']))
                 break;
 
             case 'search':
-                $search = $_GET['search'] ;
+                
+                $search = $_GET['search'];
                 $page_bar_opt ='3';
-                list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging_search(20,$search);
+                list($page_left,$page_right,$page_current,$products,$pages)=paging_search(12,$search);
+                if(mysqli_num_rows(getALL_Search('product',$search, connectdb())) >0 )
+                    $_SESSION['search']=mysqli_num_rows(getALL_Search('product',$search, connectdb()));
+                else
+                 {
+                    
+                    
+                    $_SESSION['search']=0;
+                    
+                }
+                
                 include "./view/product.php";
                 break;
 
