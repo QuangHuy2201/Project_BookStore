@@ -115,7 +115,7 @@ function  getByCategoryID($table,$category_id,$conn){
 function  getByCategoryID_Limit($table,$category_id,$conn){ 
 
   
-    $sql = "SELECT  * FROM $table Where category_id='$category_id' Limit 3 ";
+    $sql = "SELECT  * FROM $table Where category_id='$category_id' Limit 4 ";
     
     return $query_run = mysqli_query($conn,$sql);
 }

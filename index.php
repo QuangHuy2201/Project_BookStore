@@ -21,6 +21,7 @@ if(isset($_GET['act']))
                 $products_1=getByCategoryID_Limit('product',1,$conn=connectdb());
                 $products_2=getByCategoryID_Limit('product',2,$conn=connectdb());
                 $products_3=getByCategoryID_Limit('product',3,$conn=connectdb());
+                $view_1 = 
                 include "./view/home.php";
                 break;
             case'product':
@@ -28,7 +29,7 @@ if(isset($_GET['act']))
                 if(!isset($_GET['sort']))
                 {
                     $page_bar_opt ='1';
-                list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging_to_category(12);
+                    list($page_left,$page_right,$page_current,$products,$pages,$category_id)= paging_to_category(12);
 
                 }
                 else
