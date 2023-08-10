@@ -12,21 +12,16 @@ function register()
   $confirm_password = mysqli_real_escape_string($conn,$_POST['confirm_password']);
   
   if($password!=$confirm_password)
-    $_SESSION['message_warning'] ="Mật khẩu và xác nhận không khớp";
+    $_SESSION['message_warning'] ="Mật khẩu và xác nhận không khớp.";
   else{
     
-    $user_name_query = " SELECT * FROM user WHERE user_name = ' $user_name'";
-    $user_name_query_run = mysqli_query($conn,$user_name_query);
-    
+ 
     $email_query = " SELECT * FROM user WHERE email = '$email' ";
     $email_query_run = mysqli_query($conn,$email_query);
 
-    //Check user_name
-    if(mysqli_num_rows($user_name_query_run)>0)
-      $_SESSION['message_warning'] = "Tên tài khoản đã được sử dụng.";
     //Check email
-    else if(mysqli_num_rows($email_query_run)>0)
-      $_SESSION['message_warning'] = "Email đã được sử dụng.";
+    if(mysqli_num_rows($email_query_run)>0)
+      $_SESSION['message_warning'] = "Email đã được đăng kí, vui lòng thử với email khác !";
     else 
     {
       //Password hash
@@ -37,7 +32,7 @@ function register()
       if($insert_query_run)
        { //Send mail
         //sendmail($user_name,$email);
-        $_SESSION['message'] = "Tạo tài khoản thành công.";
+        $_SESSION['message'] = "Vui lòng kiểm tra email và đăng nhập với thông tin vừa tạo !";
        }
       else
       {  
