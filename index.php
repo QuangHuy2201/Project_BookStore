@@ -106,6 +106,27 @@ if(isset($_GET['act']))
                 if(isset($_GET['name'])) {
                     $product_name = $_GET['name'];
                     $product = getByName('product', $product_name, connectdb());
+                    foreach ($product as $product) {
+                        $price = number_format($product['price'])."đ";
+                        $price_old = number_format($product['price_old'])."đ";
+                        $discount = number_format($product['price_old'] - $product['price'])."đ";
+                        $discount_percent = 100 - (round($product['price'] / $product['price_old'], 2) * 100);
+                        $view = $product['view'] + 1;
+                        $product_id = $product['product_id'];
+                        addView('product', $view, $product_id, connectdb());
+                        if($product['category_id'] == 1) {
+                            $link_img = "./static/images/sach-truyen-kiem-hiep/";
+                            $category = "Truyện kiếm hiệp";
+                        }
+                        else if($product['category_id']==2) {
+                            $link_img = "./static/images/sach-van-hoc/";
+                            $category = "Sách văn học";
+                        }
+                        else  {
+                            $link_img = "./static/images/truyen-tranh-comic/";
+                            $category = "Truyện tranh manga-comic";
+                        }
+                    }
                 }
                 include "./view/product_detail.php";
                 break;

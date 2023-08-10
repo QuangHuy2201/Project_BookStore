@@ -1,25 +1,3 @@
-<?php
-    // echo $product_name;
-    foreach ($product as $product) {
-        $price = number_format($product['price'])."đ";
-        $price_old = number_format($product['price_old'])."đ";
-        $discount = number_format($product['price_old'] - $product['price'])."đ";
-        $discount_percent = 100 - (round($product['price'] / $product['price_old'], 2) * 100);
-        if($product['category_id'] == 1) {
-            $link_img = "./static/images/sach-truyen-kiem-hiep/";
-            $category = "Truyện kiếm hiệp";
-        }
-        else if($product['category_id']==2) {
-            $link_img = "./static/images/sach-van-hoc/";
-            $category = "Sách văn học";
-        }
-        else  {
-            $link_img = "./static/images/truyen-tranh-comic/";
-            $category = "Truyện tranh manga-comic";
-        }
-    }
-?>
-
 <div class="container">
     <!-- breadcrumb -->
     <div class="row bg-white p10 bd1 mt20 mb20 fs14">   
@@ -55,6 +33,10 @@
                         <p class="fs14">
                             Chưa có đánh giá | 52 đã bán
                         </p>
+                        <div class="d-flex align-items-center opacity-75 fs14">
+                            <p class="me-1">'.$product['view'].'</p>
+                            <p>lượt xem</p>
+                        </div>
                         <div class="fs14">'.$product['description'].'</div>
                         <p class="fs13 text-decoration-line-through d-inline">'.$price_old.'</p>
                         <p class="d-inline text-danger fs20 txt-semiBold">'.$price.'</p>

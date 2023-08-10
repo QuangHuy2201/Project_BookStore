@@ -120,6 +120,11 @@ function  getByCategoryID_Limit($table,$category_id,$conn){
     return $query_run = mysqli_query($conn,$sql);
 }
 
+function addView($table, $view, $product_id, $conn) {
+    $sql = "UPDATE $table SET view='$view'  where product_id = '$product_id'";
+    return $query_run = mysqli_query($conn,$sql);
+}
+
 function show_to_products($products) {
     foreach ($products as $product)  
             {
@@ -142,6 +147,10 @@ function show_to_products($products) {
                                 <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
                                 <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
                                 <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
+                            </div>
+                            <div class="d-flex align-items-center opacity-75 fs14">
+                                <p class="me-1">'.$product['view'].'</p>
+                                <p>lượt xem</p>
                             </div>
 
                             <form action="?act=cart" method="POST">

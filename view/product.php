@@ -1,4 +1,4 @@
-<?php ?>
+
 <div class="container mt-5">
     <div class="row">
         <nav aria-label="breadcrumb" class="">
@@ -17,9 +17,12 @@
             <h3 class="category-title txt-medium p10 d-inline-block">Danh mục</h3>
             <form  method="GET">
             <ul class="category-list list-unstyled mt50 ms-3">
-                <li><a type="submit"  href="index.php?act=product&category=1" name="category1"  class="text-decoration-none fs14" >Truyện kiếm hiệp</a></li>
-                <li><a type="submit"  href="index.php?act=product&category=2" name="category2" class="text-decoration-none fs14">Sách văn học</a></li>
-                <li><a type="submit"  href="index.php?act=product&category=3" name="category3" class="text-decoration-none fs14">Truyện tranh - comic</a></li>
+                <li><a type="submit"  href="index.php?act=product&category=1" name="category1" 
+                class="text-decoration-none fs14 <?php if($category_id=='1')echo'txt-medium';?>" >Truyện kiếm hiệp</a></li>
+                <li><a type="submit"  href="index.php?act=product&category=2" name="category2" 
+                class="text-decoration-none fs14 <?php if($category_id=='2')echo'txt-medium';?>">Sách văn học</a></li>
+                <li><a type="submit"  href="index.php?act=product&category=3" name="category3" 
+                class="text-decoration-none fs14 <?php if($category_id=='3')echo'txt-medium';?>">Truyện tranh - comic</a></li>
             </ul>
             </form>
         </div>
@@ -30,7 +33,7 @@
             <div class="filter row ms-3 fs14 mt10 pb10">
                 <div class="col-2">Sắp xếp theo</div>
                 <div class="col-2 filter-item">
-                    <a>Bán chạy</a>
+                    <a>Lượt xem</a>
                 </div>
                 <div class="col-2 filter-item">
                     <a href="index.php?act=product&category=<?php echo $category_id ?>&sort=2" 

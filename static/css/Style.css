@@ -84,7 +84,7 @@ body {
 
 /* ========== Product page ========== */
 .category {
-    min-height: 300px;
+    height: fit-content;
     border: 0.2rem solid #dbdbdb;
     position: relative;
 }
