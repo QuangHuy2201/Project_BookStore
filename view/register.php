@@ -21,7 +21,7 @@ if(isset($_SESSION['message']))
                         <form action="index.php?act=register" method="POST">
                             <div class="form-group">
                                 <input type="text" id="" name="name" required>
-                                <label>Tên đăng nhập</label>
+                                <label>Tên tài khoản</label>
                             </div>
                             <div class="form-group">
                                 <input type="email" id="" name="email" required>
