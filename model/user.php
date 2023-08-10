@@ -6,6 +6,7 @@ function register()
   $conn =connectdb();
 
  
+  $user_name = mysqli_real_escape_string($conn, $_POST['user_name']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $password = mysqli_real_escape_string($conn,$_POST['password']);
   $confirm_password = mysqli_real_escape_string($conn,$_POST['confirm_password']);
@@ -13,21 +14,29 @@ function register()
   if($password!=$confirm_password)
     $_SESSION['message_warning'] ="Mật khẩu và xác nhận không khớp";
   else{
-    //Check email
+    
+    $user_name_query = " SELECT * FROM user WHERE user_name = ' $user_name'";
+    $user_name_query_run = mysqli_query($conn,$user_name_query);
+    
     $email_query = " SELECT * FROM user WHERE email = '$email' ";
     $email_query_run = mysqli_query($conn,$email_query);
-    if(mysqli_num_rows($email_query_run)>0)
+
+    //Check user_name
+    if(mysqli_num_rows($user_name_query_run)>0)
+      $_SESSION['message_warning'] = "Tên tài khoản đã được sử dụng.";
+    //Check email
+    else if(mysqli_num_rows($email_query_run)>0)
       $_SESSION['message_warning'] = "Email đã được sử dụng.";
     else 
     {
       //Password hash
       $password = PasswordHash($password);
       //Insert user data
-      $insert_query = "INSERT INTO user (email,password,role_id) VALUES ('$email','$password',2)";
+      $insert_query = "INSERT INTO user (user_name,email,password,role_id) VALUES ('$user_name','$email','$password',2)";
       $insert_query_run = mysqli_query($conn,$insert_query);
       if($insert_query_run)
        { //Send mail
-        //sendmail('test',$email);
+        //sendmail($user_name,$email);
         $_SESSION['message'] = "Tạo tài khoản thành công.";
        }
       else
@@ -60,7 +69,7 @@ function login()
       if($result)
       {
         
-        $user_name = $user_data['fullname'];
+        $user_name = $user_data['user_name'];
         $user_email = $user_data['email'];
         $user_phone = $user_data['phone'];
         $user_role = $user_data['role_id'];

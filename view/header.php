@@ -56,6 +56,7 @@ if (isset($_GET['act'])) {
                         <div class="navbar-nav">
                             <a class=" nav-link <?php if ($header == 'home') echo 'active' ?>" aria-current="page" href="index.php">Home</a>
                             <a class=" nav-link <?php if ($header == 'product') echo 'active' ?>" href="index.php?act=product">Product</a>
+                            <a class=" nav-link <?php if ($header == 'cart') echo 'active' ?>" href="index.php?act=cart">Cart</a>
                             <?php
                             if (isset($_SESSION['auth_user'])) {
                             ?>
@@ -64,7 +65,7 @@ if (isset($_GET['act'])) {
                                 <a class=" nav-link <?php if ($header == 'login') echo 'active'; ?>" href="index.php?act=login">Login</a>
                             <?php }
                             ?>
-                            <a class=" nav-link <?php if ($header == 'cart') echo 'active' ?>" href="index.php?act=cart">Cart</a>
+                           
 
                         </div>
                     </div>

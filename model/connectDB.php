@@ -4,8 +4,8 @@ function connectdb(){
 
   $servername="localhost";
   $username="root";
-  $password="37516196";
-  // $password="231077";
+  //$password="37516196";
+  $password="231077";
   $dbname = "bookstore";
 
 
