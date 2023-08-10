@@ -89,7 +89,7 @@ if(isset($_GET['act']))
                 break;
             case 'logout':
                 unset($_SESSION['auth_user']);
-                header('Location: index.php?act=login');
+                header('Location: index.php?act=home');
                 break;
             case 'register':
                 

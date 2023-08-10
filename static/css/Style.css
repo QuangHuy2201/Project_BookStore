@@ -123,6 +123,7 @@ body {
     height: 4.1rem;
     padding: 1rem 1.3rem;
 }
+
 .category-list a {
     color: #333;
     display: block;
@@ -155,7 +156,8 @@ body {
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid #ee4d2d;
 }
-.filter-item_a{
+
+.filter-item_a {
     color: #ee4d2d;
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid #ee4d2d;
@@ -204,13 +206,42 @@ body {
     padding: 1.2rem;
 }
 
+.slide-fwd-center {
+    -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-center {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    100% {
+        -webkit-transform: translateZ(16rem);
+        transform: translateZ(16rem);
+    }
+}
+
+@keyframes slide-fwd-center {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    100% {
+        -webkit-transform: translateZ(16rem);
+        transform: translateZ(16rem);
+    }
+}
+
 /* ========== Product Detail ========== */
 
 .detail_img {
     height: fit-content;
 }
 
-.detail-content { 
+.detail-content {
     position: relative;
 }
 
@@ -222,13 +253,14 @@ body {
     width: 95%;
     border: 1px solid #dbdbdb;
 }
+
 .voucher-item {
     position: relative;
     padding: 5px 15px;
     border: 0;
     white-space: nowrap;
     color: #0d5cb6;
-    background: rgba(41,102,219,.13);
+    background: rgba(41, 102, 219, .13);
     width: fit-content;
     margin-right: 10px;
     cursor: pointer;
@@ -241,7 +273,7 @@ body {
     position: absolute;
     top: 2.5px;
     left: -0.3rem;
-    background-image: radial-gradient(#fff 2px,transparent 0);
+    background-image: radial-gradient(#fff 2px, transparent 0);
     background-size: 6px 6px;
     background-position-x: -6px;
 }
@@ -253,7 +285,7 @@ body {
     position: absolute;
     top: 2.5px;
     right: -0.3rem;
-    background-image: radial-gradient(#fff 2px,transparent 0);
+    background-image: radial-gradient(#fff 2px, transparent 0);
     background-size: 6px 6px;
     background-position-x: -6px;
 }

@@ -139,7 +139,7 @@ function show_to_products($products) {
             echo '<div class="col-3">
                     <div class="product-item p10 mb15">
                         <div class="product-img text-center">
-                            <img src="'.$link_img.''.$product['image'].'" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                            <img src="'.$link_img.''.$product['image'].'" class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
                         </div>
                         <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
                         <div>

@@ -45,21 +45,22 @@ if (isset($_GET['act'])) {
     <header class="p-3 bg-blue text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
                     <img src="./static/images/logo/logo1.png" width="80" height="35" alt="logo">
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-3 text-white active">Trang chủ</a></li>
+                    <li><a href="index.php" class="nav-link px-3 text-white active">Trang chủ</a></li>
                     <li>
-                        <a class="nav-link px-3 text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link px-3 text-white dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Sản phẩm
                         </a>
                         <ul class="dropdown-menu fs14">
-                            <li><a class="dropdown-item" href="#">Sách văn học</a></li>
-                            <li><a class="dropdown-item" href="#">Truyện kiếm hiệp</a></li>
-                            <li><a class="dropdown-item" href="#">Truyện tranh Manga - Comic</a></li>
+                            <li><a class="dropdown-item" href="index.php?act=product">Tất cả</a></li>
+                            <li><a class="dropdown-item" href="index.php?act=product&category=1">Sách văn học</a></li>
+                            <li><a class="dropdown-item" href="index.php?act=product&category=2">Truyện kiếm hiệp</a></li>
+                            <li><a class="dropdown-item" href="index.php?act=product&category=3">Truyện tranh Manga - Comic</a></li>
                         </ul>
                     </li>
                     <li><a href="#" class="nav-link px-3 text-white">Về chúng tôi</a></li>
@@ -81,15 +82,15 @@ if (isset($_GET['act'])) {
                     if (isset($_SESSION['auth_user'])) {
                 ?>
                     <div class="text-end">
-                        <a type="button" role="button" data-bs-toggle="dropdown" class="text-white me-2 text-decoration-none fs14 dropdown-toggle">Xin chào, User</a>
+                        <a type="button" role="button" data-bs-toggle="dropdown" class="text-white me-2 text-decoration-none fs14 dropdown-toggle">Xin chào, <?php echo $_SESSION['auth_user']['name'];?></a>
                         <ul class="dropdown-menu fs14">
                             <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
-                            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                            <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
                         </ul>
                     </div>
                 <?php } else { ?>
                     <div class="text-end">
-                        <a type="button" class="btn btn-outline-light me-2 fs14">Đăng nhập</a>
+                        <a href="index.php?act=login" type="button" class="btn btn-outline-light me-2 fs14">Đăng nhập</a>
                     </div>
                 <?php }
                 ?>
