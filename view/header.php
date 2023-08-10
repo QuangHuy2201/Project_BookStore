@@ -72,7 +72,7 @@ if (isset($_GET['act'])) {
                 </form>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <a class="btn btn-outline-light me-2 fs14">
+                    <a href="index.php?act=cart" class="btn btn-outline-light me-2 fs14">
                         <i class="fa-light fa-cart-shopping"></i>
                         Giỏ hàng
                     </a>
