@@ -45,8 +45,8 @@
                                 </div>
                             </div>
                             <form method="GET" class="row d-flex justify-content-between mt10">
-                                <a type="submit" name="delete_all" href="index.php?act=cart&delete_all" <?php if ($total == 0)  echo 'class="col-4 btn disabled btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
-                                                                                                        else echo 'class="col-4 btn btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
+                                <a type="submit" name="delete_all" href="index.php?act=cart&delete_all" <?php if ($total == 0)  echo 'class="col-4 fs14 btn disabled btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
+                                                                                                        else echo 'class="col-4 fs14 btn btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
                                                                                                         ?>>
                                     Xoá tất cả</a>
                                 <a href="#" class="col-7 order b-radius mt10 btn-outline-primary">Đặt hàng</a>

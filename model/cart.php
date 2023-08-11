@@ -71,7 +71,7 @@ function show_to_cart()
             <div class="col-2 my-auto">'.number_format($sum).'đ</div>
             <div class="col-1 my-auto">
             <form  method="GET">
-                <a type="submit" name="delete"class=" btn btn-outline-danger " href="index.php?act=cart&delete=' . $i . '">Xóa</a>
+                <a type="submit" name="delete"class="btn btn-outline-danger fs14" href="index.php?act=cart&delete=' . $i . '">Xóa</a>
             </form>
             </div>
             </div>';
