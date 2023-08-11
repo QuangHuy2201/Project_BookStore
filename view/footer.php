@@ -66,11 +66,11 @@
                         </div>
                         <div class="col-4 d-flex">
                             <i class="fa-solid fa-envelope mr10"></i>
-                            <p class="fs13">53/8 Vườn Lài - Q.Tân Phú - TP.HCM</p>
+                            <p class="fs13">support@bookstore.vn</p>
                         </div>
                         <div class="col-4 d-flex">
                             <i class="fa-solid fa-phone mr10"></i>
-                            <p class="fs13">53/8 Vườn Lài - Q.Tân Phú - TP.HCM</p>
+                            <p class="fs13">0353.854.946</p>
                         </div>
                     </div>
                     <div class="row mt20">
