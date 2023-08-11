@@ -65,16 +65,24 @@ function login()
       {
         
         $user_name = $user_data['user_name'];
+        $full_name = $user_data['full_name'];
         $user_email = $user_data['email'];
+        $user_address = $user_data['address'];
         $user_phone = $user_data['phone'];
+        $user_image = $user_data['image'];
+        $user_birthday = $user_data['birthday'];
         $user_role = $user_data['role_id'];
 
        
         $_SESSION['auth_user'] =[
 
-          'name' => $user_name ,
+          'name' => $user_name,
+          'full_name' => $full_name,
           'email'=> $user_email,
+          'address'=> $user_address,
           'phone'=> $user_phone,
+          'image'=> $user_image,
+          'birthday'=> $user_birthday,
           'role'=> $user_role,
           ];
 
