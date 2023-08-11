@@ -152,7 +152,11 @@ if(isset($_GET['act']))
                 
                 include "./view/product.php";
                 break;
+            case 'account':
 
+
+                include "./view/myaccount.php";
+                break;
         }
     }
 else {

@@ -86,7 +86,7 @@ if (isset($_GET['act'])) {
                     <div class="text-end">
                         <a type="button" role="button" data-bs-toggle="dropdown" class="text-white me-2 text-decoration-none fs14 dropdown-toggle">Xin chào, <?php echo $_SESSION['auth_user']['name'];?></a>
                         <ul class="dropdown-menu fs14">
-                            <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
+                            <li><a class="dropdown-item" href="index.php?act=account">Thông tin cá nhân</a></li>
                             <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
                         </ul>
                     </div>
