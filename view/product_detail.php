@@ -89,10 +89,10 @@
                             <input type="hidden" name="price" value="'.$product['price'].'" >
                             <input type="hidden" name="quantity" value="1" >
                             <input type="hidden" name="category_id" value="'.$product['category_id'].'" >
-                            <button type="submit" name="add_cart" class="ms-5 p10 bg-danger-subtle txt-medium text-danger text-decoration-none border border-danger b-radius" href="#">
-                            <i class="fa-regular fa-cart-plus me-1"></i>
-                            Thêm vào giỏ hàng
-                             </button>
+                            <button type="submit" name="add_cart" class="ms-5 p-3 bg-danger-subtle txt-medium text-danger text-decoration-none border border-danger b-radius" href="#">
+                                <i class="fa-regular fa-cart-plus me-1"></i>
+                                Thêm vào giỏ hàng
+                            </button>
                         </form>';
                 ?>
                
@@ -103,7 +103,7 @@
                             <input type="hidden" name="price" value="'.$product['price'].'" >
                             <input type="hidden" name="quantity" value="1" >
                             <input type="hidden" name="category_id" value="'.$product['category_id'].'" >
-                            <button type="submit" name="buy_now" class="ms-5 p10 bg-danger txt-medium text-white text-decoration-none border border-danger b-radius" >Mua ngay</button>
+                            <button type="submit" name="buy_now" class="ms-5 p-3 bg-danger txt-medium text-white text-decoration-none border border-danger b-radius" >Mua ngay</button>
                         </form>';
                 ?>
                
