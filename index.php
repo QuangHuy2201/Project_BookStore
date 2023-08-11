@@ -21,7 +21,10 @@ if(isset($_GET['act']))
                 $products_1=getByCategoryID_Limit('product',1,$conn=connectdb());
                 $products_2=getByCategoryID_Limit('product',2,$conn=connectdb());
                 $products_3=getByCategoryID_Limit('product',3,$conn=connectdb());
-                $view_1 = 
+
+                $views_1=getLimit_category_View_Desc('product',1,0,4,$conn=connectdb());
+                $views_2 = getLimit_category_View_Desc('product',2,0,4,$conn=connectdb());
+                $views_3 = getLimit_category_View_Desc('product',3,0,4,$conn=connectdb());
                 include "./view/home.php";
                 break;
             case'product':
@@ -157,6 +160,10 @@ else {
     $products_1=getByCategoryID_Limit('product',1,$conn=connectdb());
     $products_2=getByCategoryID_Limit('product',2,$conn=connectdb());
     $products_3=getByCategoryID_Limit('product',3,$conn=connectdb());
+
+    $views_1=getLimit_category_View_Desc('product',1,0,4,$conn=connectdb());
+    $views_2=getLimit_category_View_Desc('product',2,0,4,$conn=connectdb());
+    $views_3=getLimit_category_View_Desc('product',3,0,4,$conn=connectdb());
     include "./view/home.php";
    
 }

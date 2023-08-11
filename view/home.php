@@ -57,7 +57,9 @@
                     echo '<div class="col-3 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
-                                    <img src="'.$link_img.''.$product['image'].'" class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                    <a href="index.php?act=detail&name='.$product['product_name'].'">
+                                        <img src="'.$link_img.''.$product['image'].'" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                    </a>
                                 </div>
                                 <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
                                 <div>
@@ -95,7 +97,36 @@
             <div class="bg-white p15">
                 <div class="txt-semiBold">SẢN PHẨM BÁN CHẠY</div>
                 <div>
-                    
+                    <?php
+                        foreach($views_1 as $product_view) {
+                            $price =number_format($product_view['price'])."đ";
+                            $price_old =number_format($product_view['price_old'])."đ";
+                            $discount_percent = 100 - (round($product_view['price'] / $product_view['price_old'], 2) * 100);
+                            if($product_view['category_id']==1)
+                                $link_img="./static/images/sach-truyen-kiem-hiep/";
+                            else if($product_view['category_id']==2)
+                                $link_img="./static/images/sach-van-hoc/";
+                            else $link_img="./static/images/truyen-tranh-comic/";
+                            echo '
+                                <div class="mt20 d-flex">
+                                    <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    <div class="ms-3">
+                                        <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
+                                        <div class="d-flex align-items-center opacity-75 fs13">
+                                            <p class="me-1 mb-0">'.$product_view['view'].'</p>
+                                            <p class="mb-0">lượt xem</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
+                                            <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
+                                            <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
+                        }
+                        
+                    ?>
                 </div>
             </div>
         </div>
@@ -117,7 +148,7 @@
                     </a>
                 </div>
                 <?php
-                foreach ($products_1 as $product) {
+                foreach ($products_2 as $product) {
                     $price =number_format($product['price'])."đ";
                     $price_old =number_format($product['price_old'])."đ";
                     $discount_percent = 100 - (round($product['price'] / $product['price_old'], 2) * 100);
@@ -129,7 +160,9 @@
                     echo '<div class="col-3 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
-                                    <img src="'.$link_img.''.$product['image'].'" class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                    <a href="index.php?act=detail&name='.$product['product_name'].'">
+                                        <img src="'.$link_img.''.$product['image'].'" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                    </a>
                                 </div>
                                 <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
                                 <div>
@@ -162,6 +195,44 @@
                 ?>
             </div>
         </div>
+
+        <div class="col-3">
+            <div class="bg-white p15">
+                <div class="txt-semiBold">SẢN PHẨM BÁN CHẠY</div>
+                <div>
+                    <?php
+                        foreach($views_2 as $product_view) {
+                            $price =number_format($product_view['price'])."đ";
+                            $price_old =number_format($product_view['price_old'])."đ";
+                            $discount_percent = 100 - (round($product_view['price'] / $product_view['price_old'], 2) * 100);
+                            if($product_view['category_id']==1)
+                                $link_img="./static/images/sach-truyen-kiem-hiep/";
+                            else if($product_view['category_id']==2)
+                                $link_img="./static/images/sach-van-hoc/";
+                            else $link_img="./static/images/truyen-tranh-comic/";
+                            echo '
+                                <div class="mt20 d-flex">
+                                    <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    <div class="ms-3">
+                                        <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
+                                        <div class="d-flex align-items-center opacity-75 fs13">
+                                            <p class="me-1 mb-0">'.$product_view['view'].'</p>
+                                            <p class="mb-0">lượt xem</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
+                                            <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
+                                            <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
+                        }
+                        
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row mt-5">
@@ -180,7 +251,7 @@
                     </a>
                 </div>
                 <?php
-                foreach ($products_1 as $product) {
+                foreach ($products_3 as $product) {
                     $price =number_format($product['price'])."đ";
                     $price_old =number_format($product['price_old'])."đ";
                     $discount_percent = 100 - (round($product['price'] / $product['price_old'], 2) * 100);
@@ -192,7 +263,9 @@
                     echo '<div class="col-3 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
-                                    <img src="'.$link_img.''.$product['image'].'" class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                    <a href="index.php?act=detail&name='.$product['product_name'].'">
+                                        <img src="'.$link_img.''.$product['image'].'" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                    </a>
                                 </div>
                                 <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
                                 <div>
@@ -223,6 +296,44 @@
                     ';
                 }
                 ?>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="bg-white p15">
+                <div class="txt-semiBold">SẢN PHẨM BÁN CHẠY</div>
+                <div>
+                    <?php
+                        foreach($views_3 as $product_view) {
+                            $price =number_format($product_view['price'])."đ";
+                            $price_old =number_format($product_view['price_old'])."đ";
+                            $discount_percent = 100 - (round($product_view['price'] / $product_view['price_old'], 2) * 100);
+                            if($product_view['category_id']==1)
+                                $link_img="./static/images/sach-truyen-kiem-hiep/";
+                            else if($product_view['category_id']==2)
+                                $link_img="./static/images/sach-van-hoc/";
+                            else $link_img="./static/images/truyen-tranh-comic/";
+                            echo '
+                                <div class="mt20 d-flex">
+                                    <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    <div class="ms-3">
+                                        <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
+                                        <div class="d-flex align-items-center opacity-75 fs13">
+                                            <p class="me-1 mb-0">'.$product_view['view'].'</p>
+                                            <p class="mb-0">lượt xem</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
+                                            <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
+                                            <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
+                        }
+                        
+                    ?>
+                </div>
             </div>
         </div>
     </div>

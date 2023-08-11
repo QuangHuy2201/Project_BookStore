@@ -181,7 +181,7 @@ function show_to_products($products) {
                         <div class="product-img text-center">
                             <a href="index.php?act=detail&name='.$product['product_name'].'">
                                 <img src="'.$link_img.''.$product['image'].'" 
-                                class="slide-fwd-center" title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
+                                 title="'.$product['product_name'].'" alt="'.$product['product_name'].'">
                             </a>
                         </div>
                         <a class="product-title text-reset text-decoration-none fs13 mt10" name="detail" href="index.php?act=detail&name='.$product['product_name'].'" >'.$product['product_name'].'</a>
