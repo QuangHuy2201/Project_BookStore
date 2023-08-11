@@ -81,12 +81,33 @@
                 </div>
             </div>
             <div class="bg-white mt10 d-flex p10">
-                <a class="ms-5 p10 bg-danger-subtle txt-medium text-danger text-decoration-none border border-danger b-radius" href="#">
-                    <i class="fa-regular fa-cart-plus me-1"></i>
-                    Thêm vào giỏ hàng
-                </a>
+
+            <?php
+                echo '  <form action="?act=cart" method="POST">
+                            <input type="hidden" name="product_name" value="'.$product['product_name'].'" >
+                            <input type="hidden" name="image" value="'.$product['image'].'" >
+                            <input type="hidden" name="price" value="'.$product['price'].'" >
+                            <input type="hidden" name="quantity" value="1" >
+                            <input type="hidden" name="category_id" value="'.$product['category_id'].'" >
+                            <button type="submit" name="add_cart" class="ms-5 p10 bg-danger-subtle txt-medium text-danger text-decoration-none border border-danger b-radius" href="#">
+                            <i class="fa-regular fa-cart-plus me-1"></i>
+                            Thêm vào giỏ hàng
+                             </button>
+                        </form>';
+                ?>
+               
+                <?php
+                echo '  <form action="?act=cart" method="POST">
+                            <input type="hidden" name="product_name" value="'.$product['product_name'].'" >
+                            <input type="hidden" name="image" value="'.$product['image'].'" >
+                            <input type="hidden" name="price" value="'.$product['price'].'" >
+                            <input type="hidden" name="quantity" value="1" >
+                            <input type="hidden" name="category_id" value="'.$product['category_id'].'" >
+                            <button type="submit" name="buy_now" class="ms-5 p10 bg-danger txt-medium text-white text-decoration-none border border-danger b-radius" >Mua ngay</button>
+                        </form>';
+                ?>
+               
                 
-                <a class="ms-5 p10 bg-danger txt-medium text-white text-decoration-none border border-danger b-radius" href="#">Mua ngay</a>
             </div>
         </div>
 

@@ -52,8 +52,12 @@ function show_to_cart()
             echo ' <div class="row text-center bg-white mlr0 pt10 pb10 mb5 b-radius w-100">
             <div class="col-1 my-auto">' . ($i + 1) . '</div>
             <div class="col-4 my-auto text-start d-flex">
+                <a href="index.php?act=detail&name='.$_SESSION['cart'][$i]['product_name'].'">
                 <img src="' . $link_img . '" class="mx-2" width=50 atr="'.$_SESSION['cart'][$i]['product_name'].'"></img>
+                </a>
+                <a href="index.php?act=detail&name='.$_SESSION['cart'][$i]['product_name'].'" class="text-decoration-none  text-reset">
                 <p>' . $_SESSION['cart'][$i]['product_name'] . '</p>
+                </a>
             </div>
             <div class="col-2 my-auto">'.number_format($_SESSION['cart'][$i]['price']).'đ</div>
             

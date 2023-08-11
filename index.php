@@ -47,9 +47,15 @@ if(isset($_GET['act']))
                 
 
                 if(!isset($_SESSION['cart']))$_SESSION['cart']=[];
+                if(isset($_POST['add_cart']))
+                {   
+                    add_cart();
+                    header('Location: index.php?act=detail&name='.$_POST['product_name'].'');
+                }
                 if(isset($_POST['buy_now']))
                 {   
                     add_cart();
+
                 }
                 //Delete item in cart
                 if(isset($_GET['delete']))
@@ -111,6 +117,7 @@ if(isset($_GET['act']))
                     $product_name = $_GET['name'];
                     $product = getByName('product', $product_name, connectdb());
                     foreach ($product as $product) {
+                        $name =
                         $price = number_format($product['price'])."đ";
                         $price_old = number_format($product['price_old'])."đ";
                         $discount = number_format($product['price_old'] - $product['price'])."đ";
