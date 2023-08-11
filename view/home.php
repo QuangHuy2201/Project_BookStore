@@ -109,7 +109,9 @@
                             else $link_img="./static/images/truyen-tranh-comic/";
                             echo '
                                 <div class="mt20 d-flex">
-                                    <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    <a href="index.php?act=detail&name='.$product_view['product_name'].'">
+                                        <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    </a>
                                     <div class="ms-3">
                                         <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
                                         <div class="d-flex align-items-center opacity-75 fs13">
@@ -212,7 +214,9 @@
                             else $link_img="./static/images/truyen-tranh-comic/";
                             echo '
                                 <div class="mt20 d-flex">
-                                    <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    <a href="index.php?act=detail&name='.$product_view['product_name'].'">
+                                        <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    </a>
                                     <div class="ms-3">
                                         <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
                                         <div class="d-flex align-items-center opacity-75 fs13">
@@ -315,7 +319,9 @@
                             else $link_img="./static/images/truyen-tranh-comic/";
                             echo '
                                 <div class="mt20 d-flex">
-                                    <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    <a href="index.php?act=detail&name='.$product_view['product_name'].'">
+                                        <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
+                                    </a>
                                     <div class="ms-3">
                                         <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
                                         <div class="d-flex align-items-center opacity-75 fs13">

@@ -80,6 +80,14 @@
                     </p>
                 </div>
             </div>
+            <div class="bg-white mt10 d-flex p10">
+                <a class="ms-5 p10 bg-danger-subtle txt-medium text-danger text-decoration-none border border-danger b-radius" href="#">
+                    <i class="fa-regular fa-cart-plus me-1"></i>
+                    Thêm vào giỏ hàng
+                </a>
+                
+                <a class="ms-5 p10 bg-danger txt-medium text-white text-decoration-none border border-danger b-radius" href="#">Mua ngay</a>
+            </div>
         </div>
 
         <!-- sale -->
