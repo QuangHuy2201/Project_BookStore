@@ -161,6 +161,19 @@ if(isset($_GET['act']))
                 break;
             case 'account':
 
+                if(isset($_POST['save_change']))
+                {
+                    $user_name = $_POST['user_name'];
+                    $full_name = $_POST['full_name'];
+                    $address = $_POST['address'];
+                    $phone = $_POST['phone'];
+                    $birthday = date('Y-m-d',strtotime($_POST['birthday']));
+                   
+                    
+                    update_user_info('user',$_SESSION['auth_user']['email'],$user_name, $full_name,  $address, $phone, $birthday,connectdb());
+                    Update_user_data( $_SESSION['auth_user']['email'],connectdb());
+                    header('Location: index.php?act=account');
+                }
 
                 include "./view/myaccount.php";
                 break;
