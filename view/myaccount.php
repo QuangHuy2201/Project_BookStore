@@ -31,13 +31,13 @@
             <div class="card mb-4">
                 <div class="card-header">Thông tin chi tiết</div>
                 <div class="card-body">
-                    <form>
+                    <form action="?act=account" method="POST">
                         <!-- Form Group (username)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputUsername">Tên tài khoản</label>
                             <?php
                                 echo '
-                                    <input class="form-control" id="inputUsername" type="text" placeholder="Nhập tên tài khoản" value="'.$_SESSION['auth_user']['name'].'">
+                                    <input name="user_name" class="form-control" id="inputUsername" type="text" placeholder="Nhập tên tài khoản" value="'.$_SESSION['auth_user']['name'].'">
                                 ';
                             ?>
                         </div>
@@ -48,7 +48,7 @@
                                 <label class="small mb-1" for="inputFullName">Họ và tên</label>
                                 <?php
                                     echo '
-                                        <input class="form-control" id="inputFullName" type="text" placeholder="Họ tên của bạn" value="'.$_SESSION['auth_user']['full_name'].'">
+                                        <input name="full_name" class="form-control" id="inputFullName" type="text" placeholder="Họ tên của bạn" value="'.$_SESSION['auth_user']['full_name'].'">
                                     ';
                                 ?>
                             </div>                            
@@ -60,7 +60,7 @@
                                 <label class="small mb-1" for="inputLocation">Địa chỉ</label>
                                 <?php
                                     echo '
-                                        <input class="form-control" id="inputLocation" type="text" placeholder="Địa chỉ của bạn" value="'.$_SESSION['auth_user']['address'].'">
+                                        <input name="address" class="form-control" id="inputLocation" type="text" placeholder="Địa chỉ của bạn" value="'.$_SESSION['auth_user']['address'].'">
                                     ';
                                 ?>
                             </div>
@@ -70,7 +70,7 @@
                             <label class="small mb-1" for="inputEmailAddress">Email</label>
                             <?php
                                 echo '
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Địa chỉ email của bạn" value="'.$_SESSION['auth_user']['email'].'">
+                                <input class="form-control" disabled id="inputEmailAddress" type="email" placeholder="Địa chỉ email của bạn" value="'.$_SESSION['auth_user']['email'].'">
                                 ';
                             ?>
                         </div>
@@ -81,7 +81,7 @@
                                 <label class="small mb-1" for="inputPhone">Số điện thoại</label>
                                 <?php
                                     echo '
-                                        <input class="form-control" id="inputPhone" type="tel" placeholder="Số điện thoại của bạn" value="'.$_SESSION['auth_user']['phone'].'">
+                                        <input name="phone" class="form-control" id="inputPhone" type="tel" pattern="[0-9]{10}" placeholder="Số điện thoại của bạn" value="'.$_SESSION['auth_user']['phone'].'">
                                     ';
                                 ?>
                             </div>
@@ -90,14 +90,14 @@
                                 <label class="small mb-1" for="inputBirthday">Ngày sinh</label>
                                 <?php
                                     echo '
-                                        <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Ngày sinh của bạn" value="'.$_SESSION['auth_user']['birthday'].'">
+                                        <input name="birthday" class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Ngày sinh của bạn" value="'.$_SESSION['auth_user']['birthday'].'">
                                     ';
                                 ?>
                             </div>
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-danger fs16" type="reset">Huỷ</button>
-                        <button class="btn btn-primary fs16" type="button">Lưu thay đổi</button>
+                        <button  class="btn btn-danger fs16" type="reset">Huỷ</button>
+                        <button type="submit" name ="save_change" class="btn btn-primary fs16" type="button">Lưu thay đổi</button>
                     </form>
                 </div>
             </div>
