@@ -63,7 +63,7 @@ if (isset($_GET['act'])) {
                             <li><a class="dropdown-item" href="index.php?act=product&category=3">Truyện tranh Manga - Comic</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" class="nav-link px-3 text-white">Về chúng tôi</a></li>
+                    <li><a href="index.php?act=about" class="nav-link px-3 text-white">Về chúng tôi</a></li>
                     <li><a href="#" class="nav-link px-3 text-white">Liên hệ</a></li>
                 </ul>
 

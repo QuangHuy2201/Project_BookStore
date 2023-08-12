@@ -159,11 +159,21 @@ if(isset($_GET['act']))
                 
                 include "./view/product.php";
                 break;
+
             case 'account':
-
-
                 include "./view/myaccount.php";
                 break;
+            
+            case 'checkout':
+
+                include "./view/mycheckout.php";
+                break;
+
+            case 'about':
+
+                include "./view/about.php";
+                break;
+            
         }
     }
 else {
