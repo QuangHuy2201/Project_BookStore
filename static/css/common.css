@@ -282,12 +282,6 @@ mark:after {
   display: none;
 }
 
-.colorGreenGra {
-  background: linear-gradient(to right, #79BDAF 0%, #439F81 100%); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .left, .in_left {
   float: left;
 }

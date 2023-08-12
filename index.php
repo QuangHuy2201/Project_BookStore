@@ -181,7 +181,7 @@ if(isset($_GET['act']))
             
             case 'checkout':
 
-                include "./view/mycheckout.php";
+                include "./view/checkout.php";
                 break;
 
             case 'about':

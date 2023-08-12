@@ -1,4 +1,4 @@
-    <footer>
+    <footer class="mt45">
         <div class="slogan">
             <div class="container">
                 <div class="row">
