@@ -160,7 +160,8 @@ if(isset($_GET['act']))
                 include "./view/product.php";
                 break;
             case 'account':
-
+                
+                //Update info
                 if(isset($_POST['save_change']))
                 {
                     $user_name = $_POST['user_name'];
@@ -172,6 +173,22 @@ if(isset($_GET['act']))
                     
                     update_user_info('user',$_SESSION['auth_user']['email'],$user_name, $full_name,  $address, $phone, $birthday,connectdb());
                     Update_user_data( $_SESSION['auth_user']['email'],connectdb());
+                    header('Location: index.php?act=account');
+                }
+
+                //Upload img
+                if(isset($_POST['upload']))
+                {   
+                    if($_SESSION['auth_user']['image'])
+                    {
+                        $link ='./static/images/user/'.$_SESSION['auth_user']['image'];
+                        delete_file($link);
+                    }
+                    $filename = $_FILES["uploadfile"]["name"];
+	                $tempname = $_FILES["uploadfile"]["tmp_name"];
+                    upload_img($filename,$tempname);
+                    $_SESSION['auth_user']['image']=$filename;
+                    update_user_img('user',$_SESSION['auth_user']['email'],$_SESSION['auth_user']['image'],connectdb());
                     header('Location: index.php?act=account');
                 }
 

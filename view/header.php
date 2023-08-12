@@ -39,6 +39,7 @@ if (isset($_GET['act'])) {
     <link rel="stylesheet" href="./static/css/common.css">
     <link rel="stylesheet" href="./static/css/Style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    
 </head>
 
 <body>
