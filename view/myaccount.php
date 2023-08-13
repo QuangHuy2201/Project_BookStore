@@ -13,13 +13,16 @@
                 <div class="card-header">Ảnh đại diện</div>
                 <div class="card-body text-center">
                     <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" width="150"  src="./static/images/user/<?php if($_SESSION['auth_user']['image']) echo $_SESSION['auth_user']['image']; else echo 'blank-profile-picture.png' ?>" alt="ảnh đại diện">
+                    <div class="img-account-wrapper">
+                        <img class="img-account-profile rounded-circle mb-2" 
+                        src="./static/images/user/<?php if($_SESSION['auth_user']['image']) echo $_SESSION['auth_user']['image']; else echo 'blank-profile-picture.png' ?>" alt="ảnh đại diện">
+                    </div>
                     <!-- Profile picture help block-->
                     <div class="small font-italic text-muted mb-4">Ảnh JPG hoặc PNG và không được lớn hơn 5 MB</div>
                     <!-- Profile picture upload button-->
                     <form method ="POST" enctype="multipart/form-data" onsubmit="">
                     <div class="form-group">
-				        <input class="form-control" type="file" name="uploadfile" value="" />
+				        <input class="form-control" type="file" name="uploadfile" value=""/>
 			        </div>   
                     <!-- <input type="file" id="upload" name="uploadfile" hidden/>
                     <label class=" btn btn-primary label_for_upload fs14" for="upload">Tải ảnh lên</label> -->
