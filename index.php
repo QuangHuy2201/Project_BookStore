@@ -199,9 +199,9 @@ if(isset($_GET['act']))
                     // upload_img($filename,$tempname);
                     // $_SESSION['auth_user']['image']=$filename;
                     update_user_img('user',$_SESSION['auth_user']['email'],$_SESSION['auth_user']['image'],connectdb());
-                    header("location: index.php?act=account");
+                   
                 }
-                
+               
                 include "./view/myaccount.php";
                 break;
             
