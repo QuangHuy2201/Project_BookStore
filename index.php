@@ -61,9 +61,10 @@ if(isset($_GET['act']))
                 if(isset($_GET['delete']))
                 {   
                     array_splice($_SESSION['cart'],$_GET['delete'],1);
-                    
-                header('Location: index.php?act=cart');
+                   
+                    header('Location: index.php?act=cart');
                 }
+                
                  //Delete all items in cart
                 if(isset($_GET['delete_all']))
                 {
@@ -75,7 +76,7 @@ if(isset($_GET['act']))
                 {
                     $index =$_GET['add'];
                     $_SESSION['cart'][$index]['quantity']++;
-                    header('Location: index.php?act=cart');
+                   header('Location: index.php?act=cart');
                 }
                 if(isset($_GET['sub']))
                 {
@@ -83,7 +84,7 @@ if(isset($_GET['act']))
                     if($_SESSION['cart'][$index]['quantity']-1==0)
                     array_splice($_SESSION['cart'],$index,1);
                     else $_SESSION['cart'][$index]['quantity']--;
-                    header('Location: index.php?act=cart');
+                   header('Location: index.php?act=cart');
                 }
 
                 include "./view/cart.php";
@@ -180,19 +181,27 @@ if(isset($_GET['act']))
                 //Upload img
                 if(isset($_POST['upload']))
                 {   
-                    if($_SESSION['auth_user']['image'])
-                    {
-                        $link ='./static/images/user/'.$_SESSION['auth_user']['image'];
+                    $temp_img = $_SESSION['auth_user']['image'];
+                    list($_SESSION['msg'],$status)  = update_img_1();
+                   if($status==1)
+                   {
+                    
+                        $link ='./static/images/user/'.$temp_img;
                         delete_file($link);
+                        $_SESSION['auth_user']['image']=$_FILES["uploadfile"]["name"];
                     }
-                    $filename = $_FILES["uploadfile"]["name"];
-	                $tempname = $_FILES["uploadfile"]["tmp_name"];
-                    upload_img($filename,$tempname);
-                    $_SESSION['auth_user']['image']=$filename;
+                    else $_SESSION['auth_user']['image'] = $temp_img;
+                    
+                    
+                   
+                    // $filename = $_FILES["uploadfile"]["name"];
+	                // $tempname = $_FILES["uploadfile"]["tmp_name"];
+                    // upload_img($filename,$tempname);
+                    // $_SESSION['auth_user']['image']=$filename;
                     update_user_img('user',$_SESSION['auth_user']['email'],$_SESSION['auth_user']['image'],connectdb());
-                    header('Location: index.php?act=account');
+                    header("location: index.php?act=account");
                 }
-
+                
                 include "./view/myaccount.php";
                 break;
             

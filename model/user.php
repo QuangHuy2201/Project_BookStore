@@ -186,7 +186,7 @@ function Update_user_data($email,$conn){
 function upload_img($filename,$tempname){
 
 	$folder = "./static/images/user/" . $filename;
-
+  //move_uploaded_file($tempname, $folder)
 	// Now let's move the uploaded image into the folder: image
 	if (move_uploaded_file($tempname, $folder)) {
 		return true;
@@ -207,5 +207,46 @@ if (!unlink($file_pointer)) {
 else {
    // echo ("$file_pointer has been deleted");
 }
+}
+function update_img_1()
+{
+$msg="";
+$target_dir = "./static/images/user/";
+$target_file = $target_dir . basename($_FILES["uploadfile"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+
+
+// Check if file already exists
+if (file_exists($target_file)) {
+  $msg ="Ảnh đã tồn tại.";
+  $uploadOk = 0;
+}
+
+// Check file size
+if ($_FILES["uploadfile"]["size"] > 500000) {
+  $msg ="Ảnh có dung lượng quá lớn.";
+  $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "JPG" && $imageFileType != "PNG" ) {
+  $msg ="Xin lỗi, chỉ chấp nhận file JPG,PNG.";
+  $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  $msg .=" Xin lỗi, ảnh của bạn chưa dược cập nhật.";
+// if everything is ok, try to upload file
+} else {
+  if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], $target_file)) {
+    $msg .= "Ảnh ". htmlspecialchars( basename( $_FILES["uploadfile"]["name"])). " đã được tải lên.";
+  } else {
+    $msg .= " Xin lỗi, ảnh của bạn không được tải lên.";
+  }
+}
+return array ($msg,$uploadOk) ;
 }
 ?>
