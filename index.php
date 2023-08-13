@@ -48,7 +48,8 @@ if(isset($_GET['act']))
                 if(isset($_POST['add_cart']))
                 {   
                     add_cart();
-                    header('Location: index.php?act=detail&name='.$_POST['product_name'].'');
+                    echo'<script> window.location.href="index.php?act=detail&name='.$_POST['product_name'].'";</script>';
+                    //header('Location: index.php?act=detail&name='.$_POST['product_name'].'');
                 }
                 if(isset($_POST['buy_now']))
                 {   
@@ -59,22 +60,24 @@ if(isset($_GET['act']))
                 if(isset($_GET['delete']))
                 {   
                     array_splice($_SESSION['cart'],$_GET['delete'],1);
-                   
-                    header('Location: index.php?act=cart');
+                    echo'<script> window.location.href="index.php?act=cart";</script>';
+                    //header('Location: index.php?act=cart');
                 }
                 
                  //Delete all items in cart
                 if(isset($_GET['delete_all']))
                 {
                     unset($_SESSION['cart']); 
-                    header('Location: index.php?act=cart');
+                    echo'<script> window.location.href="index.php?act=cart";</script>';
+                   //header('Location: index.php?act=cart');
                 }
                //Update cart 
                 if(isset($_GET['add']))
                 {
                     $index =$_GET['add'];
                     $_SESSION['cart'][$index]['quantity']++;
-                   header('Location: index.php?act=cart');
+                    echo'<script> window.location.href="index.php?act=cart";</script>';
+                    // header('Location: index.php?act=cart');
                 }
                 if(isset($_GET['sub']))
                 {
@@ -82,7 +85,8 @@ if(isset($_GET['act']))
                     if($_SESSION['cart'][$index]['quantity']-1==0)
                     array_splice($_SESSION['cart'],$index,1);
                     else $_SESSION['cart'][$index]['quantity']--;
-                   header('Location: index.php?act=cart');
+                    echo'<script> window.location.href="index.php?act=cart";</script>';
+                   //header('Location: index.php?act=cart');
                 }
 
                 include "./view/cart.php";
@@ -98,7 +102,8 @@ if(isset($_GET['act']))
                 break;
             case 'logout':
                 unset($_SESSION['auth_user']);
-                header('Location: index.php?act=home');
+                echo'<script> window.location.href="index.php?act=home";</script>';
+                //header('Location: index.php?act=home');
                 break;
             case 'register':
                 
@@ -174,7 +179,8 @@ if(isset($_GET['act']))
                     
                     update_user_info('user',$_SESSION['auth_user']['email'],$user_name, $full_name,  $address, $phone, $birthday,connectdb());
                     Update_user_data( $_SESSION['auth_user']['email'],connectdb());
-                    header('Location: index.php?act=account');
+                    echo'<script> window.location.href="index.php?act=account";</script>';
+                    //header('Location: index.php?act=account');
                 }
 
                 //Upload img
@@ -193,7 +199,8 @@ if(isset($_GET['act']))
                     else $_SESSION['auth_user']['image'] = $temp_img;
     
                     update_user_img('user',$_SESSION['auth_user']['email'],$_SESSION['auth_user']['image'],connectdb());
-                    header('Location: index.php?act=account');
+                    echo'<script> window.location.href="index.php?act=account";</script>';
+                    //header('Location: index.php?act=account');
                     exit(0);
                 }
 
