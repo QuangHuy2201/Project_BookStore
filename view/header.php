@@ -1,29 +1,7 @@
 <?php
 session_start();
-if (isset($_GET['act'])) {
-    switch ($_GET['act']) {
-        case 'product':
-            $header = 'product';
-            break;
-        case 'cart':
-            $header = 'cart';
-            break;
-        case 'login':
-            $header = 'login';
-            break;
-        case 'register':
-            $header = 'login';
-            break;
-        case 'detail':
-            $header = 'detail';
-            break;
-        default:
-            $header = 'home';
-            break;
-    }
-} else $header = 'home';
-
-
+if(!isset($_SESSION['view']))$_SESSION['view']=0;
+else $_SESSION['view']+=1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +22,7 @@ if (isset($_GET['act'])) {
 <body>
     <header class="p-3 bg-blue text-white">
         <div class="container">
+            <p class="text-dark">Lượt truy cập: <?php echo $_SESSION['view'] ?> </p>
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->

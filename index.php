@@ -6,10 +6,8 @@ include "./model/page.php";
 include "./model/user.php";
 include "./model/passwordBcrypt.php";
 
-
-
 //Header
-$header ='';
+
 
 include_once "./view/header.php";
 
