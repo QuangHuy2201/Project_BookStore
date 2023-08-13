@@ -163,6 +163,7 @@ if(isset($_GET['act']))
 
             case 'account':
                 
+              
                 //Update info
                 if(isset($_POST['save_change']))
                 {
@@ -183,6 +184,7 @@ if(isset($_GET['act']))
                 {   
                     $temp_img = $_SESSION['auth_user']['image'];
                     list($_SESSION['msg'],$status)  = update_img_1();
+                    
                    if($status==1)
                    {
                     
@@ -191,17 +193,12 @@ if(isset($_GET['act']))
                         $_SESSION['auth_user']['image']=$_FILES["uploadfile"]["name"];
                     }
                     else $_SESSION['auth_user']['image'] = $temp_img;
-                    
-                    
-                   
-                    // $filename = $_FILES["uploadfile"]["name"];
-	                // $tempname = $_FILES["uploadfile"]["tmp_name"];
-                    // upload_img($filename,$tempname);
-                    // $_SESSION['auth_user']['image']=$filename;
+    
                     update_user_img('user',$_SESSION['auth_user']['email'],$_SESSION['auth_user']['image'],connectdb());
-                   
+                    header('Location: index.php?act=account');
+                    exit(0);
                 }
-               
+
                 include "./view/myaccount.php";
                 break;
             
