@@ -1,4 +1,3 @@
-
 <?php
 if(isset($_SESSION['msg']))
 {show_to_warning($_SESSION['msg']);unset($_SESSION['msg']);}
