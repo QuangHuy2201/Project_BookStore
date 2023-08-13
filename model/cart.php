@@ -29,7 +29,7 @@ function add_cart()
         ];
         $_SESSION['cart'][] = $product_cart;
     }
-    header('Location: index.php?act=cart');
+   // header('Location: index.php?act=cart');
 }
 
 function show_to_cart()
