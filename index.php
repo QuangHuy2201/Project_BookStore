@@ -159,6 +159,7 @@ if(isset($_GET['act']))
                 
                 include "./view/product.php";
                 break;
+
             case 'account':
                 
                 //Update info
@@ -194,6 +195,17 @@ if(isset($_GET['act']))
 
                 include "./view/myaccount.php";
                 break;
+            
+            case 'checkout':
+
+                include "./view/checkout.php";
+                break;
+
+            case 'about':
+
+                include "./view/about.php";
+                break;
+            
         }
     }
 else {

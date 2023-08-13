@@ -95,7 +95,7 @@
 
         <div class="col-3">
             <div class="bg-white p15">
-                <div class="txt-semiBold">SẢN PHẨM BÁN CHẠY</div>
+                <div class="txt-semiBold border-bottom">SẢN PHẨM BÁN CHẠY</div>
                 <div>
                     <?php
                         foreach($views_1 as $product_view) {
@@ -200,7 +200,7 @@
 
         <div class="col-3">
             <div class="bg-white p15">
-                <div class="txt-semiBold">SẢN PHẨM BÁN CHẠY</div>
+                <div class="txt-semiBold border-bottom">SẢN PHẨM BÁN CHẠY</div>
                 <div>
                     <?php
                         foreach($views_2 as $product_view) {
@@ -305,7 +305,7 @@
 
         <div class="col-3">
             <div class="bg-white p15">
-                <div class="txt-semiBold">SẢN PHẨM BÁN CHẠY</div>
+                <div class="txt-semiBold border-bottom">SẢN PHẨM BÁN CHẠY</div>
                 <div>
                     <?php
                         foreach($views_3 as $product_view) {

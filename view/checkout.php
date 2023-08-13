@@ -1,64 +1,76 @@
-<!-- Cart items details -->
-<div class="cart-wrapper bg-gray h-100vh">
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <h2 class="cart-title mt20">Giỏ hàng</h2>
-                <div class="row txt-bold text-center bg-white mlr0 pt10 pb10 b-radius w-100 mb20">
-                    <div class="col-1">STT</div>
-                    <div class="col-4">Tên Sản Phẩm</div>
-                    <div class="col-2">Đơn giá</div>
-                    <div class="col-2">Số lượng</div>
-                    <div class="col-2">Thành tiền</div>
-                    <div class="col-1">Xoá</div>
-                </div>
-                
-                <?php $total = show_to_cart(); ?>
-                <?php   
-               
-                ?>
-            </div>
+<div class="container">
+    <div class="row g-5 mt20 fs14">
+        <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-primary txt-medium fs18">Lựa chọn của bạn</span>
+                <span class="badge bg-primary rounded-pill">3</span>
+            </h4>
+            <ul class="list-group mb-3 fs16">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="p10">
+                        <p class="mb-0">Brief description</p>
+                    </div>
+                    <span class="text-body-secondary">$12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="p10">
+                        <p class="mb-0">Brief description</p>
+                    </div>
+                    <span class="text-body-secondary">$12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center p10">
+                    <span class="txt-medium ms-3">Tổng cộng</span>
+                    <p class="txt-semiBold mb-0">$20</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3 fs18 txt-medium text-primary">Địa chỉ nhận hàng</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="lastName" class="form-label">Họ tên</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="">
+                    </div>
 
-            <div class="col-4">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="mt20 mb20">Thông tin thanh toán</h2>
-                        <div class="bg-white b-radius p30">
-                            <div class="price d-flex justify-content-between mb10">
-                                <div class="price_heading">Tạm tính</div>
-                                <div class="price-value">
-                                    <?php echo number_format($total); ?>đ
-                                </div>
-                            </div>
-                            <div class="discount d-flex justify-content-between mb10">
-                                <div class="discount-heading">Giảm giá</div>
-                                <div class="discount-value">0đ</div>
-                            </div>
-                            <div class="ship-fee d-flex justify-content-between mb10">
-                                <div class="ship-fee-heading">Phí giao hàng</div>
-                                <div class="ship-fee-value">0đ</div>
-                            </div>
-                            <div class="total d-flex justify-content-between mt20 txt-semiBold fs20">
-                                <div class="total-heading">Tổng thanh toán</div>
-                                <div class="total-value">
-                                    <?php echo number_format($total); ?>đ
-                                </div>
-                            </div>
-                            <form method="GET" class="row d-flex justify-content-between mt10">
-                                <a type="submit" name="delete_all" href="index.php?act=cart&delete_all" <?php if ($total == 0)  echo 'class="col-4 btn disabled btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
-                                                                                                        else echo 'class="col-4 btn btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
-                                                                                                        ?>>
-                                    Xoá tất cả</a>
-                                <a href="#" class="col-7 order b-radius mt10 btn-outline-primary">Đặt hàng</a>
-                            </form>
-                        </div>
+                    <div class="col-12">
+                        <label for="address" class="form-label">Địa chỉ</label>
+                        <input type="text" class="form-control" id="address" placeholder="" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="phone-number" class="form-label">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phone-number" placeholder="" required>
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <h4 class="mb-3">Phương thức thanh toán</h4>
+
+                <div class="my-3">
+                    <div class="form-check">
+                        <input id="cod" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="momo" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <label class="form-check-label" for="momo">Ví điện tử Momo</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="vnpay" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <label class="form-check-label" for="vnpay">Ví điện tử Vnpay</label>
                     </div>
                 </div>
-            </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="submit">Đồng ý</button>
+            </form>
         </div>
     </div>
 </div>
-
-<?php
-include "footer.php";
-?>

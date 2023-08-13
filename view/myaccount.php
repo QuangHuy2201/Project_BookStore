@@ -99,7 +99,7 @@
                         </div>
                         <!-- Save changes button-->
                         <button  class="btn btn-danger fs16" type="reset">Huỷ</button>
-                        <button type="submit" name ="save_change" class="btn btn-primary fs16" type="button">Lưu thay đổi</button>
+                        <button type="submit" name ="save_change" class="btn text-white btn-bg fs16" type="button">Lưu thay đổi</button>
                     </form>
                 </div>
             </div>

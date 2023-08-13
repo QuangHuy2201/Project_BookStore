@@ -1,9 +1,9 @@
 <!-- Cart items details -->
-<div class="cart-wrapper bg-gray h-100vh">
-    <div class="container">
+<div class="cart-wrapper bg-gray">
+    <div class="container mb45">
         <div class="row">
             <div class="col-8">
-                <h2 class="cart-title mt20">Giỏ hàng</h2>
+                <h2 class="cart-title mt20 mb20">Giỏ hàng</h2>
                 <div class="row txt-bold text-center bg-white mlr0 pt10 pb10 b-radius w-100 mb20">
                     <div class="col-1">STT</div>
                     <div class="col-4">Tên Sản Phẩm</div>
@@ -49,7 +49,7 @@
                                                                                                         else echo 'class="col-4 fs14 btn btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
                                                                                                         ?>>
                                     Xoá tất cả</a>
-                                <a href="#" class="col-7 order b-radius mt10 btn-outline-primary">Đặt hàng</a>
+                                <a href="index.php?act=checkout" class="col-7 order b-radius mt10 btn-bg">Đặt hàng</a>
                             </form>
                         </div>
                     </div>
@@ -58,7 +58,3 @@
         </div>
     </div>
 </div>
-
-<?php
-include "footer.php";
-?>
