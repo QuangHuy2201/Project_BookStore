@@ -2,8 +2,8 @@
     <!-- Account page navigation-->
     <nav class="nav nav-borders">
         <a class="nav-link active ms-0" href="#" target="__blank">Thông tin cá nhân</a>
-        <a class="nav-link" href="#" target="__blank">Thanh toán</a>
-        <a class="nav-link" href="#"  target="__blank">Thông báo</a>
+        <a class="nav-link" target="__blank">Thanh toán</a>
+        <a class="nav-link"  target="__blank">Thông báo</a>
     </nav>
     <hr class="mt-0 mb-4">
     <div class="row">
@@ -13,16 +13,18 @@
                 <div class="card-header">Ảnh đại diện</div>
                 <div class="card-body text-center">
                     <!-- Profile picture image-->
-                    <?php 
-                        if($_SESSION['auth_user']['image']) echo '<img class="img-account-profile rounded-circle mb-2" src="./static/images/logo/'.$_SESSION['auth_user']['image'].'" alt="ảnh đại diện">';
-                        else echo '<img class="img-account-profile rounded-circle mb-2" src="./static/images/logo/blank-profile-picture.png" alt="ảnh đại diện">';
-                        // echo '<img class="img-account-profile rounded-circle mb-2" src="./static/images/logo/blank-profile-picture.png" alt="ảnh đại diện">';
-                    ?>
+                    <img class="img-account-profile rounded-circle mb-2" width="150"  src="./static/images/user/<?php if($_SESSION['auth_user']['image']) echo $_SESSION['auth_user']['image']; else echo 'blank-profile-picture.png' ?>" alt="ảnh đại diện">
                     <!-- Profile picture help block-->
                     <div class="small font-italic text-muted mb-4">Ảnh JPG hoặc PNG và không được lớn hơn 5 MB</div>
                     <!-- Profile picture upload button-->
-                    <input type="file" id="upload" hidden/>
-                    <label class="btn btn-primary label_for_upload fs14" for="upload">Tải ảnh lên</label>
+                    <form method ="POST" enctype="multipart/form-data" onsubmit="">
+                    <div class="form-group">
+				        <input class="form-control" type="file" name="uploadfile" value="" />
+			        </div>   
+                    <!-- <input type="file" id="upload" name="uploadfile" hidden/>
+                    <label class=" btn btn-primary label_for_upload fs14" for="upload">Tải ảnh lên</label> -->
+                    <button class="btn btn-primary label_for_upload fs14 "  type="submit" name="upload" >UPLOAD</button>
+                </form> 
                 </div>
             </div>
         </div>
@@ -104,4 +106,21 @@
         </div>
     </div>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

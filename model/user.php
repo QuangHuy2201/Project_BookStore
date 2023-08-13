@@ -105,7 +105,7 @@ function check_info()
 {
   if(isset($_SESSION['auth_user']))
   {
-    if($_SESSION['auth_user']['name']=="")
+    if($_SESSION['auth_user']['full_name']=="")
     $_SESSION['message_info'] = "Vui lòng cập nhật thông tin tài khoản.";
     else if ($_SESSION['auth_user']['phone']=="")
     $_SESSION['message_info'] = "Vui lòng cập nhật thông tin tài khoản.";
@@ -141,12 +141,13 @@ function update_user_info( $table,$user_email,$user_name, $user_full_name, $user
   SET user_name = '$user_name', full_name='$user_full_name' ,address = '$user_address', phone = '$user_phone', birthday= '$user_birthday' 
   WHERE (email = '$user_email')";
   mysqli_query($conn,$sql);
-  
-  
-  
 
+}
+function update_user_img( $table,$user_email,$image,$conn)
+{
+  $sql = "UPDATE  $table SET image = '$image' WHERE (email = '$user_email')";
+  mysqli_query($conn,$sql);
 
-  
 }
 function Update_user_data($email,$conn){
 
@@ -182,5 +183,29 @@ function Update_user_data($email,$conn){
     else echo"aaa";
 }
 
+function upload_img($filename,$tempname){
 
+	$folder = "./static/images/user/" . $filename;
+
+	// Now let's move the uploaded image into the folder: image
+	if (move_uploaded_file($tempname, $folder)) {
+		return true;
+	} else {
+		return false;
+	}
+
+}
+function delete_file($file_pointer){
+
+  // PHP program to delete a file named gfg.txt
+// using unlink() function
+
+// Use unlink() function to delete a file
+if (!unlink($file_pointer)) {
+    echo ("$file_pointer cannot be deleted due to an error");
+}
+else {
+   // echo ("$file_pointer has been deleted");
+}
+}
 ?>
