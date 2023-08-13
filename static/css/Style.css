@@ -47,6 +47,9 @@ body {
 .txt-bold {
     font-family: Poppins-Bold, sans-serif;
 }
+.txt-blue {
+    color: #2c55a5;
+}
 
 .bg-white {
     background-color: #fff;
@@ -84,8 +87,20 @@ body {
     background-color: #3462bf;
 }
 
+
+
 /* ========== Header ========== */
-.shopping-cart {
+.header-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.header-avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.cart-icon {
     position: relative;
     display: block;
     width: 28px;
@@ -94,12 +109,12 @@ body {
     overflow: hidden;
 }
 
-.shopping-cart-icon {
+.cart-icon i {
     position: relative;
     top: 4px;
     z-index: 1;
-    font-size: 24px;
-    color: white;
+    font-size: 2.4rem;
+    padding-right: 1rem;
 }
 
 .count {
@@ -340,7 +355,12 @@ body {
 
 
 /* ========== Account page ========= */
+.img-account-wrapper {
+    height: 10rem;
+}
+
 .img-account-profile {
+    width: 10rem;
     height: 10rem;
 }
 
@@ -562,6 +582,16 @@ body {
 
 .myform-area .form-area .myform-button .myform-btn:hover {
     background: #07315B;
+}
+
+/* ========= Modal ========== */
+.modal-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-wrapper .modal {
+    
 }
 
 /*========== footer ==========*/

@@ -17,7 +17,7 @@ else $_SESSION['view']+=1;
     <link rel="stylesheet" href="./static/css/common.css">
     <link rel="stylesheet" href="./static/css/Style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </head>
 <body>
     <header class="p-3 bg-blue text-white">
@@ -45,13 +45,14 @@ else $_SESSION['view']+=1;
                     <li><a href="#" class="nav-link px-3 text-white">Liên hệ</a></li>
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="index.php" method="GET">
-                    <input type="hidden" name ="act"value="search"/>
-                    <input type="text" name="search"class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search" 
-                        value="<?php if(isset($_GET['search'])) echo $_GET['search'];?>">
+                    <input type="hidden" name="act" value="search" />
+                    <input type="text" name="search" class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search" value="<?php if (isset($_GET['search'])) echo $_GET['search']; ?>">
                 </form>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <a href="index.php?act=cart" class="btn btn-outline-light me-2 fs14">
-                        <i class="fa-light fa-cart-shopping"></i>
+                    <a href="index.php?act=cart" class="btn btn-outline-light txt-medium d-flex align-items-center me-2 pb05 pt05 fs14">
+                        <div class="cart-icon me-2">
+                            <i class="fa-regular fa-cart-shopping"></i>
+                        </div>
                         Giỏ hàng
                     </a>
                 </form>

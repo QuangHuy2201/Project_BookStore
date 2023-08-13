@@ -49,7 +49,8 @@
                                                                                                         else echo 'class="col-4 fs14 btn btn-outline-danger mt10 b-radius d-flex align-items-center justify-content-center"';
                                                                                                         ?>>
                                     Xoá tất cả</a>
-                                <a href="index.php?act=checkout" class="col-7 order b-radius mt10 btn-bg">Đặt hàng</a>
+                                <a <?php if(!isset($_SESSION['cart']) || ($_SESSION['cart']!=[])) echo 'href="index.php?act=checkout"';
+                                        else echo 'disable'; ?> class="col-7 order b-radius mt10 btn-bg">Đặt hàng</a>
                             </form>
                         </div>
                     </div>
