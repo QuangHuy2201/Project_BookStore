@@ -36,7 +36,7 @@ function register()
         $body = '
         <p> Chúc mừng <b>'.$user_name.'</b> đã đăng kí thành công tài khoản tại <b>Bookstore.</b></p>
         <p> Lời đầu tiên, đội ngũ Bookstore xin gửi lời cảm ơn chân thành đến Quý khách hàng đã trở thành 1 thành viên trong đại gia đình <b>Bookstore</b>. Xin thông báo với quý khách hàng vào tháng 08 này, Bookstore đã chính thức lên 47 tuổi. 
-        tuy đã vào hàng U50 nhưng tinh thần của đội ngũ Bookstore vẫn rất tươi trẻ và sẵn sàng mang đến cho Quý khách hàng nhiều ưu đãi trong chương trình sinh nhật năm nay. </p>
+        Tuy đã vào hàng U50 nhưng tinh thần của đội ngũ Bookstore vẫn rất tươi trẻ và sẵn sàng mang đến cho Quý khách hàng nhiều ưu đãi trong chương trình sinh nhật năm nay. </p>
                           <br><br>
                           <p>Hãy đăng nhập và tận hưởng nhiều ưu đãi mua sắm tại <b>Bookstore</b> dành cho khách hàng mới</p>
                           <img width="700" height="300" src="cid:img">';
