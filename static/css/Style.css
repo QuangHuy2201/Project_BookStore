@@ -81,6 +81,7 @@ body {
 
 .btn-bg {
     background-color: #2c55a5;
+    color: #fff;
 }
 
 .btn-bg:hover {
@@ -94,6 +95,10 @@ body {
 .header-avatar {
     width: 3.5rem;
     height: 3.5rem;
+    cursor: pointer;
+}
+.header-avatar:hover {
+    opacity: 0.7;
 }
 
 .header-avatar img {
@@ -109,7 +114,10 @@ body {
 
 .cart-icon {
     position: relative;
-    display: block;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 28px;
     height: 28px;
     height: auto;
@@ -228,11 +236,12 @@ body {
 
 .product-title {
     line-height: 1.5;
-    height: 4rem;overflow: hidden;
+    height: 4rem;
+    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; 
-    white-space: pre-wrap; 
+    white-space: pre-wrap;
 }
 
 .product-title:hover {

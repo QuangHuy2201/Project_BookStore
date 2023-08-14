@@ -101,7 +101,7 @@
 
                 <hr class="my-4">
                 
-                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="submit" name="btn-submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Đồng ý</button>
+                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="button"data-bs-toggle="modal" data-bs-target="#exampleModal">Đồng ý</button>
                 
                 <div class="modal-wrapper">
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -114,7 +114,7 @@
                                     <h3>Cám ơn bạn đã đặt hàng</h3>
                                 </div>
                                 <div class="modal-footer ">
-                                    <button type="button" class="btn btn-primary txt-white fs16" id="continue">Tiếp tục mua sắm</button>
+                                    <button type="button" class="btn btn-bg txt-white fs16" id="continue">Tiếp tục mua sắm</button>
                                 </div>
                             </div>
                         </div>
