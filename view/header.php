@@ -22,7 +22,6 @@ else $_SESSION['view']+=1;
 <body>
     <header class="p-3 bg-blue text-white">
         <div class="container">
-            <p class="text-dark">Lượt truy cập: <?php echo $_SESSION['view'] ?> </p>
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
@@ -59,18 +58,21 @@ else $_SESSION['view']+=1;
                 <?php
                 if (isset($_SESSION['auth_user'])) 
 				{	
-                    echo '<div class="text-end">';
                     if($_SESSION['auth_user']['image'])
                			 echo '
-                            <a type="button" role="button" data-bs-toggle="dropdown" class="text-white me-2 text-decoration-none fs14 header-avatar">
+                            <div class="text-white me-2 text-decoration-none fs14 header-avatar">
                                 <img src="./static/images/user/'.$_SESSION['auth_user']['image'].'" alt="ảnh đại diện">
-                            </a>
+                            </div>
                     ';
 				 	else 
-						echo '<a type="button" role="button" data-bs-toggle="dropdown" class="text-white me-2 text-decoration-none fs14 header-avatar">
+						echo '<div class="text-white me-2 text-decoration-none fs14 header-avatar">
                                 <img src="./static/images/user/blank-profile-picture.png" alt="ảnh đại diện">
-                            </a>';
-                    echo '<ul class="dropdown-menu fs14">
+                            </div>';
+                    echo '<div class="text-end">
+                        <div class="dropdown-toggle dropdown-icon" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </div>
+                        <ul class="dropdown-menu fs14">
                             <li><a class="dropdown-item" href="index.php?act=account">Thông tin cá nhân</a></li>
                             <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
                         </ul>

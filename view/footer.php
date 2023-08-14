@@ -28,6 +28,7 @@
                     <div class="col">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.6577681146437!2d106.63277347159912!3d10.787127422831098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eacc47be85b%3A0x84babd9ec98ae6c!2zTmjDoCBTw6FjaCBUcuG7sWMgVHV54bq_biBOZXdzaG9w!5e0!3m2!1svi!2s!4v1691149445928!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                    <p class="text-dark fs13">Lượt truy cập: <?php echo $_SESSION['view'] ?> </p>
                 </div>
                 <div class="col-8">
                     <div class="row service pt50 pl20">

@@ -100,6 +100,12 @@ body {
     border-radius: 50%;
 }
 
+.dropdown-icon {
+    cursor: pointer;
+    padding: 1rem;
+    padding-left: 0;
+}
+
 .cart-icon {
     position: relative;
     display: block;
