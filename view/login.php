@@ -28,7 +28,7 @@ if(isset($_SESSION['message_info']))
                                 <label>Mật khẩu</label>
                             </div>
                             <div class="forgot-password fs14 text-end mt10">
-                                <a href="#">Quên mật khẩu?</a>
+                                <a href="index.php?act=forgot">Quên mật khẩu?</a>
                             </div>
                             <div class="myform-button">
                                 <input type="submit" name="btn-login" class="myform-btn" value="Đăng nhập"></input>
