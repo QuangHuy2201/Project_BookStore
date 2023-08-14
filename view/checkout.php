@@ -6,7 +6,31 @@
                 <span class="badge bg-blue rounded-pill">3</span>
             </h4>
             <ul class="list-group mb-3 fs16">
-                <li class="list-group-item d-flex justify-content-between lh-sm">
+              <?php
+              $total = 0;
+              for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) 
+              {
+                $sum = $_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity'];
+                $total+=$sum;
+                $sum = number_format($sum);
+                echo'<li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="p10">
+                        <p class="mb-0">'.$_SESSION['cart'][$i]['product_name']. ':'.$_SESSION['cart'][$i]['quantity'].'cuốn</p>
+                    </div>
+                    <span class="text-body-secondary">'.$sum.'đ</span>
+                    </li>';
+                } 
+                $total = number_format($total);
+                echo'<li class="list-group-item d-flex justify-content-between lh-sm">
+                <div class="p10">
+                    <p class="mb-0">Tổng tiền thanh toán:</p>
+                </div>
+                <span class="text-body-secondary">'.$total.'đ</span>
+                </li>';
+                
+              ?>  
+            
+                <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
                     <div class="p10">
                         <p class="mb-0">Brief description</p>
                     </div>
@@ -21,12 +45,14 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center p10">
                     <span class="txt-medium ms-3">Tổng cộng</span>
                     <p class="txt-semiBold mb-0">$20</p>
-                </li>
+                </li> -->
+
+
             </ul>
         </div>
         <div class="col-md-7 col-lg-8">
             <h4 class="mb-3 fs18 txt-medium txt-blue">Địa chỉ nhận hàng</h4>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation"  method="POST" action="?act=checkout" novalidate>
                 <div class="row g-3">
                     <div class="col-12">
                         <label for="lastName" class="form-label txt-medium">Họ tên</label>
@@ -54,22 +80,22 @@
 
                 <div class="my-3">
                     <div class="form-check">
-                        <input id="cod" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <input id="cod"  type="radio" class="form-check-input" checked required>
                         <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
                     </div>
                     <div class="form-check">
-                        <input id="momo" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <input id="momo"  type="radio" class="form-check-input" required>
                         <label class="form-check-label" for="momo">Ví điện tử Momo</label>
                     </div>
                     <div class="form-check">
-                        <input id="vnpay" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <input id="vnpay"  type="radio" class="form-check-input"  required>
                         <label class="form-check-label" for="vnpay">Ví điện tử Vnpay</label>
                     </div>
                 </div>
 
                 <hr class="my-4">
-
-                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Đồng ý</button>
+                
+                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="submit" name="btn-submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Đồng ý</button>
                 
                 <div class="modal-wrapper">
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

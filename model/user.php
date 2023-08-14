@@ -88,7 +88,8 @@ function login()
 
 
         $_SESSION['message'] = "Đăng nhập thành công";
-        header('Location: index.php?act=home');
+        echo'<script> window.location.href="index.php?act=home";</script>';
+        //header('Location: index.php?act=home');
       }
       else
       {
