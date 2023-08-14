@@ -1,9 +1,14 @@
 <div class="container">
     <div class="row g-5 mt20 fs14">
-        <div class="col-md-5 col-lg-4 order-md-last">
+        <div class="col-md-5 col-lg-5 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="txt-blue txt-medium fs18">Lựa chọn của bạn</span>
-                <span class="badge bg-blue rounded-pill">3</span>
+                <div>
+                    <span class="txt-blue txt-medium fs18 me-2">Lựa chọn của bạn</span>
+                    <span class="badge bg-blue rounded-pill"><?php echo sizeof($_SESSION['cart'])?></span>
+                </div>
+                <a href="index.php?act=cart" class="col-4 fs13 btn btn-outline-danger b-radius d-flex align-items-center justify-content-center">
+                    Thay đổi số lượng
+                </a>
             </h4>
             <ul class="list-group mb-3 fs16">
               <?php
@@ -13,19 +18,20 @@
                 $sum = $_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity'];
                 $total+=$sum;
                 $sum = number_format($sum);
-                echo'<li class="list-group-item d-flex justify-content-between lh-sm">
+                echo'<li class="list-group-item d-flex justify-content-between align-items-center lh-sm">
                     <div class="p10">
-                        <p class="mb-0">'.$_SESSION['cart'][$i]['product_name']. ':'.$_SESSION['cart'][$i]['quantity'].'cuốn</p>
+                        <p class="mb-0">'.$_SESSION['cart'][$i]['product_name'].'</p>
+                        <p class="mb-0 mt10 fs14">Số lượng: '.$_SESSION['cart'][$i]['quantity'].'</p>
                     </div>
                     <span class="text-body-secondary">'.$sum.'đ</span>
                     </li>';
                 } 
                 $total = number_format($total);
-                echo'<li class="list-group-item d-flex justify-content-between lh-sm">
-                <div class="p10">
+                echo'<li class="list-group-item d-flex justify-content-between align-items-center lh-sm">
+                <div class="p10 txt-bold">
                     <p class="mb-0">Tổng tiền thanh toán:</p>
                 </div>
-                <span class="text-body-secondary">'.$total.'đ</span>
+                <span class="txt-bold">'.$total.'đ</span>
                 </li>';
                 
               ?>  
@@ -50,7 +56,7 @@
 
             </ul>
         </div>
-        <div class="col-md-7 col-lg-8">
+        <div class="col-md-7 col-lg-7">
             <h4 class="mb-3 fs18 txt-medium txt-blue">Địa chỉ nhận hàng</h4>
             <form class="needs-validation"  method="POST" action="?act=checkout" novalidate>
                 <div class="row g-3">
@@ -60,7 +66,7 @@
                     </div>
                     <div class="col-12">
                         <label for="email" class="form-label txt-medium">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="<?php echo $_SESSION['auth_user']['email'] ?>" require>
+                        <input type="email" class="form-control" id="email" placeholder="<?php echo $_SESSION['auth_user']['email'] ?>" disabled>
                     </div>
 
                     <div class="col-12">
@@ -84,11 +90,11 @@
                         <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
                     </div>
                     <div class="form-check">
-                        <input id="momo"  type="radio" class="form-check-input" required>
+                        <input id="momo"  type="radio" class="form-check-input" disabled>
                         <label class="form-check-label" for="momo">Ví điện tử Momo</label>
                     </div>
                     <div class="form-check">
-                        <input id="vnpay"  type="radio" class="form-check-input"  required>
+                        <input id="vnpay"  type="radio" class="form-check-input"  disabled>
                         <label class="form-check-label" for="vnpay">Ví điện tử Vnpay</label>
                     </div>
                 </div>

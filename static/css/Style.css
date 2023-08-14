@@ -85,6 +85,7 @@ body {
 
 .btn-bg:hover {
     background-color: #3462bf;
+    color: #fff;
 }
 
 
@@ -355,7 +356,6 @@ body {
     cursor: pointer;
     margin-top: 1rem;
 }
-
 
 /* ========== Account page ========= */
 .img-account-wrapper {
