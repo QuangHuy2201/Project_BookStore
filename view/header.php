@@ -48,9 +48,9 @@ else $_SESSION['view']+=1;
                     <input type="text" name="search" class="form-control form-control-dark fs14" placeholder="Tìm kiếm..." aria-label="Search" value="<?php if (isset($_GET['search'])) echo $_GET['search']; ?>">
                 </form>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <a href="index.php?act=cart" class="btn btn-outline-light txt-medium d-flex align-items-center me-2 pb05 pt05 fs14">
+                    <a href="index.php?act=cart" class="btn btn-outline-light txt-medium d-flex align-items-center pb05 pt05 fs14">
                         <div class="cart-icon me-2">
-                            <i class="fa-regular fa-cart-shopping"></i>
+                            <i class="fa-regular fa-cart-shopping fs18"></i>
                         </div>
                         Giỏ hàng
                     </a>
@@ -58,9 +58,10 @@ else $_SESSION['view']+=1;
                 <?php
                 if (isset($_SESSION['auth_user'])) 
 				{	
+                    echo '<div class="text-end">';
                     if($_SESSION['auth_user']['image'])
                			 echo '
-                            <div class="text-white me-2 text-decoration-none fs14 header-avatar">
+                            <div class="text-white me-2 text-decoration-none fs14 header-avatar"  data-bs-toggle="dropdown" >
                                 <img src="./static/images/user/'.$_SESSION['auth_user']['image'].'" alt="ảnh đại diện">
                             </div>
                     ';
@@ -68,18 +69,15 @@ else $_SESSION['view']+=1;
 						echo '<div class="text-white me-2 text-decoration-none fs14 header-avatar">
                                 <img src="./static/images/user/blank-profile-picture.png" alt="ảnh đại diện">
                             </div>';
-                    echo '<div class="text-end">
-                        <div class="dropdown-toggle dropdown-icon" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="visually-hidden">Toggle Dropdown</span>
-                        </div>
-                        <ul class="dropdown-menu fs14">
+                    echo '
+                        <ul class="dropdown-menu fs14 mt10">
                             <li><a class="dropdown-item" href="index.php?act=account">Thông tin cá nhân</a></li>
                             <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
                         </ul>
                         </div>';}
                	else 
 					echo'<div class="text-end">
-					<a href="index.php?act=login" type="button" class="btn btn-outline-light me-2 fs14">Đăng nhập</a>
+					<a href="index.php?act=login" type="button" class="btn btn-outline-light me-2 fs14  txt-medium">Đăng nhập</a>
 					</div>';
                 ?>      
             </div>
