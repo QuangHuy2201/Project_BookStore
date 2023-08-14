@@ -4,9 +4,10 @@ function add_cart()
 
     $product_name = $_POST['product_name'];
     $price = $_POST['price'];
-    $quantity = $_POST['quantity'];;
+    $quantity = $_POST['quantity'];
     $image = $_POST['image'];
     $category_id = $_POST['category_id'];
+
     //Check product in cart 
     //flag
     $fl = 0;
@@ -25,7 +26,8 @@ function add_cart()
             'price' => $price,
             'quantity' =>  $quantity,
             'image' =>   $image,
-            'category_id' => $category_id
+            'category_id' => $category_id,
+            
         ];
         $_SESSION['cart'][] = $product_cart;
     }

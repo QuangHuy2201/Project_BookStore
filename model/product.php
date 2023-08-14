@@ -164,6 +164,16 @@ function  getLimit_Search($table,$search,$start,$end,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
+function get_AUTO_INCREMENT($table,$conn)
+{
+    $sql = "SELECT `AUTO_INCREMENT` as id
+            FROM  INFORMATION_SCHEMA.TABLES
+            WHERE TABLE_SCHEMA = 'bookstore'
+            AND   TABLE_NAME   = '$table'";
+    $query_run = mysqli_fetch_assoc(mysqli_query($conn,$sql));
+    $query_result = $query_run['id'];
+    return  $query_result;
+}
 
 function show_to_products($products) {
     foreach ($products as $product)  

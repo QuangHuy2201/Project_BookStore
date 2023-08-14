@@ -208,7 +208,11 @@ if(isset($_GET['act']))
                 break;
             
             case 'checkout':
-
+                if(isset($_POST['btn-submit']))
+                {
+                    $_SESSION['id_cart']= get_AUTO_INCREMENT('orders',connectdb());
+                   
+                }
                 include "./view/checkout.php";
                 break;
 
