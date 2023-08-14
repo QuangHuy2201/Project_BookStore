@@ -223,12 +223,11 @@ body {
 
 .product-title {
     line-height: 1.5;
-    height: 4rem;
-    overflow: hidden;
-    display: block;
+    height: 4rem;overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; 
+    white-space: pre-wrap; 
 }
 
 .product-title:hover {

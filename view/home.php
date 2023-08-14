@@ -30,7 +30,7 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-9">
+        <div class="col-lg-9 col-md-12">
             <div class="row bg-white">
                 <div class="list px-0 d-flex justify-content-between align-items-center">
                     <div>
@@ -54,7 +54,7 @@
                     else if($product['category_id']==2)
                     $link_img="./static/images/sach-van-hoc/";
                     else $link_img="./static/images/truyen-tranh-comic/";
-                    echo '<div class="col-3 mt50">
+                    echo '<div class="col-md-3 col-sm-6 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
                                     <a href="index.php?act=detail&name='.$product['product_name'].'">
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-3 d-none d-lg-block">
             <div class="bg-white p15">
                 <div class="txt-semiBold border-bottom">SẢN PHẨM BÁN CHẠY</div>
                 <div>
@@ -112,8 +112,8 @@
                                     <a href="index.php?act=detail&name='.$product_view['product_name'].'">
                                         <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
                                     </a>
-                                    <div class="ms-3">
-                                        <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
+                                    <div class="ms-3 overflow-hidden">
+                                        <a class="product-title w-100 text-wrap text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
                                         <div class="d-flex align-items-center opacity-75 fs13">
                                             <p class="me-1 mb-0">'.$product_view['view'].'</p>
                                             <p class="mb-0">lượt xem</p>
