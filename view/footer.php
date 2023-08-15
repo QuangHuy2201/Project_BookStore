@@ -1,4 +1,4 @@
-    <footer class="mt45 bg-white">
+    <footer class="bg-white">
         <div class="slogan">
             <div class="container">
                 <div class="row">
