@@ -30,7 +30,7 @@ if(isset($_SESSION['msg']))
 			        </div>   
                     <!-- <input type="file" id="upload" name="uploadfile" hidden/>
                     <label class=" btn btn-primary label_for_upload fs14" for="upload">Tải ảnh lên</label> -->
-                    <button class="btn btn-primary label_for_upload fs14 "  type="submit" name="upload" >UPLOAD</button>
+                    <button class="btn btn-bg label_for_upload fs14 "  type="submit" name="upload" >UPLOAD</button>
                 </form> 
                 </div>
             </div>

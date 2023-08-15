@@ -1,12 +1,14 @@
 <div class="container">
     <div class="row g-5 mt20 fs14">
         <div class="col-md-5 col-lg-5 order-md-last">
-            <h4 class="d-flex align-items-center justify-content-between mb-3">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <div>
-                    <span class="txt-blue txt-medium fs18 me-2">Lựa chọn của bạn: </span>
+                    <span class="txt-blue txt-medium fs18 me-2">Lựa chọn của bạn</span>
                     <span class="badge bg-blue rounded-pill"><?php echo sizeof($_SESSION['cart'])?></span>
                 </div>
-                <a type="submit" class="col-4 fs14 btn btn-outline-danger btn-sm b-radius d-flex align-items-center justify-content-center" href="index.php?act=cart">Cập nhật giỏ hàng</a>
+                <a href="index.php?act=cart" class="col-4 fs13 btn btn-outline-danger b-radius d-flex align-items-center justify-content-center">
+                    Thay đổi số lượng
+                </a>
             </h4>
             <ul class="list-group mb-3 fs16">
               <?php
@@ -19,7 +21,7 @@
                 echo'<li class="list-group-item d-flex justify-content-between align-items-center lh-sm">
                     <div class="p10">
                         <p class="mb-0">'.$_SESSION['cart'][$i]['product_name'].'</p>
-                        <p class="fs14 mt10">Số lượng: '.$_SESSION['cart'][$i]['quantity'].'</p>
+                        <p class="mb-0 mt10 fs14">Số lượng: '.$_SESSION['cart'][$i]['quantity'].'</p>
                     </div>
                     <span class="text-body-secondary">'.$sum.'đ</span>
                     </li>';
@@ -56,7 +58,7 @@
         </div>
         <div class="col-md-7 col-lg-7">
             <h4 class="mb-3 fs18 txt-medium txt-blue">Địa chỉ nhận hàng</h4>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation"  method="POST" action="?act=checkout" novalidate>
                 <div class="row g-3">
                     <div class="col-12">
                         <label for="lastName" class="form-label txt-medium">Họ tên</label>
@@ -88,18 +90,18 @@
                         <label class="form-check-label" for="cod">Thanh toán khi nhận hàng</label>
                     </div>
                     <div class="form-check">
-                        <input id="momo"  type="radio" class="form-check-input" required disabled>
+                        <input id="momo"  type="radio" class="form-check-input" disabled>
                         <label class="form-check-label" for="momo">Ví điện tử Momo</label>
                     </div>
                     <div class="form-check">
-                        <input id="vnpay"  type="radio" class="form-check-input"  required disabled>
+                        <input id="vnpay"  type="radio" class="form-check-input"  disabled>
                         <label class="form-check-label" for="vnpay">Ví điện tử Vnpay</label>
                     </div>
                 </div>
 
                 <hr class="my-4">
                 
-                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Đồng ý</button>
+                <button class="w-100 btn text-white btn-bg btn-lg fs16" type="button"data-bs-toggle="modal" data-bs-target="#exampleModal">Đồng ý</button>
                 
                 <div class="modal-wrapper">
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,7 +114,7 @@
                                     <h3>Cám ơn bạn đã đặt hàng</h3>
                                 </div>
                                 <div class="modal-footer ">
-                                    <button type="button" class="btn btn-primary txt-white fs16" id="continue">Tiếp tục mua sắm</button>
+                                    <button type="button" class="btn btn-bg txt-white fs16" id="continue">Tiếp tục mua sắm</button>
                                 </div>
                             </div>
                         </div>

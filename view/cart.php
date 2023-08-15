@@ -50,7 +50,7 @@
                                                                                                         ?>>
                                     Xoá tất cả</a>
                                 <a <?php if(!isset($_SESSION['cart']) || ($_SESSION['cart']!=[]))if(isset($_SESSION['auth_user'])) echo 'href="index.php?act=checkout"';
-                                        else echo 'disable title="Vui lòng đăng nhập để đặt hàng."'; ?> class="col-7 order b-radius mt10 btn-bg">Đặt hàng</a>
+                                        else echo 'disable title="Vui lòng đăng nhập để đặt hàng."'; ?> class="col-7 order b-radius mt10 btn-bg d-flex align-items-center justify-content-center">Đặt hàng</a>
                             </form>
                         </div>
                     </div>

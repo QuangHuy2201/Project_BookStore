@@ -1,6 +1,6 @@
 <?php if ($_GET['act'] = '') echo 'ab'; ?>
 <section id="slider">
-    <div id="carouselExampleIndicators" class="carousel slide">
+    <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -54,7 +54,7 @@
                     else if($product['category_id']==2)
                     $link_img="./static/images/sach-van-hoc/";
                     else $link_img="./static/images/truyen-tranh-comic/";
-                    echo '<div class="col-md-3 col-sm-6 mt50">
+                    echo '<div class="col-md-3 col-sm-6 col-6 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
                                     <a href="index.php?act=detail&name='.$product['product_name'].'">
@@ -119,7 +119,7 @@
                                             <p class="mb-0">lượt xem</p>
                                         </div>
                                         <div class="d-flex align-items-center">
-                                            <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
+                                            <p class="fs10 text-decoration-line-through me-2 d-lg-none d-xl-block">'.$price_old.'</>
                                             <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
                                             <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
                                         </div>
@@ -135,7 +135,7 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-9">
+        <div class="col-lg-9 col-md-12">
             <div class="row bg-white">
                 <div class="list px-0 d-flex justify-content-between align-items-center">
                     <div>
@@ -159,7 +159,7 @@
                     else if($product['category_id']==2)
                     $link_img="./static/images/sach-van-hoc/";
                     else $link_img="./static/images/truyen-tranh-comic/";
-                    echo '<div class="col-3 mt50">
+                    echo '<div class="col-md-3 col-sm-6 col-6 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
                                     <a href="index.php?act=detail&name='.$product['product_name'].'">
@@ -198,7 +198,7 @@
             </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-3 d-none d-lg-block">
             <div class="bg-white p15">
                 <div class="txt-semiBold border-bottom">SẢN PHẨM BÁN CHẠY</div>
                 <div>
@@ -217,14 +217,14 @@
                                     <a href="index.php?act=detail&name='.$product_view['product_name'].'">
                                         <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
                                     </a>
-                                    <div class="ms-3">
+                                    <div class="ms-3 overflow-hidden">
                                         <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
                                         <div class="d-flex align-items-center opacity-75 fs13">
                                             <p class="me-1 mb-0">'.$product_view['view'].'</p>
                                             <p class="mb-0">lượt xem</p>
                                         </div>
                                         <div class="d-flex align-items-center">
-                                            <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
+                                            <p class="fs10 text-decoration-line-through me-2 d-lg-none d-xl-block">'.$price_old.'</>
                                             <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
                                             <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
                                         </div>
@@ -240,7 +240,7 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-9">
+        <div class="col-lg-9 col-md-12">
             <div class="row bg-white">
                 <div class="list px-0 d-flex justify-content-between align-items-center">
                     <div>
@@ -264,7 +264,7 @@
                     else if($product['category_id']==2)
                     $link_img="./static/images/sach-van-hoc/";
                     else $link_img="./static/images/truyen-tranh-comic/";
-                    echo '<div class="col-3 mt50">
+                    echo '<div class="col-md-3 col-sm-6 col-6 mt50">
                             <div class="product-item p10 mb15">
                                 <div class="product-img text-center">
                                     <a href="index.php?act=detail&name='.$product['product_name'].'">
@@ -303,7 +303,7 @@
             </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-3 d-none d-lg-block">
             <div class="bg-white p15">
                 <div class="txt-semiBold border-bottom">SẢN PHẨM BÁN CHẠY</div>
                 <div>
@@ -322,14 +322,14 @@
                                     <a href="index.php?act=detail&name='.$product_view['product_name'].'">
                                         <img src="'.$link_img.''.$product_view['image'].'" width="60"></img>
                                     </a>
-                                    <div class="ms-3">
+                                    <div class="ms-3 overflow-hidden">
                                         <a class="product-title text-reset text-decoration-none fs13" name="detail" href="index.php?act=detail&name='.$product_view['product_name'].'" >'.$product_view['product_name'].'</a>
                                         <div class="d-flex align-items-center opacity-75 fs13">
                                             <p class="me-1 mb-0">'.$product_view['view'].'</p>
                                             <p class="mb-0">lượt xem</p>
                                         </div>
                                         <div class="d-flex align-items-center">
-                                            <p class="fs10 text-decoration-line-through me-2">'.$price_old.'</>
+                                            <p class="fs10 text-decoration-line-through me-2 d-lg-none d-xl-block">'.$price_old.'</>
                                             <p class="product-price me-2 text-danger txt-medium">'.$price.'</p>
                                             <p class="discount_percent badge rounded-pill text-bg-danger">'.$discount_percent.'%</p>
                                         </div>
