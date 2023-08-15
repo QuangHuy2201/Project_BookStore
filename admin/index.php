@@ -7,15 +7,22 @@
 // include "./model/passwordBcrypt.php";
 
 //Header
-
 include "./view/header.php";
 
 if(isset($_GET['act']))
     {   
         switch($_GET['act'])
         {   
-            case 'home':
-                include "./home.php";
+            // case 'home':
+            //     include "./view/home.php";
+            //     break;
+
+            case 'user':
+                include "./view/user.php";
+                break;
+                
+            case 'category':
+                include "./view/category.php";
                 break;
 
             default:

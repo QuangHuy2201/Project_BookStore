@@ -22,10 +22,11 @@ body {
 .tar {text-align: right;}
 .relative {position: relative;}
 .z1 {z-index: 1;}
-hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
+/* hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;} */
 
 .brb15 {border-radius: 0 0 1.5rem 1.5rem;}
 .br15 {border-radius: 1.5rem;}
+.w16 {width: 1.6rem;}
 
 /*---------- upper -----------*/
 #container {
@@ -181,26 +182,11 @@ hr {border:none; border-bottom: 0.1rem solid #199342; margin: 0;}
 .ttl {
   text-align: center;
 }
-mark {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
+
+.ls02 {
+  letter-spacing: 0.02rem;
 }
-mark:after {
-  content:"";
-  display: block;
-  width: 100%;
-  height: 1.3rem;
-  position: absolute;
-  left: 0rem;
-  bottom: 1rem;
-  z-index: -1;
-  background : -moz-linear-gradient(0% 50% 0deg,rgba(214, 196, 130, 1) 0%,rgba(245, 231, 203, 1) 50%,rgba(226, 210, 170, 1) 100%);
-  background : -webkit-linear-gradient(0deg, rgba(214, 196, 130, 1) 0%, rgba(245, 231, 203, 1) 50%, rgba(226, 210, 170, 1) 100%);
-  background : -o-linear-gradient(0deg, rgba(214, 196, 130, 1) 0%, rgba(245, 231, 203, 1) 50%, rgba(226, 210, 170, 1) 100%);
-  background : -ms-linear-gradient(0deg, rgba(214, 196, 130, 1) 0%, rgba(245, 231, 203, 1) 50%, rgba(226, 210, 170, 1) 100%);
-  background : linear-gradient(90deg, rgba(214, 196, 130, 1) 0%, rgba(245, 231, 203, 1) 50%, rgba(226, 210, 170, 1) 100%);
-}
+
 .speech {
   position: relative;
   z-index: 1;
