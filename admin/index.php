@@ -5,25 +5,31 @@ include "../model/connectDB.php";
 // include "./model/page.php";
 include "./model/login.php";
 include "./model/user.php";
+include "./model/product.php";
 // include "./model/passwordBcrypt.php";
 
 //Header
 include "./view/header.php";
+session_start();
 
 if(isset($_GET['act']))
     {   
         switch($_GET['act'])
         {   
-            case'home':
-                include "./view/home.php";
+            case'user':
+                include "./view/user.php";
                 break;
-            // case 'login':
-            //     if (isset($_POST['btn-login']))
-            //     {   
-            //         login_admin(connectdb());
-            //     }
-            //     include "./view/login.php";
-            //     break;
+            case 'login':
+                if (isset($_POST['btn-login']))
+                {   
+                    login_admin(connectdb());
+                }
+                include "./view/login.php";
+                break;
+            case'logout':
+                unset($_SESSION['auth_user']);
+                include "./view/login.php";
+                break;
             
             case 'user':
                 if(isset($_POST['btn-submit-user'])) {
@@ -47,6 +53,7 @@ if(isset($_GET['act']))
                 break;
 
             case 'product':
+               list($page_left,$page_right,$page_current,$products,$pages) =paging(12);
                 include "./view/product.php";
                 break;
 
@@ -56,7 +63,5 @@ if(isset($_GET['act']))
         }
     }
 else {
-    
     include "./view/login.php";
-   
-}
+   }

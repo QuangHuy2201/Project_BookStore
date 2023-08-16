@@ -344,8 +344,6 @@ function page_bar_search($page_current,$page_left,$page_right,$pages,$search){
         echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
         echo'<a href="index.php?act=search&search='.$search.'&page='.$pages.'" class="btn btn-outline-secondary">>></a> ';
         }
-    
-    
 }   
 
 function page_bar_category($page_current,$page_left,$page_right,$pages,$category_id){

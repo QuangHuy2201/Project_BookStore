@@ -7,7 +7,7 @@ function login_admin($conn)
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-  $login_query =  "SELECT * FROM user WHERE email ='$email' "  ;
+  $login_query =  "SELECT * FROM user WHERE email ='$email' and role_id=1 "  ;
   $login_query_run = mysqli_query($conn,$login_query);
 
   //Check user name true
@@ -33,7 +33,7 @@ function login_admin($conn)
         $user_role = $user_data['role_id'];
 
        
-        $_SESSION['auth_user'] =[
+        $_SESSION['auth_admin'] =[
 
           'name' => $user_name,
           'full_name' => $full_name,
@@ -46,17 +46,18 @@ function login_admin($conn)
           ];
 
 
-        $_SESSION['message'] = "Đăng nhập thành công";
-        header('Location: index.php?act=home');
+        $_SESSION['message-ad'] = "Đăng nhập thành công";
+        header('Location: index.php?act=user');
       }
       else
       {
-        $_SESSION['message_warning'] = "Sai password ";
+        $_SESSION['message_warning-ad'] = "Sai password ";
       }
 
   }
   else{
-    $_SESSION['message_warning'] = "Không tìm thấy Email ";
+    $_SESSION['message_warning-ad'] = "Không tìm thấy Email ";
+    
   }
 }
 
