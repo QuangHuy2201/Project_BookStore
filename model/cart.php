@@ -63,7 +63,7 @@ function show_to_cart()
             </div>
             <div class="col-2 my-auto">'.number_format($_SESSION['cart'][$i]['price']).'đ</div>
             
-            <div class="col-2 my-auto">
+            <div class="col-2 my-auto"> 
             <form method="GET">
                 <a class="btn quantity-arrow-minus" type="submit"  name="sub" href="index.php?act=cart&sub='.$i.'"> - </a>
                 <input disabled class="quantity-num" type="number" value="'.$_SESSION['cart'][$i]['quantity'].'"></input>

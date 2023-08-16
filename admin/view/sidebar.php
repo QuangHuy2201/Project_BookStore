@@ -61,5 +61,6 @@
         </li>
     </ul>
     <hr>
-    <div class="btn btn-primary fs14">Đăng xuất</div>
+    <?php if(isset($_SESSION['auth_admin']))echo $_SESSION['auth_admin']['name'];?>
+    <a class="btn btn-primary fs14" href="index.php?act=logout">Đăng xuất</a>
 </div>

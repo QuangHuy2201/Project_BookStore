@@ -41,30 +41,28 @@
             </tbody>
         </table>
 
-        <h3 class="txt-semiBold mt45">Danh sách thành viên</h3>
+        <h3 class="txt-semiBold mt45">Danh sách sản phẩm</h3>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Họ và tên</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Giá cũ</th>
                     <th scope="col">Sửa</th>
                     <th scope="col">Xoá</th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-                    $user = getAllUser("user", connectdb());
-                    $count = 0;
-                    foreach ($user as $user) {
-                        $count++;
+                    page_bar($page_current,$page_left,$page_right,$pages);
+                    foreach ($products as $product) {
                         echo '
                             <tr>
-                                <th scope="row">'.$count.'</th>
-                                <td>'.$user['full_name'].'</td>
-                                <td>'.$user['email'].'</td>
-                                <td>'.$user['phone'].'</td>
+                                <th scope="row">'.$product['product_id'].'</th>
+                                <td>'.$product['product_name'].'</td>
+                                <td>'.number_format($product['price']).'</td>
+                                <td>'.number_format($product['price_old']).'</td>
                                 <td>
                                     <a class="btn btn-success fs14" data-bs-toggle="dropdown" href="collapseEdit"  role="button" aria-expanded="false" aria-controls="collapseExample">Sửa</a>    
                                 </td>
@@ -74,6 +72,7 @@
                             </tr>
                         ';
                     }
+                   
                 ?>
                 
             </tbody>

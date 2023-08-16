@@ -41,30 +41,24 @@
             </tbody>
         </table>
 
-        <h3 class="txt-semiBold mt45">Danh sách thành viên</h3>
+        <h3 class="txt-semiBold mt45">Danh sách danh mục</h3>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Họ và tên</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Tên danh mục</th>
                     <th scope="col">Sửa</th>
                     <th scope="col">Xoá</th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
-                    $user = getAllUser("user", connectdb());
-                    $count = 0;
-                    foreach ($user as $user) {
-                        $count++;
+                    $category = getAll("category", connectdb());
+                    foreach ($category as $category) {
                         echo '
                             <tr>
-                                <th scope="row">'.$count.'</th>
-                                <td>'.$user['full_name'].'</td>
-                                <td>'.$user['email'].'</td>
-                                <td>'.$user['phone'].'</td>
+                                <th scope="row">'.$category['category_id'].'</th>
+                                <td>'.$category['category_name'].'</td>
                                 <td>
                                     <a class="btn btn-success fs14" data-bs-toggle="dropdown" href="collapseEdit"  role="button" aria-expanded="false" aria-controls="collapseExample">Sửa</a>    
                                 </td>
