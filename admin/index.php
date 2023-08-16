@@ -10,15 +10,15 @@ include "./model/product.php";
 
 //Header
 include "./view/header.php";
+
+$header ="";
 session_start();
 
 if(isset($_GET['act']))
     {   
         switch($_GET['act'])
         {   
-            case'user':
-                include "./view/user.php";
-                break;
+           
             case 'login':
                 if (isset($_POST['btn-login']))
                 {   
@@ -32,6 +32,7 @@ if(isset($_GET['act']))
                 break;
             
             case 'user':
+                $header ="user";
                 if(isset($_POST['btn-submit-user'])) {
                     // var_dump($_POST['full_name']);
                     $full_name = $_POST['full_name'];
@@ -44,15 +45,21 @@ if(isset($_GET['act']))
                     $user_id = $_POST['user_id'];
                     deleteUser('user', $user_id, connectdb());
                 }
-                
+                if(isset($_POST['btn-add-user']))
+                {
+                    register(connectdb());
+
+                }
                 include "./view/user.php";
                 break;
 
             case 'category':
+                $header ="category";
                 include "./view/category.php";
                 break;
 
             case 'product':
+                $header ="product";
                list($page_left,$page_right,$page_current,$products,$pages) =paging(10);
                 include "./view/product.php";
                 break;

@@ -3,7 +3,7 @@
 function  getAllUser($table,$conn)
 { 
 
-    $sql = "SELECT * FROM $table where role_id = 2";
+    $sql = "SELECT * FROM $table ";
 
     return $query_run = mysqli_query($conn,$sql);
 }

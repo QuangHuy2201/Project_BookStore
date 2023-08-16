@@ -6,19 +6,19 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto fs14">
         <li class="nav-item">
-            <a href="index.php?act=user" class="nav-link active" aria-current="page" title="Thông tin thành viên">
+            <a href="index.php?act=user" class="nav-link text-white <?php if($header=="user") echo' active';?>" aria-current="page" title="Thông tin thành viên">
                 <i class="fa-light fa-user w16"></i>
                 Thành viên
             </a>
         </li>
         <li>
-            <a href="index.php?act=category" class="nav-link text-white" title="Các phân loại sản phẩm">
+            <a href="index.php?act=category" class="nav-link text-white<?php if($header=="category") echo' active';?>" title="Các phân loại sản phẩm">
                 <i class="fa-light fa-list w16"></i>
                 Danh mục
             </a>
         </li>
         <li>
-            <a href="index.php?act=product" class="nav-link text-white" title="Danh mục sản phẩm">
+            <a href="index.php?act=product" class="nav-link text-white <?php if($header=="product") echo' active';?>" title="Danh mục sản phẩm">
                 <i class="fa-light fa-grid-2 w16"></i>
                 Sản phẩm
             </a>
@@ -61,6 +61,6 @@
         </li>
     </ul>
     <hr>
-    <?php if(isset($_SESSION['auth_admin']))echo $_SESSION['auth_admin']['name'];?>
+    <p class="text-center"><?php if(isset($_SESSION['auth_admin']))echo $_SESSION['auth_admin']['name'];?></p>
     <a class="btn btn-primary fs14" href="index.php?act=logout">Đăng xuất</a>
 </div>
