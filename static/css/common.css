@@ -176,6 +176,7 @@ body {
 .black {color: #000;}
 .no-wrap {white-space: nowrap;}
 .grey_bg {background: #e1f5eb80;}
+.grey02{background-color: #ccc !important;}
 .grey_txt {color: #e1f5eb80;}
 .cursor-disabled {cursor: not-allowed;}
 

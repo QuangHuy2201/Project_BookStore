@@ -7,7 +7,8 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Tên danh mục</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Danh mục sản phẩm</th>
                     <th scope="col">Thêm</th>
                 </tr>
             </thead>
@@ -34,7 +35,7 @@
                 </form>
                     <tr>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <p>Thêm người dùng thành công!</p>
+                        <p>Thêm sản phẩm thành công!</p>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     </tr>

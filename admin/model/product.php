@@ -73,6 +73,18 @@ function page_bar($page_current,$page_left,$page_right,$pages)
     }
 }   
 
+function  updateCategory($table, $category_name, $category_id, $conn){ 
 
+    $sql = "UPDATE $table SET category_name = '$category_name' WHERE (category_id = '$category_id')";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+
+function  deleteCategory($table, $category_id, $conn){ 
+
+    $sql = "DELETE FROM $table WHERE (category_id = $category_id);";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
 
 ?>

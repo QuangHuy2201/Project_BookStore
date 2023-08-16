@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form method="POST" action="index.php?act=user">
-                                            <input type="hidden" class="form-control" value="'.$user['user_id'].'" id="user_id" name="user_id" />
+                                            <input class="form-control" value="'.$user['user_id'].'" id="user_id" name="user_id" disabled />
 
                                             <p>Bạn có chắc chắn muốn xoá người dùng '.$user['full_name'].' .</p>
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
