@@ -40,7 +40,7 @@ else $_SESSION['view']+=1;
                         </ul>
                     </li>
                     <li><a href="index.php?act=about" class="nav-link px-3 text-white">Về chúng tôi</a></li>
-                    <li><a href="#" class="nav-link px-3 text-white">Liên hệ</a></li>
+                    <li><a href="index.php?act=contact" class="nav-link px-3 text-white">Liên hệ</a></li>
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 search-mobile" action="index.php" method="GET">
                     <input type="hidden" name="act" value="search" />
@@ -65,7 +65,7 @@ else $_SESSION['view']+=1;
                             </div>
                     ';
 				 	else 
-						echo '<div class="text-white me-2 text-decoration-none fs14 header-avatar">
+						echo '<div class="text-white me-2 text-decoration-none fs14 header-avatar"  data-bs-toggle="dropdown" >
                                 <img src="./static/images/user/blank-profile-picture.png" alt="ảnh đại diện">
                             </div>';
                     echo '

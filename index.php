@@ -230,6 +230,9 @@ if(isset($_GET['act']))
                 include "./view/forgotpassword.php";
                 break;
             
+            case 'contact':
+                include "./view/contact.php";
+                break;
         }
     }
 else {

@@ -4,6 +4,7 @@ include "../model/connectDB.php";
 // include "./model/product.php";
 // include "./model/page.php";
  include "./model/login.php";
+include "./model/user.php";
 // include "./model/passwordBcrypt.php";
 
 //Header
@@ -16,13 +17,18 @@ if(isset($_GET['act']))
             case'home':
                 include "./view/home.php";
                 break;
-            case 'login':
-                if (isset($_POST['btn-login']))
-                {   
-                    login_admin(connectdb());
-                }
-                include "./view/login.php";
+            // case 'login':
+            //     if (isset($_POST['btn-login']))
+            //     {   
+            //         login_admin(connectdb());
+            //     }
+            //     include "./view/login.php";
+            //     break;
+            
+            case 'user':
+                include "./view/user.php";
                 break;
+
             default:
                 include "./view/login.php";
                 break;
