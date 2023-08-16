@@ -149,9 +149,43 @@
     <div class="row mb30">
         <div class="col detail-main bg-white mt20 p20">
             <div class="mb30">
-                <h3>Mô tả sản phẩm</h3>
+                <h3>Mô tả sản phẩm: đang cập nhật</h3> 
             </div>
-            <p>Đang cập nhật</p>
+           
+            <div class="">
+                <h3>Đánh giá sản phẩm</h3>
+            </div>
+      
+       
+        <form action="index.php?act=detail&name=<?php echo $product['product_name'] ;?>" method="POST">    
+        <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Mời bạn đánh giá:</span>
+        <input type="text"  name="feedback" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="row d-flex justify-content-center">
+        <?php
+       if(isset($_SESSION['auth_user']))
+       echo'<button type="submit" name="btn-submit-feedback" class="btn btn-primary fs20" style="width: 15%;">Xác nhận</button>';
+        else echo'<div class="alert alert-warning d-flex justify-content-center" role="alert">
+        Vui lòng đăng nhập để thêm bình luận!
+      </div>
+       '
+        ?>
+        </div>
+        </form>
+      
+
+        <?php
+         foreach( $feedbacks as $feedback)
+         {
+
+            echo'<p class="fw-bold">'.$feedback['user_name'].': </p>
+                <p>'.$feedback['feedback'].'</p>
+                <br>
+                 ';
+
+         }
+        ?>
         </div>
     </div>
 </div>

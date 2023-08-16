@@ -164,6 +164,17 @@ function  getLimit_Search($table,$search,$start,$end,$conn){
     
     return $query_run = mysqli_query($conn,$sql);
 }
+function  add_feedback($table,$product_id,$feedback,$user_name,$conn){ 
+
+    $sql = "INSERT INTO $table (product_id,feedback,user_name) VALUES ('$product_id', '$feedback','$user_name')";
+    
+    return $query_run = mysqli_query($conn,$sql);
+}
+
+function getALL_feedback($table,$product_id ,$conn){
+    $sql = "SELECT * FROM $table WHERE product_id ='$product_id'";
+    return $query_run = mysqli_query($conn,$sql);
+}
 function get_AUTO_INCREMENT($table,$conn)
 {
     $sql = "SELECT `AUTO_INCREMENT` as id
