@@ -29,6 +29,14 @@ if(isset($_GET['act']))
                 include "./view/user.php";
                 break;
 
+            case 'category':
+                include "./view/category.php";
+                break;
+
+            case 'product':
+                include "./view/product.php";
+                break;
+
             default:
                 include "./view/login.php";
                 break;

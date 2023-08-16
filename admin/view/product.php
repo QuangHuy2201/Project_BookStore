@@ -3,7 +3,7 @@
         <?php include "./view/sidebar.php" ?>
     </div>
     <div class="col-10 p20">
-        <h3 class="txt-semiBold">Thêm danh mục mới</h3>
+        <h3 class="txt-semiBold">Thêm sản phẩm</h3>
         <table class="table table-hover">
             <thead>
                 <tr>

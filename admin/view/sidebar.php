@@ -14,52 +14,52 @@
         <li>
             <a href="index.php?act=category" class="nav-link text-white" title="Các phân loại sản phẩm">
                 <i class="fa-light fa-list w16"></i>
-                Phân loại sản phẩm
+                Danh mục
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Danh mục sản phẩm">
+            <a href="index.php?act=product" class="nav-link text-white" title="Danh mục sản phẩm">
                 <i class="fa-light fa-grid-2 w16"></i>
                 Sản phẩm
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Bình luận của khách về sản phẩm">
+            <a class="nav-link text-secondary cursor-disabled" title="Bình luận của khách về sản phẩm">
                 <i class="fa-light fa-gavel w16"></i>
                 Đánh giá sản phẩm
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Danh sách đơn hàng và trạng thái">
+            <a class="nav-link text-secondary cursor-disabled" title="Danh sách đơn hàng và trạng thái">
                 <i class="fa-light fa-box w16"></i>
                 Đơn hàng
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Phản hồi thắc mắc của khách hàng">
+            <a class="nav-link text-secondary cursor-disabled" title="Phản hồi thắc mắc của khách hàng">
                 <i class="fa-light fa-comment w16"></i>
                 Phản hồi khách hàng
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Gửi mail khuyến mãi cho khách hàng">
+            <a class="nav-link text-secondary cursor-disabled" title="Gửi mail khuyến mãi cho khách hàng">
                 <i class="fa-light fa-rectangle-ad w16"></i>
                 Giới thiệu khuyến mãi
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Thay đổi banner tại trang chủ">
+            <a class="nav-link text-secondary cursor-disabled" title="Thay đổi banner tại trang chủ">
                 <i class="fa-light fa-sliders w16"></i>
                 Thay đổi banner
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white" title="Thay đổi thông tin liên lạc">
+            <a class="nav-link text-secondary cursor-disabled" title="Thay đổi thông tin liên lạc">
                 <i class="fa-light fa-address-card"></i>
                 Thay đổi thông tin
             </a>
         </li>
     </ul>
     <hr>
-    <div class="btn btn-primary fs14">Thoát...</div>
+    <div class="btn btn-primary fs14">Đăng xuất</div>
 </div>
