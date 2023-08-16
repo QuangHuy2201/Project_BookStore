@@ -12,21 +12,23 @@
                 </tr>
             </thead>
             <tbody>
-                <form method="post">
+                <form method="POST" action="index.php?act=category">
                     <tr>
                         <td width="15%">
-                            <input type="text" name="category" placeholder="Nhập tên danh mục" style="padding: 0.4rem;"  require>
+                            <input type="text" name="category_name" placeholder="Nhập tên danh mục" style="padding: 0.4rem;"  require>
                         </td>
                         <td>
-                            <button class="btn btn-primary fs14 plr20" name="add">Thêm</button>
+                            <button type="submit" class="btn btn-primary fs14 plr20" name="btn-add-category">Thêm</button>
                         </td>
                     </tr>
                 </form>
                     <tr>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <p>Thêm danh mục thành công!</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    <?php
+if(isset($_SESSION['message_warning-ad']))
+{show_to_warning($_SESSION['message_warning-ad']);unset($_SESSION['message_warning-ad']);}
+if(isset($_SESSION['message-ad']))
+{show_to_message($_SESSION['message-ad']);unset($_SESSION['message-ad']);}
+?>
                     </tr>
             </tbody>
         </table>
@@ -98,7 +100,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form method="POST" action="index.php?act=category">
-                                            <input class="form-control  grey02 grey_txt cursor-disabled" value="'.$category['category_id'].'" id="category_id" name="category_id" type="hidden"/>
+                                            <input class="form-control grey02 grey_txt cursor-disabled" value="'.$category['category_id'].'" id="category_id" name="category_id" type="hidden"/>
 
                                             <p>Bạn có chắc chắn muốn xoá danh mục '.$category['category_name'].' với ID: '.$category['category_id'].' .</p>
                                             <div class="text-end">

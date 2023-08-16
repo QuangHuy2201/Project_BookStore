@@ -65,6 +65,12 @@ if(isset($_GET['act']))
                     deleteCategory('category', $category_id, connectdb());
                 }
 
+                if(isset($_POST['btn-add-category'])) {
+                    $category_name = $_POST['category_name'];
+                    addCategory('category', $category_name, connectdb());
+                    
+                }
+
                 include "./view/category.php";
                 break;
 
