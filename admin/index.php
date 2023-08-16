@@ -3,7 +3,7 @@
 include "../model/connectDB.php";
 // include "./model/product.php";
 // include "./model/page.php";
- include "./model/login.php";
+include "./model/login.php";
 include "./model/user.php";
 include "./model/product.php";
 // include "./model/passwordBcrypt.php";
@@ -32,6 +32,19 @@ if(isset($_GET['act']))
                 break;
             
             case 'user':
+                if(isset($_POST['btn-submit-user'])) {
+                    // var_dump($_POST['full_name']);
+                    $full_name = $_POST['full_name'];
+                    $phone = $_POST['phone'];
+                    $user_id = $_POST['user_id'];
+                    updateUser('user', $full_name, $phone, $user_id,connectdb());
+                }
+            
+                if(isset($_POST['del-user'])) {
+                    $user_id = $_POST['user_id'];
+                    deleteUser('user', $user_id, connectdb());
+                }
+                
                 include "./view/user.php";
                 break;
 
