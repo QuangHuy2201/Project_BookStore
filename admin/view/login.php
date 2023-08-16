@@ -2,13 +2,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+            <?php
+if(isset($_SESSION['message_warning']))
+{show_to_warning($_SESSION['message_warning']);unset($_SESSION['message_warning']);}
+if(isset($_SESSION['message']))
+?>
                 <div class="form-area form-area2 login-form">
                     <div class="form-content">
                         <img src="../static/images/logo/Security.jpg" alt="logging" >
                     </div>
                     <div class="form-input">
                         <h2 class="login-admin">Đăng Nhập</h2>
-                        <form>
+                        <form action="index.php?act=login"  method="POST">
                             <div class="form-group">
                                 <input type="email" id="" name="email" required>
                                 <label>Email</label>
@@ -18,7 +23,7 @@
                                 <label>Mật khẩu</label>
                             </div>
                             <div class="myform-button">
-                                <button class="myform-btn">Đăng nhập</button>
+                                <button class="myform-btn" type="submit" name="btn-login">Đăng nhập</button >
                             </div>
                         </form>
                     </div>

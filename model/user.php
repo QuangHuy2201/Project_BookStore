@@ -31,7 +31,19 @@ function register()
       $insert_query_run = mysqli_query($conn,$insert_query);
       if($insert_query_run)
        { //Send mail
-        //sendmail($user_name,$email);
+        $img_path ='./static/images/mail/new_customer.jpg';
+        $subject = 'Thư cảm ơn';
+        $body = '
+        <p> Chúc mừng <b>'.$user_name.'</b> đã đăng kí thành công tài khoản tại <b>Bookstore.</b></p>
+        <p> Lời đầu tiên, đội ngũ Bookstore xin gửi lời cảm ơn chân thành đến Quý khách hàng đã trở thành 1 thành viên trong đại gia đình <b>Bookstore</b>. Xin thông báo với quý khách hàng vào tháng 08 này, Bookstore đã chính thức lên 47 tuổi. 
+        Tuy đã vào hàng U50 nhưng tinh thần của đội ngũ Bookstore vẫn rất tươi trẻ và sẵn sàng mang đến cho Quý khách hàng nhiều ưu đãi trong chương trình sinh nhật năm nay. </p>
+                          <br><br>
+                          <p>Hãy đăng nhập và tận hưởng nhiều ưu đãi mua sắm tại <b>Bookstore</b> dành cho khách hàng mới</p>
+                          <img width="700" height="300" src="cid:img">';
+                          //Send mail
+        sendmail( $user_name,$email,$subject,$body,$img_path);
+
+
         $_SESSION['message'] = "Vui lòng kiểm tra email và đăng nhập với thông tin vừa tạo !";
        }
       else
@@ -89,6 +101,65 @@ function login()
 
         $_SESSION['message'] = "Đăng nhập thành công";
         echo'<script> window.location.href="index.php?act=home";</script>';
+        //header('Location: index.php?act=home');
+      }
+      else
+      {
+        $_SESSION['message_warning'] = "Sai password ";
+      }
+
+  }
+  else{
+    $_SESSION['message_warning'] = "Không tìm thấy Email ";
+  }
+}
+function login_admin()
+{
+  $conn =connectdb();
+
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+  $login_query =  "SELECT * FROM user WHERE email ='$email' "  ;
+  $login_query_run = mysqli_query($conn,$login_query);
+
+  //Check user name true
+  if (mysqli_num_rows($login_query_run)>0)
+  {
+      //*Get user data
+      $user_data = mysqli_fetch_array($login_query_run);
+
+      //Todo: check password_input vs hashed_password
+      $hashed_password = $user_data['password'];
+      $result=PasswordVerify($password,$hashed_password);
+ 
+      if($result)
+      {
+        
+        $user_name = $user_data['user_name'];
+        $full_name = $user_data['full_name'];
+        $user_email = $user_data['email'];
+        $user_address = $user_data['address'];
+        $user_phone = $user_data['phone'];
+        $user_image = $user_data['image'];
+        $user_birthday = $user_data['birthday'];
+        $user_role = $user_data['role_id'];
+
+       
+        $_SESSION['auth_user'] =[
+
+          'name' => $user_name,
+          'full_name' => $full_name,
+          'email'=> $user_email,
+          'address'=> $user_address,
+          'phone'=> $user_phone,
+          'image'=> $user_image,
+          'birthday'=> $user_birthday,
+          'role'=> $user_role,
+          ];
+
+
+        $_SESSION['message'] = "Đăng nhập thành công";
         //header('Location: index.php?act=home');
       }
       else
@@ -217,8 +288,6 @@ $target_file = $target_dir . basename($_FILES["uploadfile"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-
-
 // Check if file already exists
 if (file_exists($target_file)) {
   $msg ="Ảnh đã tồn tại.";
@@ -249,5 +318,54 @@ if ($uploadOk == 0) {
   }
 }
 return array ($msg,$uploadOk) ;
+}
+
+function generateRandomString($length = 20) {
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $charactersLength = strlen($characters);
+  $randomString = '';
+  for ($i = 0; $i < $length; $i++) {
+      $randomString .= $characters[random_int(0, $charactersLength - 1)];
+  }
+  return $randomString;
+}
+
+function check_email($email,$conn)
+{
+ 
+  $email_query = " SELECT * FROM user WHERE email = '$email' ";
+  $email_query_run = mysqli_query($conn,$email_query);
+
+  //Check email
+  if(mysqli_num_rows($email_query_run)>0)
+{ 
+  $new_pw = generateRandomString();
+  $new_pw_hash = PasswordHash($new_pw);
+  $sql = "UPDATE user SET password='$new_pw_hash'  WHERE email = '$email'";
+  $sql_update_run = mysqli_query($conn,$sql);
+  
+  //Load user data update
+  $user_data = mysqli_fetch_array($email_query_run);
+  $user_name =  $user_data['user_name'];
+  if($sql_update_run)
+    { 
+      $img_path ='./static/images/mail/sale_70.jpg';
+      $subject = 'Thay đổi mật khẩu thành công';
+      $body = ' <p>Chào <b>'.$user_name.'</b> mật khẩu tài khoản tại <b>Bookstore.</b> của bạn đã bị thay đổi.</p>
+                          <p><b>Mật khẩu mới : '.$new_pw.'</b>.</p>
+                          <p><b>Để bảo mật thông tin tài khoản vui lòng thay đổi mật khẩu sau khi đăng nhập thành công và vui lòng không chia sẻ mật khẩu.</b></p>
+                          <br><br>
+                          <p>Hãy tiếp tục tận hưởng nhiều ưu đãi mua sắm tại <b>Bookstore</b></p>
+                          <img src="cid:img">';
+                          //Send mail
+      sendmail($user_data['user_name'],$email,$subject,$body,$img_path);
+      $_SESSION['check_mail_success'] = "Mật khẩu mới đã gửi vào email của bạn!";
+    }
+  else  $_SESSION['check_mail_error'] ="Đã xảy ra lỗi vui lòng thử lại sau ít phút.";
+
+}
+  else $_SESSION['check_mail_error'] = "Email không tồn tại trên hệ thống, vui lòng thử với email khác !";
+
+  
 }
 ?>

@@ -220,6 +220,15 @@ if(isset($_GET['act']))
 
                 include "./view/about.php";
                 break;
+            case 'forgot':
+                if(isset($_POST['btn-forgot']))
+                {
+                    $email  = $_POST['email'];
+                    check_email($email,connectdb());
+                    
+                }
+                include "./view/forgotpassword.php";
+                break;
             
         }
     }

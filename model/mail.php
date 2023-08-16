@@ -12,7 +12,7 @@ require './PHPMailer/src/SMTP.php';
 
 //Load Composer's autoloader
 require './composer/vendor/autoload.php';
-function sendmail($user_name,$email){
+function sendmail($user_name,$email,$subject,$body,$img_path){
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 $mail->CharSet = "UTF-8";
@@ -40,16 +40,20 @@ try {
     // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
+    // Add an embedded image to the email
+    $mail->AddEmbeddedImage($img_path, 'img');
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Đăng kí thành công';
-    $mail->Body    = 'Chúc mừng <b>'.$user_name.'</b> đã đăng kí thành công tài khoản tại <b>Bookstore.</b>
-                        <p>Hãy tận hưởng mua sắm với nhiều ưu đãi dành cho thành viên mới.</p>';
+    $mail->Subject = $subject;
+    // $mail->Subject = 'Đăng kí thành công';
+    // $mail->Body    = 'Chúc mừng <b>'.$user_name.'</b> đã đăng kí thành công tài khoản tại <b>Bookstore.</b>
+    //                     <p>Hãy tận hưởng mua sắm với nhiều ưu đãi dành cho thành viên mới.</p>';
+     $mail->Body = $body;
    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
    
     $mail->send();
-    echo 'Message has been sent';
+   // echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+   // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 }
