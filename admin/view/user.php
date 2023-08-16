@@ -57,6 +57,7 @@
             </thead>
             <tbody>
                 <?php 
+                    
                     $user = getAllUser("user", connectdb());
                     $count = 0;
                     foreach ($user as $user) {
@@ -64,16 +65,71 @@
                         echo '
                             <tr>
                                 <th scope="row">'.$count.'</th>
-                                <td>'.$user['full_name'].'</td>
-                                <td>'.$user['email'].'</td>
-                                <td>'.$user['phone'].'</td>
-                                <td>
-                                    <a class="btn btn-success fs14" data-bs-toggle="dropdown" href="collapseEdit"  role="button" aria-expanded="false" aria-controls="collapseExample">Sửa</a>    
+                                <td scope="col">'.$user['full_name'].'</td>
+                                <td scope="col">'.$user['email'].'</td>
+                                <td scope="col">'.$user['phone'].'</td>
+                                <td scope="col">
+                                    <button class="btn btn-success fs14" 
+                                    type="button" data-bs-toggle="modal" 
+                                    data-bs-target="#modal'.$user['user_id'].'">Sửa</button>    
                                 </td>
-                                <td>
-                                    <button class="btn btn-danger fs14">Xoá</button>    
+                                <td scope="col">
+                                    <button class="btn btn-danger fs14"
+                                    type="button" data-bs-toggle="modal" 
+                                    data-bs-target="#del'.$user['user_id'].'">Xoá</button>    
                                 </td>
                             </tr>
+                            <div class="modal fade" id="modal'.$user['user_id'].'" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs26" id="modal'.$user['email'].'Label">Cập nhật</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form method="POST" action="index.php?act=user">
+                                            <div>
+                                                <label for="full_name">User ID</label>
+                                                <input class="form-control" value="'.$user['user_id'].'" id="user_id" name="user_id" disabled />
+                                            </div>
+                                            <div>
+                                                <label for="full_name">Họ và Tên</label>
+                                                <input class="form-control" value="'.$user['full_name'].'" id="full_name" name="full_name"></input>
+                                            </div>
+                                            <div>
+                                                <label for="phones">Số điện thoại</label>
+                                                <input class="form-control" value="'.$user['phone'].'" id="phone" name="phone"></input>
+                                            </div>
+                                            <div class="mt10 text-end">
+                                                <button type="button" class="btn btn-secondary fs14" data-bs-dismiss="modal">Huỷ</button>
+                                                <button type="submit" class="btn btn-primary fs14" name="btn-submit-user">Cập nhật</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal" id="del'.$user['user_id'].'" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="index.php?act=user">
+                                            <input type="hidden" class="form-control" value="'.$user['user_id'].'" id="user_id" name="user_id" />
+
+                                            <p>Bạn có chắc chắn muốn xoá người dùng '.$user['full_name'].' .</p>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
+                                            <button type="submit" class="btn btn-primary" name="del-user">Đồng ý</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
                         ';
                     }
                 ?>
