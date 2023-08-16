@@ -143,6 +143,15 @@ if(isset($_GET['act']))
                         }
                     }
                 }
+                //Add feedback 
+                if(isset($_POST['btn-submit-feedback']))
+                {
+                    $feedback = $_POST['feedback'];
+                    $user_name = $_SESSION['auth_user']['name'];
+                    add_feedback('feedback',$product_id,$feedback,$user_name,connectdb());
+                }
+                $feedbacks = getALL_feedback('feedback',$product_id ,connectdb());
+               
                 include "./view/product_detail.php";
                 break;
 
@@ -155,7 +164,6 @@ if(isset($_GET['act']))
                     $_SESSION['search']=mysqli_num_rows(getALL_Search('product',$search, connectdb()));
                 else
                  {
-                    
                     
                     $_SESSION['search']=0;
                     
