@@ -327,22 +327,22 @@ function page_bar_search($page_current,$page_left,$page_right,$pages,$search){
 
         if($page_current!=1 )
         {
-            echo' <a href="index.php?act=search&search='.$search.'&page=1" class="btn btn-outline-secondary"><<</a> ';
+            echo' <a href="index.php?act=search&search='.$search.'&page=1" class="btn btn-outline-primary"><<</a> ';
             if($page_current-3>1)
-            echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
+            echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
         }
         
         for($i=$page_left ;$i<=$page_right;$i++ )
         {   if ($page_current==$i)
-            echo' <a href="index.php?act=search&search='.$search.'&page='.$i.'" class="active btn btn-outline-secondary">'.$i.'</a>';
+            echo' <a href="index.php?act=search&search='.$search.'&page='.$i.'" class="active btn btn-outline-primary">'.$i.'</a>';
             else
-            echo' <a href="index.php?act=search&search='.$search.'&page='.$i.'" class="btn btn-outline-secondary">'.$i.'</a>';
+            echo' <a href="index.php?act=search&search='.$search.'&page='.$i.'" class="btn btn-outline-primary">'.$i.'</a>';
         }
         if($page_current<$pages)
         {
         if($page_current+3<$pages)
-        echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
-        echo'<a href="index.php?act=search&search='.$search.'&page='.$pages.'" class="btn btn-outline-secondary">>></a> ';
+        echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
+        echo'<a href="index.php?act=search&search='.$search.'&page='.$pages.'" class="btn btn-outline-primary">>></a> ';
         }
 }   
 
@@ -352,44 +352,44 @@ function page_bar_category($page_current,$page_left,$page_right,$pages,$category
     {
         if($page_current!=1)
         {
-            echo' <a href="index.php?act=product&category='.$category_id.'&page=1" class="btn btn-outline-secondary"><<</a> ';
+            echo' <a href="index.php?act=product&category='.$category_id.'&page=1" class="btn btn-outline-primary"><<</a> ';
             if($page_current-3>1)
-            echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
+            echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
         }
         
         for($i=$page_left ;$i<=$page_right;$i++ )
         {   if ($page_current==$i)
-            echo' <a href="index.php?act=product&category='.$category_id.'&page='.$i.'" class="active btn btn-outline-secondary">'.$i.'</a>';
+            echo' <a href="index.php?act=product&category='.$category_id.'&page='.$i.'" class="active btn btn-outline-primary">'.$i.'</a>';
             else
-            echo' <a href="index.php?act=product&category='.$category_id.'&page='.$i.'" class="btn btn-outline-secondary">'.$i.'</a>';
+            echo' <a href="index.php?act=product&category='.$category_id.'&page='.$i.'" class="btn btn-outline-primary">'.$i.'</a>';
         }
         if($page_current<$pages)
         {
         if($page_current+3<$pages)
-        echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
-        echo'<a href="index.php?act=product&category='.$category_id.'&page='.$pages.'" class="btn btn-outline-secondary">>></a> ';
+        echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
+        echo'<a href="index.php?act=product&category='.$category_id.'&page='.$pages.'" class="btn btn-outline-primary">>></a> ';
         }
     }
     else
     {
         if($page_current!=1)
     {
-        echo' <a href="index.php?act=product&page=1" class="btn btn-outline-secondary"><<</a> ';
+        echo' <a href="index.php?act=product&page=1" class="btn btn-outline-primary"><<</a> ';
         if($page_current-3>1)
-        echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
+        echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
     }
     
     for($i=$page_left ;$i<=$page_right;$i++ )
     {   if ($page_current==$i)
-        echo' <a href="index.php?act=product&page='.$i.'" class="active btn btn-outline-secondary">'.$i.'</a>';
+        echo' <a href="index.php?act=product&page='.$i.'" class="active btn btn-outline-primary">'.$i.'</a>';
         else
-        echo' <a href="index.php?act=product&page='.$i.'" class="btn btn-outline-secondary">'.$i.'</a>';
+        echo' <a href="index.php?act=product&page='.$i.'" class="btn btn-outline-primary">'.$i.'</a>';
     }
     if($page_current<$pages)
     {
     if($page_current+3<$pages)
-    echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
-    echo'<a href="index.php?act=product&page='.$pages.'" class="btn btn-outline-secondary">>></a> ';
+    echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
+    echo'<a href="index.php?act=product&page='.$pages.'" class="btn btn-outline-primary">>></a> ';
     }
     }
 }          
@@ -400,44 +400,44 @@ function page_bar_category_sort($page_current,$page_left,$page_right,$pages,$cat
     {
         if($page_current!=1)
         {
-            echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page=1" class="btn btn-outline-secondary"><<</a> ';
+            echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page=1" class="btn btn-outline-primary"><<</a> ';
             if($page_current-3>1)
-            echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
+            echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
         }
         
         for($i=$page_left ;$i<=$page_right;$i++ )
         {   if ($page_current==$i)
-            echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="active btn btn-outline-secondary">'.$i.'</a>';
+            echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="active btn btn-outline-primary">'.$i.'</a>';
             else
-            echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="btn btn-outline-secondary">'.$i.'</a>';
+            echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="btn btn-outline-primary">'.$i.'</a>';
         }
         if($page_current<$pages)
         {
         if($page_current+3<$pages)
-        echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
-        echo'<a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$pages.'" class="btn btn-outline-secondary">>></a> ';
+        echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
+        echo'<a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$pages.'" class="btn btn-outline-primary">>></a> ';
         }
     }
     else
     {
         if($page_current!=1)
     {
-        echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page=1" class="btn btn-outline-secondary"><<</a> ';
+        echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page=1" class="btn btn-outline-primary"><<</a> ';
         if($page_current-3>1)
-        echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
+        echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
     }
     
     for($i=$page_left ;$i<=$page_right;$i++ )
     {   if ($page_current==$i)
-        echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="active btn btn-outline-secondary">'.$i.'</a>';
+        echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="active btn btn-outline-primary">'.$i.'</a>';
         else
-        echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="btn btn-outline-secondary">'.$i.'</a>';
+        echo' <a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$i.'" class="btn btn-outline-primary">'.$i.'</a>';
     }
     if($page_current<$pages)
     {
     if($page_current+3<$pages)
-    echo' <a href="" class=" disabled btn btn-outline-secondary">...</a> ';
-    echo'<a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$pages.'" class="btn btn-outline-secondary">>></a> ';
+    echo' <a href="" class=" disabled btn btn-outline-primary">...</a> ';
+    echo'<a href="index.php?act=product&category='.$category_id.'&sort='.$sort.'&page='.$pages.'" class="btn btn-outline-primary">>></a> ';
     }
     }
 }          

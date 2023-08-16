@@ -4,7 +4,7 @@
             <div class="col-md-8">
             <?php
 if(isset($_SESSION['message_warning-ad']))
-{show_to_warning($_SESSION['message_warning-ad']);unset($_SESSION['message_warning-ad']);}
+{show_to_warning($_SESSION['message_warning-ad']);unset($_SESSION['message_warning-ad']);}``
 ?>
                 <div class="form-area form-area2 login-form">
                     <div class="form-content">

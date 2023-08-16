@@ -40,7 +40,7 @@ if(isset($_GET['act']))
                 break;
 
             case 'product':
-               list($page_left,$page_right,$page_current,$products,$pages) =paging(12);
+               list($page_left,$page_right,$page_current,$products,$pages) =paging(10);
                 include "./view/product.php";
                 break;
 
