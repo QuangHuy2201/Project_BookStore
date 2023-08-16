@@ -99,7 +99,7 @@ if(isset($_SESSION['message-ad']))
                                         <form method="POST" action="index.php?act=user">
                                             <div>
                                                 <label for="full_name">User ID</label>
-                                                <input class="form-control" value="'.$user['user_id'].'" id="user_id" name="user_id" disabled />
+                                                <input class="form-control grey02 grey_txt cursor-disabled" value="'.$user['user_id'].'" id="user_id" name="user_id" readonly />
                                             </div>
                                             <div>
                                                 <label for="full_name">Họ và Tên</label>
@@ -128,11 +128,13 @@ if(isset($_SESSION['message-ad']))
                                     </div>
                                     <div class="modal-body">
                                         <form method="POST" action="index.php?act=user">
-                                            <input type="hidden" class="form-control" value="'.$user['user_id'].'" id="user_id" name="user_id" />
+                                            <input class="form-control grey02 grey_txt cursor-disabled" value="'.$user['user_id'].'" id="user_id" name="user_id" type="hidden" />
 
-                                            <p>Bạn có chắc chắn muốn xoá người dùng '.$user['full_name'].' .</p>
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
-                                            <button type="submit" class="btn btn-primary" name="del-user">Đồng ý</button>
+                                            <p>Bạn có chắc chắn muốn xoá thành viên '.$user['user_name'].' với ID: '.$user['user_id'].' .</p>
+                                            <div class="text-end">
+                                                <button type="button" class="btn btn-secondary fs14" data-bs-dismiss="modal">Huỷ</button>
+                                                <button type="submit" class="btn btn-primary fs14" name="del-user">Đồng ý</button>
+                                            </div>
                                         </form>
                                     </div>
                                     </div>

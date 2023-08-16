@@ -54,7 +54,23 @@ if(isset($_GET['act']))
                 break;
 
             case 'category':
-                $header ="category";
+                if(isset($_POST['btn-edit-category'])) {
+                    $category_id = $_POST['category_id'];
+                    $category_name = $_POST['category_name'];
+                    updateCategory('category', $category_name, $category_id, connectdb());
+                }
+
+                if(isset($_POST['del-category'])) {
+                    $category_id = $_POST['category_id'];
+                    deleteCategory('category', $category_id, connectdb());
+                }
+
+                if(isset($_POST['btn-add-category'])) {
+                    $category_name = $_POST['category_name'];
+                    addCategory('category', $category_name, connectdb());
+                    
+                }
+
                 include "./view/category.php";
                 break;
 
