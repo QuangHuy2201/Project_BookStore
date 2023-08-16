@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form method="post">
+                <form action="index.php?act=user" method="POST">
                     <tr>
                         <td>
                             <input type="text" name="email" placeholder="Email" require>
@@ -23,22 +23,24 @@
                             <input type="password" name="password" placeholder="Password" require>
                         </td>
                         <td>
-                            <select name="rold" id="rold">
+                            <select name="role" >
                                 <option value="1">Quản trị viên</option>
                                 <option value="2" selected="selected">Thành viên</option>
                             </select>
                         </td>
                         </td>
                         <td>
-                            <button class="btn btn-primary fs14" name="add">Thêm</button>
+                            <button class="btn btn-primary fs14" type="submit" name="btn-add-user">Thêm</button>
                         </td>
                     </tr>
                 </form>
                     <tr>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <p>Thêm người dùng thành công!</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+<?php
+if(isset($_SESSION['message_warning-ad']))
+{show_to_warning($_SESSION['message_warning-ad']);unset($_SESSION['message_warning-ad']);}
+if(isset($_SESSION['message-ad']))
+{show_to_message($_SESSION['message-ad']);unset($_SESSION['message-ad']);}
+?>
                     </tr>
             </tbody>
         </table>
@@ -50,6 +52,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Họ và tên</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Loại người dùng</th>
                     <th scope="col">Số điện thoại</th>
                     <th scope="col">Sửa</th>
                     <th scope="col">Xoá</th>
@@ -62,11 +65,16 @@
                     $count = 0;
                     foreach ($user as $user) {
                         $count++;
+                        $role;
+                        if($user['role_id']==1)
+                        $role="Quản trị viên";
+                        else $role="Thành viên";
                         echo '
                             <tr>
                                 <th scope="row">'.$count.'</th>
                                 <td scope="col">'.$user['full_name'].'</td>
                                 <td scope="col">'.$user['email'].'</td>
+                                <td scope="col">'.$role.'</td>
                                 <td scope="col">'.$user['phone'].'</td>
                                 <td scope="col">
                                     <button class="btn btn-success fs14" 

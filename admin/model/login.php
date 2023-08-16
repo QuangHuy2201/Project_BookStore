@@ -79,7 +79,42 @@ function show_to_message($message)
           '.$message.'
   <button type="button" name="close_message"  class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>';
+}
 
+function register($conn)
+{
+
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $password = mysqli_real_escape_string($conn,$_POST['password']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
+  
+  $email_query = " SELECT * FROM user WHERE email = '$email'  ";
+  $email_query_run = mysqli_query($conn,$email_query);
+
+    //Check email
+    if(mysqli_num_rows($email_query_run)>0)
+      $_SESSION['message_warning-ad'] = "Email đã được đăng kí, vui lòng thử với email khác !";
+    else 
+    {
+      //Password hash
+      $password = PasswordHash($password);
+      //Insert user data
+      $insert_query = "INSERT INTO user (email,password,role_id) VALUES ('$email','$password',$role)";
+      $insert_query_run = mysqli_query($conn,$insert_query);
+      if($insert_query_run)
+       { 
+
+        $_SESSION['message-ad'] = "Thêm người dùng thành công!";
+
+       }
+      else
+      {  
+
+        $_SESSION['message_warning-ad'] = "Đã xảy ra lỗi.";
+
+      }
+    }
   
 }
+
 ?>
