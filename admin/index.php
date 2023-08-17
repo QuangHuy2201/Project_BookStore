@@ -54,6 +54,7 @@ if(isset($_GET['act']))
                 break;
 
             case 'category':
+                $header ="category";
                 if(isset($_POST['btn-edit-category'])) {
                     $category_id = $_POST['category_id'];
                     $category_name = $_POST['category_name'];

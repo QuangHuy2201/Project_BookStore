@@ -33,12 +33,12 @@
                         </td>
                     </tr>
                 </form>
-                    <tr>
+                    <!-- <tr>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <p>Thêm sản phẩm thành công!</p>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    </tr>
+                    </tr> -->
             </tbody>
         </table>
 
